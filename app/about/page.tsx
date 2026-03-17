@@ -35,7 +35,7 @@ export default function AboutPage() {
         <div className="container-main">
           <div className="zigzag-row">
             <div className="zigzag-image">
-              <Image src="/12.jpeg" alt="Manufacturing Precision" fill style={{ objectFit: 'cover' }} />
+              <Image src="/4.webp" alt="Manufacturing Precision" fill style={{ objectFit: 'cover' }} />
             </div>
             <div>
               <h2 className="section-title">Our Story</h2>

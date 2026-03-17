@@ -3,18 +3,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const galleryImages = [
-  { src: '/1.jpeg', alt: 'Premium glass partition installation' },
-  { src: '/2.jpeg', alt: 'Modern office cubicle systems' },
-  { src: '/3.jpeg', alt: 'Full-height glass wall profiles' },
-  { src: '/4.jpeg', alt: 'Double glaze acoustic partition' },
-  { src: '/5.jpeg', alt: 'Floor-to-ceiling office dividers' },
-  { src: '/6.jpeg', alt: 'Precision aluminium extrusions' },
-  { src: '/7.jpeg', alt: 'Custom partition solutions' },
-  { src: '/8.jpeg', alt: 'Contemporary retail glass system' },
-  { src: '/10.jpeg', alt: 'Executive suite glass doors' },
-  { src: '/11.jpeg', alt: 'Acoustic double glazing' },
-  { src: '/12.jpeg', alt: 'Aluminium profile finishes' },
-  { src: '/3.jpeg', alt: 'Corporate boardroom project' },
+  { src: '/1.webp', alt: 'Premium glass partition installation' },
+  { src: '/2.webp', alt: 'Modern office cubicle systems' },
+  { src: '/3.webp', alt: 'Full-height glass wall profiles' },
+  { src: '/4.webp', alt: 'Double glaze acoustic partition' },
+  { src: '/5.webp', alt: 'Floor-to-ceiling office dividers' },
+  { src: '/6.webp', alt: 'Precision aluminium extrusions' },
+  { src: '/1.webp', alt: 'Custom partition solutions' },
+  { src: '/2.webp', alt: 'Contemporary retail glass system' },
+  { src: '/3.webp', alt: 'Executive suite glass doors' },
+  { src: '/4.webp', alt: 'Acoustic double glazing' },
+  { src: '/5.webp', alt: 'Aluminium profile finishes' },
+  { src: '/6.webp', alt: 'Corporate boardroom project' },
 ];
 
 export default function GalleryPage() {

@@ -32,19 +32,20 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className="navbar"
+        className={`navbar ${scrolled ? 'scrolled' : ''}`}
         style={{
-          background: scrolled || menuOpen ? 'var(--navy)' : 'linear-gradient(to bottom, rgba(10,22,40,0.92) 0%, rgba(10,22,40,0) 100%)',
-          boxShadow: scrolled ? '0 4px 24px rgba(10,22,40,0.25)' : 'none',
+          background: 'var(--white)',
+          boxShadow: scrolled || menuOpen ? '0 4px 24px rgba(10,22,40,0.1)' : '0 2px 10px rgba(0,0,0,0.05)',
+          borderBottom: '1px solid rgba(10,22,40,0.05)',
         }}
       >
-        <div className="container-main" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 1.5rem', height: '72px' }}>
+        <div className="container-main" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 1.5rem', height: '85px' }}>
           {/* Logo */}
           <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', height: '100%' }}>
-            <div style={{ position: 'relative', height: '44px', width: '180px' }}>
+            <div style={{ position: 'relative', height: '65px', width: '220px' }}>
               <Image 
                 src="/logoo.png" 
-                alt="Logo" 
+                alt="Raja Aluminium Logo" 
                 fill
                 style={{ objectFit: 'contain', objectPosition: 'left' }}
                 priority
@@ -59,7 +60,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 style={{
-                  color: pathname === link.href ? 'var(--gold)' : 'rgba(255,255,255,0.88)',
+                  color: pathname === link.href ? 'var(--gold-dark)' : 'var(--navy)',
                   fontWeight: pathname === link.href ? 700 : 500,
                   fontSize: '0.9rem',
                   padding: '0.5rem 0.875rem',
@@ -93,20 +94,20 @@ export default function Navbar() {
               padding: '6px',
             }}
           >
-            <span style={{ width: '24px', height: '2px', background: 'white', display: 'block', transition: 'all 0.3s', transform: menuOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none' }} />
-            <span style={{ width: '24px', height: '2px', background: 'white', display: 'block', transition: 'all 0.3s', opacity: menuOpen ? 0 : 1 }} />
-            <span style={{ width: '24px', height: '2px', background: 'white', display: 'block', transition: 'all 0.3s', transform: menuOpen ? 'rotate(-45deg) translate(5px, -5px)' : 'none' }} />
+            <span style={{ width: '24px', height: '2px', background: 'var(--navy)', display: 'block', transition: 'all 0.3s', transform: menuOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none' }} />
+            <span style={{ width: '24px', height: '2px', background: 'var(--navy)', display: 'block', transition: 'all 0.3s', opacity: menuOpen ? 0 : 1 }} />
+            <span style={{ width: '24px', height: '2px', background: 'var(--navy)', display: 'block', transition: 'all 0.3s', transform: menuOpen ? 'rotate(-45deg) translate(5px, -5px)' : 'none' }} />
           </button>
         </div>
 
         {/* Mobile Drawer */}
         <div
           style={{
-            background: 'var(--navy)',
+            background: 'var(--white)',
             overflow: 'hidden',
             maxHeight: menuOpen ? '500px' : '0',
             transition: 'max-height 0.4s ease',
-            borderTop: menuOpen ? '1px solid rgba(255,255,255,0.1)' : 'none',
+            borderTop: menuOpen ? '1px solid rgba(10,22,40,0.05)' : 'none',
           }}
           className="mobile-drawer"
         >
@@ -116,12 +117,12 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 style={{
-                  color: pathname === link.href ? 'var(--gold)' : 'rgba(255,255,255,0.88)',
+                  color: pathname === link.href ? 'var(--gold-dark)' : 'var(--navy)',
                   fontWeight: pathname === link.href ? 700 : 500,
                   fontSize: '1rem',
                   padding: '0.75rem 0.5rem',
                   textDecoration: 'none',
-                  borderBottom: '1px solid rgba(255,255,255,0.08)',
+                  borderBottom: '1px solid rgba(0,0,0,0.05)',
                   display: 'block',
                 }}
               >

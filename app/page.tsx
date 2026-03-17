@@ -4,11 +4,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const heroSlides = [
-  { src: '/1.jpeg', alt: 'Glass Partition System — Corporate Office' },
-  { src: '/2.jpeg', alt: 'Modern Aluminium Profile Installation' },
-  { src: '/3.jpeg', alt: 'Premium Glass Partition — Commercial' },
-  { src: '/4.jpeg', alt: 'Double Glaze Partition System' },
-  { src: '/5.jpeg', alt: 'Aluminium Profile Extrusion' },
+  { src: '/1.webp', alt: 'Premium Glass Partition System' },
+  { src: '/2.webp', alt: 'Modern Aluminium Profile Solutions' },
+  { src: '/3.webp', alt: 'High-End Office Partitioning' },
+  { src: '/4.webp', alt: 'Acoustic Glass Wall Systems' },
+  { src: '/5.webp', alt: 'Precision Aluminium Extrusions' },
+  { src: '/6.webp', alt: 'Bespoke Partition Hardware' },
 ];
 
 const stats = [
@@ -38,14 +39,14 @@ const differentiators = [
 ];
 
 const industries = [
-  { name: 'Corporate Offices', img: '/1.jpeg' },
-  { name: 'Healthcare & Hospitals', img: '/2.jpeg' },
-  { name: 'Retail & Showrooms', img: '/3.jpeg' },
-  { name: 'Hospitality & Hotels', img: '/4.jpeg' },
-  { name: 'Educational Institutions', img: '/5.jpeg' },
-  { name: 'Government & PSU', img: '/6.jpeg' },
-  { name: 'Industrial & Warehousing', img: '/7.jpeg' },
-  { name: 'Residential High-Rise', img: '/8.jpeg' },
+  { name: 'Corporate Offices', img: '/1.webp' },
+  { name: 'Healthcare & Hospitals', img: '/2.webp' },
+  { name: 'Retail & Showrooms', img: '/3.webp' },
+  { name: 'Hospitality & Hotels', img: '/4.webp' },
+  { name: 'Educational Institutions', img: '/5.webp' },
+  { name: 'Government & PSU', img: '/6.webp' },
+  { name: 'Industrial & Warehousing', img: '/1.webp' },
+  { name: 'Residential High-Rise', img: '/2.webp' },
 ];
 
 const steps = [

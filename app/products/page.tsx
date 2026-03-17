@@ -18,7 +18,7 @@ const products = [
       { label: 'Finishes', value: 'Anodised Silver, Matt Black, Champagne' }
     ],
     applications: ['Executive offices and boardrooms', 'Open-plan corporate interiors', 'Commercial retail fit-outs', 'Hotel lobby dividers', 'Reception area partitioning'],
-    img: '/4.jpeg'
+    img: '/1.webp'
   },
   {
     sku: 'RAP-2525',
@@ -31,7 +31,7 @@ const products = [
       { label: 'Frame Construction', value: 'Lightweight aluminium extrusion' }
     ],
     applications: ['Contemporary residential interiors', 'Boutique retail spaces', 'Co-working and hot-desk environments', 'Feature walls and room dividers', 'Design studios and creative offices'],
-    img: '/7.jpeg'
+    img: '/2.webp'
   },
   {
     sku: 'RAP-100SG',
@@ -44,7 +44,7 @@ const products = [
       { label: 'Frame Construction', value: 'Heavy-section extruded aluminium' }
     ],
     applications: ['Full-height office partitions (floor to ceiling)', 'Healthcare and clinic partitioning', 'Government and institutional buildings', 'Commercial banking halls', 'Airport lounges and transit areas'],
-    img: '/3.jpeg'
+    img: '/3.webp'
   },
   {
     sku: 'RAP-100DG',
@@ -57,7 +57,7 @@ const products = [
       { label: 'Frame Construction', value: 'Thermally broken heavy-section aluminium' }
     ],
     applications: ['Premium corporate headquarters', 'Executive suites and C-Suite offices', 'Financial institutions and trading floors', 'Premium residential apartments', 'High-end hospitality interiors'],
-    img: '/12.jpeg'
+    img: '/4.webp'
   },
   {
     sku: 'RJ-100-DG-AC',
@@ -70,7 +70,7 @@ const products = [
       { label: 'Acoustic Rating', value: 'Up to 52dB Rw' }
     ],
     applications: ['Conference rooms and boardrooms', 'Medical consultation and procedure rooms', 'Legal offices and chambers', 'Judiciary and government facilities', 'Recording studios and media rooms'],
-    img: '/11.jpeg'
+    img: '/5.webp'
   },
   {
     sku: 'RAP-FRAME',
@@ -83,7 +83,7 @@ const products = [
       { label: 'Acoustic Rating', value: '36–40dB' }
     ],
     applications: ['Luxury residential and penthouse interiors', 'Premium hotel room dividers', 'Retail showcase environments', 'Art galleries and showrooms', 'High-end restaurant and bar interiors'],
-    img: '/8.jpeg'
+    img: '/6.webp'
   }
 ];
 

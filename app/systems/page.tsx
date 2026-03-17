@@ -16,7 +16,7 @@ const systems = [
       { label: 'Demountable', value: 'Yes — components can be dismantled and reinstalled' },
       { label: 'Fire Rating', value: 'Fire-rated glazing available on request (EI 30 / EI 60)' }
     ],
-    img: '/1.jpeg'
+    img: '/1.webp'
   },
   {
     id: 'double-glaze',
@@ -31,7 +31,7 @@ const systems = [
       { label: 'Thermal Performance', value: 'U-value from 1.8 W/m²K' },
       { label: 'Cable Management', value: 'Integrated cable channel within base track' }
     ],
-    img: '/4.jpeg'
+    img: '/2.webp'
   },
   {
     id: 'demountable',
@@ -44,7 +44,7 @@ const systems = [
       { title: 'Lease Exit Compliance', text: "Demountable partitions are typically classified as tenant's fixtures" },
       { title: 'Reconfiguration Speed', text: 'Typical floor can be reconfigured in 3–5 days without disruption' }
     ],
-    img: '/2.jpeg'
+    img: '/3.webp'
   },
   {
     id: 'frameless',
@@ -57,7 +57,7 @@ const systems = [
       'Hotel suites and spa interiors',
       'Art galleries and exhibition spaces'
     ],
-    img: '/5.jpeg'
+    img: '/4.webp'
   }
 ];
 
