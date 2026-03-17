@@ -1,65 +1,290 @@
-import Image from "next/image";
+'use client';
+import { useState, useEffect, useCallback } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
-export default function Home() {
+const heroSlides = [
+  { src: '/1.jpeg', alt: 'Glass Partition System — Corporate Office' },
+  { src: '/2.jpeg', alt: 'Modern Aluminium Profile Installation' },
+  { src: '/3.jpeg', alt: 'Premium Glass Partition — Commercial' },
+  { src: '/4.jpeg', alt: 'Double Glaze Partition System' },
+  { src: '/5.jpeg', alt: 'Aluminium Profile Extrusion' },
+];
+
+const stats = [
+  { value: '500+', label: 'Projects Delivered', sub: 'Residential, Commercial & Institutional' },
+  { value: '20+', label: 'Product SKUs', sub: 'Profiles, Systems & Accessories' },
+  { value: '50+', label: 'Cities Served', sub: 'Pan India Supply Network' },
+  { value: '10+', label: 'Years in Business', sub: 'Established Expertise' },
+  { value: '2', label: 'Office Locations', sub: 'Bikaner HQ · Navi Mumbai' },
+];
+
+const products = [
+  { sku: 'RAP-2545', name: '25×45 Single Glaze Slimline Profile', desc: 'Snap-fit single glazed system for executive offices and corporate fit-outs. Accepts 10–12mm glass.', img: '/6.jpeg', tag: 'Single Glaze' },
+  { sku: 'RAP-2525', name: '25×25 Ultra-Slim Partition Profile', desc: 'Minimalist frame for contemporary residential and boutique retail spaces. 8–10mm glass.', img: '/7.jpeg', tag: 'Single Glaze' },
+  { sku: 'RAP-100SG', name: '25×100 Single Glazing System', desc: 'Structural heavy-section frame for full-height office partitions and institutional buildings.', img: '/8.jpeg', tag: 'Structural' },
+  { sku: 'RAP-100DG', name: '25×100 Double Glazing System', desc: 'Thermally broken double-glazed cavity frame for premium corporate HQs and executive suites.', img: '/10.jpeg', tag: 'Double Glaze' },
+  { sku: 'RJ-100', name: 'RJ-100 Acoustic Double Glaze (52dB)', desc: 'High-performance acoustic wall rated up to 52dB Rw — ideal for boardrooms and healthcare.', img: '/11.jpeg', tag: 'Acoustic' },
+  { sku: 'RAP-FRAME', name: 'Custom Extrusion Solutions', desc: 'Bespoke profiles engineered to your exact specification — any dimension, any finish.', img: '/12.jpeg', tag: 'Custom' },
+];
+
+const differentiators = [
+  { icon: '🎯', title: 'Precision Manufacturing', desc: 'Profiles extruded to tight dimensional tolerances — consistent fit and finish on every installation.' },
+  { icon: '📐', title: 'Wide Profile Range', desc: 'From slim 25×25 dividers to heavy-duty 25×100 double-glazed systems — one supplier for your entire project.' },
+  { icon: '🎨', title: 'Multiple Finishes', desc: 'Anodised Silver, Powder Coated (RAL range), Champagne, Matt Black, Bronze — match any interior specification.' },
+  { icon: '🔇', title: 'Acoustic Performance', desc: 'RJ-100 double-glaze system rated up to 52dB — ideal for executive offices, boardrooms and healthcare.' },
+  { icon: '🚚', title: 'PAN India Supply', desc: 'Manufacturing in Bikaner & supply hub in Navi Mumbai — fast dispatch to all major metros.' },
+  { icon: '📞', title: 'Full Technical Support', desc: 'CAD drawings, installation guides, site visit support and responsive WhatsApp service throughout.' },
+];
+
+const industries = [
+  { name: 'Corporate Offices', img: '/1.jpeg' },
+  { name: 'Healthcare & Hospitals', img: '/2.jpeg' },
+  { name: 'Retail & Showrooms', img: '/3.jpeg' },
+  { name: 'Hospitality & Hotels', img: '/4.jpeg' },
+  { name: 'Educational Institutions', img: '/5.jpeg' },
+  { name: 'Government & PSU', img: '/6.jpeg' },
+  { name: 'Industrial & Warehousing', img: '/7.jpeg' },
+  { name: 'Residential High-Rise', img: '/8.jpeg' },
+];
+
+const steps = [
+  { num: '01', title: 'Enquire', desc: 'Share your project dimensions, partition type and finish requirements via our form, email or WhatsApp.' },
+  { num: '02', title: 'Specify', desc: 'Our technical team reviews your brief and recommends the correct profile system. Free sample dispatch available.' },
+  { num: '03', title: 'Quote & Confirm', desc: 'Receive a detailed itemised quotation within 24 hours. Flexible payment and credit terms for registered contractors.' },
+  { num: '04', title: 'Supply & Support', desc: 'Profiles dispatched to site with complete installation hardware. Technical support throughout your installation.' },
+];
+
+const testimonials = [
+  { text: 'The 25×45 slimline profiles were exactly what we needed for a premium corporate fit-out in Mumbai. Consistent quality, on-time delivery and excellent after-sales support.', author: 'Interior Designer, Mumbai' },
+  { text: "We've been specifying these profiles on all our commercial projects for the past three years. The double-glazed system performs exactly as rated — clients love the acoustic results.", author: 'Architect, Delhi' },
+  { text: 'Competitive pricing, wide finish range and reliable dispatch from their Navi Mumbai office made them our preferred aluminium profile supplier for North and West India.', author: 'Contractor, Jaipur' },
+];
+
+function HeroSlider() {
+  const [current, setCurrent] = useState(0);
+  const total = heroSlides.length;
+
+  const next = useCallback(() => setCurrent(c => (c + 1) % total), [total]);
+  const prev = () => setCurrent(c => (c - 1 + total) % total);
+
+  useEffect(() => {
+    const timer = setInterval(next, 5000);
+    return () => clearInterval(timer);
+  }, [next]);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="hero-slider">
+      {heroSlides.map((slide, i) => (
+        <div key={slide.src} className="hero-slide" style={{ opacity: i === current ? 1 : 0, zIndex: i === current ? 1 : 0 }}>
+          <Image src={slide.src} alt={slide.alt} fill style={{ objectFit: 'cover', objectPosition: 'center' }} priority={i === 0} />
+        </div>
+      ))}
+      <div className="hero-overlay" />
+
+      {/* Content */}
+      <div className="hero-content">
+        <div style={{ maxWidth: '700px' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--gold)', color: 'var(--navy)', padding: '0.35rem 0.875rem', borderRadius: '50px', fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
+            ✦ Premium Aluminium Profile Systems
+          </div>
+          <h1 style={{ color: 'white', fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 900, lineHeight: 1.1, marginBottom: '1.25rem', textShadow: '0 2px 16px rgba(0,0,0,0.3)' }}>
+            Premium Aluminium Profile Systems for Modern Interiors
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'clamp(0.95rem, 2vw, 1.15rem)', lineHeight: 1.7, marginBottom: '2rem', maxWidth: '600px' }}>
+            Manufacturer &amp; Supplier of Demountable Glass Partition Profiles — Single Glaze, Double Glaze, Acoustic Systems, and Custom Extrusions. Serving Architects, Contractors and Developers Across India.
           </p>
+          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+            <Link href="/products" className="btn-gold">▶ Explore Our Products</Link>
+            <Link href="/contact" className="btn-outline-white">✉ Get a Free Quote</Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </div>
+
+      {/* Arrows */}
+      <button onClick={prev} aria-label="Previous slide" style={{ position: 'absolute', left: '1.5rem', top: '50%', transform: 'translateY(-50%)', zIndex: 10, background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.3)', borderRadius: '50%', width: '48px', height: '48px', color: 'white', fontSize: '1.2rem', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(4px)', transition: 'background 0.2s' }}>‹</button>
+      <button onClick={next} aria-label="Next slide" style={{ position: 'absolute', right: '1.5rem', top: '50%', transform: 'translateY(-50%)', zIndex: 10, background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.3)', borderRadius: '50%', width: '48px', height: '48px', color: 'white', fontSize: '1.2rem', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(4px)', transition: 'background 0.2s' }}>›</button>
+
+      {/* Dots */}
+      <div style={{ position: 'absolute', bottom: '2rem', left: '50%', transform: 'translateX(-50%)', zIndex: 10, display: 'flex', gap: '0.5rem' }}>
+        {heroSlides.map((_, i) => (
+          <button key={i} onClick={() => setCurrent(i)} aria-label={`Go to slide ${i + 1}`} style={{ width: i === current ? '32px' : '10px', height: '10px', borderRadius: '5px', background: i === current ? 'var(--gold)' : 'rgba(255,255,255,0.5)', border: 'none', cursor: 'pointer', transition: 'all 0.35s ease', padding: 0 }} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default function HomePage() {
+  return (
+    <div>
+      {/* HERO */}
+      <HeroSlider />
+
+      {/* TRUST BAR */}
+      <div className="trust-bar">
+        ✓ Trusted by 500+ Projects &nbsp;·&nbsp; PAN India Supply &nbsp;·&nbsp; Bikaner + Navi Mumbai Offices &nbsp;·&nbsp; ✓ WhatsApp Enquiries Welcome &nbsp;·&nbsp; 24-Hour Quotation Response
+      </div>
+
+      {/* STATS */}
+      <section style={{ background: 'var(--navy)', padding: '4rem 0' }}>
+        <div className="container-main">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '2rem' }}>
+            {stats.map((stat, i) => (
+              <div key={i} style={{ textAlign: 'center', padding: '1.5rem 1rem', borderRight: i < stats.length - 1 ? '1px solid rgba(255,255,255,0.1)' : 'none' }}>
+                <div className="stat-number">{stat.value}</div>
+                <div style={{ color: 'white', fontWeight: 700, fontSize: '1rem', marginTop: '0.5rem', marginBottom: '0.25rem' }}>{stat.label}</div>
+                <div style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.8rem' }}>{stat.sub}</div>
+              </div>
+            ))}
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* PRODUCTS OVERVIEW */}
+      <section className="section-padding section-silver">
+        <div className="container-main">
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <div className="gold-bar" style={{ margin: '0 auto 1.25rem' }} />
+            <h2 className="section-title">Our Partition Profile Range</h2>
+            <p className="section-subtitle" style={{ margin: '0 auto' }}>
+              Engineered for performance, precision and aesthetics — available in standard sizes and custom extrusions to meet any architectural requirement.
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '1.75rem', marginBottom: '2.5rem' }}>
+            {products.map(p => (
+              <div key={p.sku} className="product-card">
+                <div style={{ position: 'relative', height: '200px', overflow: 'hidden' }}>
+                  <Image src={p.img} alt={p.name} fill style={{ objectFit: 'cover' }} />
+                  <div style={{ position: 'absolute', top: '0.875rem', left: '0.875rem' }}>
+                    <span className="product-badge">{p.tag}</span>
+                  </div>
+                </div>
+                <div style={{ padding: '1.25rem 1.5rem 1.5rem' }}>
+                  <div style={{ fontSize: '0.78rem', color: 'var(--gold-dark)', fontWeight: 700, letterSpacing: '0.08em', marginBottom: '0.35rem' }}>SKU: {p.sku}</div>
+                  <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--navy)', marginBottom: '0.625rem', lineHeight: 1.3 }}>{p.name}</h3>
+                  <p style={{ fontSize: '0.88rem', color: 'var(--text-mid)', lineHeight: 1.65 }}>{p.desc}</p>
+                  <Link href="/products" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', color: 'var(--gold-dark)', fontSize: '0.875rem', fontWeight: 700, textDecoration: 'none', marginTop: '1rem' }}>
+                    View Specs →
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ textAlign: 'center' }}>
+            <Link href="/products" className="btn-navy">View Full Product Catalogue →</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* WHY CHOOSE US */}
+      <section className="section-padding section-white">
+        <div className="container-main">
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <div className="gold-bar" style={{ margin: '0 auto 1.25rem' }} />
+            <h2 className="section-title">The Aluminium Profile Partner Built for Professional Projects</h2>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1.5rem' }}>
+            {differentiators.map((item, i) => (
+              <div key={i} className="card-glass">
+                <div style={{ fontSize: '2.25rem', marginBottom: '1rem' }}>{item.icon}</div>
+                <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--navy)', marginBottom: '0.625rem' }}>{item.title}</h3>
+                <p style={{ color: 'var(--text-mid)', fontSize: '0.9rem', lineHeight: 1.7 }}>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* INDUSTRIES */}
+      <section className="section-padding section-silver">
+        <div className="container-main">
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <div className="gold-bar" style={{ margin: '0 auto 1.25rem' }} />
+            <h2 className="section-title">Built for Every Built Environment</h2>
+            <p className="section-subtitle" style={{ margin: '0 auto' }}>Our partition systems are trusted by architects and contractors across every sector.</p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '1.25rem', marginBottom: '2.5rem' }}>
+            {industries.map((ind, i) => (
+              <div key={i} className="industry-tile">
+                <Image src={ind.img} alt={ind.name} fill style={{ objectFit: 'cover' }} />
+                <div className="industry-tile-overlay">
+                  <h3 style={{ color: 'white', fontSize: '1rem', fontWeight: 700, letterSpacing: '0.02em' }}>{ind.name}</h3>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ textAlign: 'center' }}>
+            <Link href="/industries" className="btn-navy">See How We Serve Each Industry →</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* PROCESS */}
+      <section className="section-padding section-navy">
+        <div className="container-main">
+          <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+            <div className="gold-bar" style={{ margin: '0 auto 1.25rem' }} />
+            <h2 className="section-title-white">From Enquiry to Installation-Ready Profiles in 4 Simple Steps</h2>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem', position: 'relative' }}>
+            {steps.map((step, i) => (
+              <div key={i} className="process-step" style={{ textAlign: 'center', padding: '2rem 1.5rem', background: 'rgba(255,255,255,0.05)', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)' }}>
+                <div className="step-circle">{step.num}</div>
+                <h3 style={{ color: 'white', fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.75rem' }}>{step.title}</h3>
+                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.9rem', lineHeight: 1.7 }}>{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="section-padding section-white">
+        <div className="container-main">
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <div className="gold-bar" style={{ margin: '0 auto 1.25rem' }} />
+            <h2 className="section-title">What Architects &amp; Contractors Say</h2>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1.5rem' }}>
+            {testimonials.map((t, i) => (
+              <div key={i} className="testimonial-card">
+                <div style={{ fontSize: '2.5rem', color: 'var(--gold)', lineHeight: 1, marginBottom: '0.75rem' }}>&ldquo;</div>
+                <p style={{ color: 'var(--text-mid)', fontSize: '0.95rem', lineHeight: 1.75, marginBottom: '1.25rem', fontStyle: 'italic' }}>{t.text}</p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'var(--navy)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--gold)', fontWeight: 800, fontSize: '0.875rem' }}>★</div>
+                  <div>
+                    <div style={{ fontWeight: 700, fontSize: '0.875rem', color: 'var(--navy)' }}>{t.author}</div>
+                    <div style={{ fontSize: '0.78rem', color: 'var(--gold)' }}>★★★★★</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA BAND */}
+      <section style={{ background: 'linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%)', padding: '5rem 0', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: '-80px', right: '-80px', width: '400px', height: '400px', borderRadius: '50%', background: 'rgba(201,168,76,0.08)', pointerEvents: 'none' }} />
+        <div className="container-main" style={{ textAlign: 'center', position: 'relative', zIndex: 1 }}>
+          <h2 className="section-title-white" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}>Ready to Specify? Get a Quotation in 24 Hours.</h2>
+          <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '1.05rem', maxWidth: '600px', margin: '1rem auto 2.5rem', lineHeight: 1.7 }}>
+            Submit your project requirements and our technical team will respond with product recommendations, a detailed quotation, and free sample dispatch where required.
+          </p>
+          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <Link href="/contact" className="btn-gold">▶ Get a Free Quote</Link>
+            <a href="tel:+91" className="btn-outline-white">📞 Call Us Now</a>
+            <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="btn-outline-white">💬 WhatsApp Us</a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
