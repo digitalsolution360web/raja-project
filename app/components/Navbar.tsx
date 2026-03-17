@@ -40,25 +40,13 @@ export default function Navbar() {
       >
         <div className="container-main" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 1.5rem', height: '72px' }}>
           {/* Logo */}
-          <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
-            <div style={{
-              background: '#FFFFFF',
-              padding: '6px 16px',
-              borderRadius: '4px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              height: '52px',
-              borderBottom: '3px solid var(--gold)',
-              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.12)',
-              transition: 'transform 0.2s ease'
-            }}>
+          <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', height: '100%' }}>
+            <div style={{ position: 'relative', height: '44px', width: '180px' }}>
               <Image 
-                src="/logo.png" 
+                src="/logoo.png" 
                 alt="Logo" 
-                width={150} 
-                height={36} 
-                style={{ objectFit: 'contain', width: 'auto', height: '100%' }}
+                fill
+                style={{ objectFit: 'contain', objectPosition: 'left' }}
                 priority
               />
             </div>

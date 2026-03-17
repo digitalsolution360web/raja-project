@@ -115,6 +115,56 @@ function HeroSlider() {
   );
 }
 
+function TestimonialSlider() {
+  const [current, setCurrent] = useState(0);
+  const total = testimonials.length;
+
+  const next = useCallback(() => setCurrent(c => (c + 1) % total), [total]);
+  const prev = () => setCurrent(c => (c - 1 + total) % total);
+
+  useEffect(() => {
+    const timer = setInterval(next, 6000);
+    return () => clearInterval(timer);
+  }, [next]);
+
+  return (
+    <div style={{ position: 'relative', maxWidth: '800px', margin: '0 auto', overflow: 'hidden', padding: '1rem' }}>
+      <div style={{ 
+        display: 'flex', 
+        transition: 'transform 0.5s ease', 
+        transform: `translateX(-${current * 100}%)` 
+      }}>
+        {testimonials.map((t, i) => (
+          <div key={i} style={{ minWidth: '100%', padding: '0 1rem' }}>
+            <div className="testimonial-card" style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '3rem 2.5rem' }}>
+              <div style={{ fontSize: '3.5rem', color: 'var(--gold)', lineHeight: 1, marginBottom: '0.5rem' }}>&ldquo;</div>
+              <p style={{ color: 'var(--text-mid)', fontSize: '1.15rem', lineHeight: 1.8, marginBottom: '2rem', fontStyle: 'italic' }}>{t.text}</p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'var(--navy)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--gold)', fontWeight: 800, fontSize: '1.1rem' }}>★</div>
+                <div>
+                  <div style={{ fontWeight: 800, fontSize: '1.05rem', color: 'var(--navy)', letterSpacing: '0.01em' }}>{t.author}</div>
+                  <div style={{ fontSize: '0.9rem', color: 'var(--gold)', marginTop: '2px' }}>★★★★★ Rating</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      {/* Navigation */}
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginTop: '3rem' }}>
+        <button onClick={prev} className="btn-outline-navy" style={{ padding: '0.75rem 1.25rem', borderRadius: '50px', cursor: 'pointer', border: '2px solid var(--navy)', background: 'transparent', color: 'var(--navy)', fontWeight: 700 }}>← Prev</button>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          {testimonials.map((_, i) => (
+            <div key={i} onClick={() => setCurrent(i)} style={{ width: '10px', height: '10px', borderRadius: '50%', background: i === current ? 'var(--gold)' : 'var(--silver-dark)', cursor: 'pointer', transition: 'all 0.3s' }} />
+          ))}
+        </div>
+        <button onClick={next} className="btn-outline-navy" style={{ padding: '0.75rem 1.25rem', borderRadius: '50px', cursor: 'pointer', border: '2px solid var(--navy)', background: 'transparent', color: 'var(--navy)', fontWeight: 700 }}>Next →</button>
+      </div>
+    </div>
+  );
+}
+
 export default function HomePage() {
   return (
     <div>
@@ -207,7 +257,7 @@ export default function HomePage() {
             <p className="section-subtitle" style={{ margin: '0 auto' }}>Our partition systems are trusted by architects and contractors across every sector.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '1.25rem', marginBottom: '2.5rem' }}>
+          <div className="industries-grid">
             {industries.map((ind, i) => (
               <div key={i} className="industry-tile">
                 <Image src={ind.img} alt={ind.name} fill style={{ objectFit: 'cover' }} />
@@ -217,6 +267,24 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+
+          <style jsx>{`
+            .industries-grid {
+              display: grid;
+              grid-template-columns: repeat(4, 1fr);
+              gap: 1.5rem;
+              margin-bottom: 2.5rem;
+            }
+            @media (max-width: 1024px) {
+              .industries-grid { grid-template-columns: repeat(3, 1fr); }
+            }
+            @media (max-width: 768px) {
+              .industries-grid { grid-template-columns: repeat(2, 1fr); }
+            }
+            @media (max-width: 480px) {
+              .industries-grid { grid-template-columns: 1fr; }
+            }
+          `}</style>
 
           <div style={{ textAlign: 'center' }}>
             <Link href="/industries" className="btn-navy">See How We Serve Each Industry →</Link>
@@ -252,21 +320,7 @@ export default function HomePage() {
             <h2 className="section-title">What Architects &amp; Contractors Say</h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1.5rem' }}>
-            {testimonials.map((t, i) => (
-              <div key={i} className="testimonial-card">
-                <div style={{ fontSize: '2.5rem', color: 'var(--gold)', lineHeight: 1, marginBottom: '0.75rem' }}>&ldquo;</div>
-                <p style={{ color: 'var(--text-mid)', fontSize: '0.95rem', lineHeight: 1.75, marginBottom: '1.25rem', fontStyle: 'italic' }}>{t.text}</p>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'var(--navy)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--gold)', fontWeight: 800, fontSize: '0.875rem' }}>★</div>
-                  <div>
-                    <div style={{ fontWeight: 700, fontSize: '0.875rem', color: 'var(--navy)' }}>{t.author}</div>
-                    <div style={{ fontSize: '0.78rem', color: 'var(--gold)' }}>★★★★★</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <TestimonialSlider />
         </div>
       </section>
 

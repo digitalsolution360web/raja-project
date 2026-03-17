@@ -10,23 +10,12 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link href="/" style={{ textDecoration: 'none', display: 'inline-block', marginBottom: '1.25rem' }}>
-              <div style={{
-                background: '#FFFFFF',
-                padding: '6px 14px',
-                borderRadius: '4px',
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                height: '48px',
-                borderBottom: '3px solid var(--gold)',
-                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.12)'
-              }}>
+              <div style={{ position: 'relative', height: '40px', width: '160px' }}>
                 <Image 
-                  src="/logo.png" 
+                  src="/logoo.png" 
                   alt="Company Logo" 
-                  width={140} 
-                  height={32} 
-                  style={{ objectFit: 'contain', width: 'auto', height: '100%' }}
+                  fill
+                  style={{ objectFit: 'contain', objectPosition: 'left' }}
                 />
               </div>
             </Link>
