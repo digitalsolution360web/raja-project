@@ -42,7 +42,7 @@ export default function GalleryPage() {
                    alt={image.alt} 
                    width={400} 
                    height={300} 
-                   style={{ width: '100%', height: 'auto', display: 'block' }}
+                   style={{ width: '100%', display: 'block', objectFit: 'cover' }}
                 />
                 <div className="gallery-item-overlay">
                   <div style={{ color: 'white', background: 'var(--navy)', padding: '0.5rem 1rem', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 600 }}>

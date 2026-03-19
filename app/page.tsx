@@ -86,18 +86,18 @@ function HeroSlider() {
       {/* Content */}
       <div className="hero-content">
         <div style={{ maxWidth: '700px' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--gold)', color: 'var(--navy)', padding: '0.35rem 0.875rem', borderRadius: '50px', fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--gold)', color: 'var(--white)', padding: '0.35rem 0.875rem', borderRadius: '50px', fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
             ✦ Premium Aluminium Profile Systems
           </div>
-          <h1 style={{ color: 'white', fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 900, lineHeight: 1.1, marginBottom: '1.25rem', textShadow: '0 2px 16px rgba(0,0,0,0.3)' }}>
+          <h1 style={{ color: 'white', fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 900, lineHeight: 1.1, marginBottom: '1.25rem', textShadow: '0 4px 20px rgba(15, 23, 42, 0.4)' }}>
             Premium Aluminium Profile Systems for Modern Interiors
           </h1>
           <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'clamp(0.95rem, 2vw, 1.15rem)', lineHeight: 1.7, marginBottom: '2rem', maxWidth: '600px' }}>
             Manufacturer &amp; Supplier of Demountable Glass Partition Profiles — Single Glaze, Double Glaze, Acoustic Systems, and Custom Extrusions. Serving Architects, Contractors and Developers Across India.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <Link href="/products" className="btn-gold">▶ Explore Our Products</Link>
-            <Link href="/contact" className="btn-outline-white">✉ Get a Free Quote</Link>
+            <Link href="/products" className="btn-gold">Explore Our Products →</Link>
+            <Link href="/contact" className="btn-outline-white">Get a Free Quote →</Link>
           </div>
         </div>
       </div>
@@ -130,10 +130,10 @@ function TestimonialSlider() {
 
   return (
     <div style={{ position: 'relative', maxWidth: '800px', margin: '0 auto', overflow: 'hidden', padding: '1rem' }}>
-      <div style={{ 
-        display: 'flex', 
-        transition: 'transform 0.5s ease', 
-        transform: `translateX(-${current * 100}%)` 
+      <div style={{
+        display: 'flex',
+        transition: 'transform 0.5s ease',
+        transform: `translateX(-${current * 100}%)`
       }}>
         {testimonials.map((t, i) => (
           <div key={i} style={{ minWidth: '100%', padding: '0 1rem' }}>
@@ -151,13 +151,13 @@ function TestimonialSlider() {
           </div>
         ))}
       </div>
-      
+
       {/* Navigation */}
       <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginTop: '3rem' }}>
         <button onClick={prev} className="btn-outline-navy" style={{ padding: '0.75rem 1.25rem', borderRadius: '50px', cursor: 'pointer', border: '2px solid var(--navy)', background: 'transparent', color: 'var(--navy)', fontWeight: 700 }}>← Prev</button>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           {testimonials.map((_, i) => (
-            <div key={i} onClick={() => setCurrent(i)} style={{ width: '10px', height: '10px', borderRadius: '50%', background: i === current ? 'var(--gold)' : 'var(--silver-dark)', cursor: 'pointer', transition: 'all 0.3s' }} />
+            <div key={i} onClick={() => setCurrent(i)} style={{ width: '10px', height: '10px', borderRadius: '50%', background: i === current ? 'var(--primary)' : 'var(--silver-dark)', cursor: 'pointer', transition: 'all 0.3s' }} />
           ))}
         </div>
         <button onClick={next} className="btn-outline-navy" style={{ padding: '0.75rem 1.25rem', borderRadius: '50px', cursor: 'pointer', border: '2px solid var(--navy)', background: 'transparent', color: 'var(--navy)', fontWeight: 700 }}>Next →</button>
@@ -173,7 +173,7 @@ export default function HomePage() {
       <HeroSlider />
 
       {/* TRUST BAR */}
-      <div className="trust-bar">
+      <div className="trust-bar " style={{ color: 'white' }}>
         ✓ Trusted by 500+ Projects &nbsp;·&nbsp; PAN India Supply &nbsp;·&nbsp; Bikaner + Navi Mumbai Offices &nbsp;·&nbsp; ✓ WhatsApp Enquiries Welcome &nbsp;·&nbsp; 24-Hour Quotation Response
       </div>
 
@@ -214,7 +214,7 @@ export default function HomePage() {
                 </div>
                 <div style={{ padding: '1.25rem 1.5rem 1.5rem' }}>
                   <div style={{ fontSize: '0.78rem', color: 'var(--gold-dark)', fontWeight: 700, letterSpacing: '0.08em', marginBottom: '0.35rem' }}>SKU: {p.sku}</div>
-                  <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--navy)', marginBottom: '0.625rem', lineHeight: 1.3 }}>{p.name}</h3>
+                  <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--accent)', marginBottom: '0.625rem', lineHeight: 1.3 }}>{p.name}</h3>
                   <p style={{ fontSize: '0.88rem', color: 'var(--text-mid)', lineHeight: 1.65 }}>{p.desc}</p>
                   <Link href="/products" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', color: 'var(--gold-dark)', fontSize: '0.875rem', fontWeight: 700, textDecoration: 'none', marginTop: '1rem' }}>
                     View Specs →
@@ -241,12 +241,105 @@ export default function HomePage() {
             {differentiators.map((item, i) => (
               <div key={i} className="card-glass">
                 <div style={{ fontSize: '2.25rem', marginBottom: '1rem' }}>{item.icon}</div>
-                <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--navy)', marginBottom: '0.625rem' }}>{item.title}</h3>
+                <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--accent)', marginBottom: '0.625rem' }}>{item.title}</h3>
                 <p style={{ color: 'var(--text-mid)', fontSize: '0.9rem', lineHeight: 1.7 }}>{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
+      </section>
+
+      {/* SOLUTIONS SECTION */}
+      <section className="section-padding section-silver">
+        <div className="container-main">
+          <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+            <div className="gold-bar" style={{ margin: '0 auto 1.25rem' }} />
+            <h2 className="section-title">High-Performance Sliding & Glass Solutions</h2>
+            <p className="section-subtitle" style={{ margin: '0 auto' }}>
+              Premium aluminium and glass partition systems engineered for architectural excellence in both commercial and residential spaces.
+            </p>
+          </div>
+
+          {/* Commercial */}
+          <div className="zigzag-row">
+            <div className="zigzag-image">
+              <Image
+                src="/commercial-solutions.png"
+                alt="Commercial Aluminium Sliding & Glass Partition"
+                width={700}
+                height={500}
+                className="w-full h-auto rounded-xl shadow-2xl"
+              />
+            </div>
+            <div>
+              <h3 style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--accent)', marginBottom: '1.25rem' }}>Commercial Aluminium Sliding & Glass Partition Solutions</h3>
+              <p style={{ color: 'var(--text-mid)', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '1.5rem' }}>
+                At Mumbai Aluminium and Glass, we specialize in high-performance commercial sliding systems designed for modern workspaces. Whether it's a sleek office partition or a heavy-duty sliding door, our solutions provide superior durability, acoustic insulation, and aesthetic excellence.
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, marginBottom: '2.5rem' }}>
+                {[
+                  { title: 'Expertise & Customization', desc: 'Tailored designs for offices, retail, and commercial buildings.' },
+                  { title: 'Quality Products', desc: 'High-grade aluminium profiles and toughened safety glass.' },
+                  { title: 'Timely Execution', desc: 'Reliable project timelines and streamlined installation.' },
+                  { title: 'Professional Installation', desc: 'Precision fitting by our expert technicians.' }
+                ].map((item, i) => (
+                  <li key={i} style={{ display: 'flex', gap: '0.875rem', marginBottom: '0.875rem' }}>
+                    <span style={{ color: 'var(--gold)', fontWeight: 900, fontSize: '1.1rem' }}>✓</span>
+                    <div>
+                      <strong style={{ color: 'var(--navy)', fontWeight: 700 }}>{item.title}:</strong>
+                      <span style={{ color: 'var(--text-mid)', marginLeft: '0.5rem' }}>{item.desc}</span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                <a href="tel:+919987020538" className="btn-phone" style={{ width: 'fit-content' }}>
+                  <span className="phone-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  </span> +91 9987020538
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Residential */}
+          <div className="zigzag-row">
+            <div className="order-2 lg:order-1">
+              <h3 style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--navy)', marginBottom: '1.25rem' }}>Residential Aluminum Sliding and Glass Partition Works</h3>
+              <p style={{ color: 'var(--text-mid)', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '1.5rem' }}>
+                Enhance your home with our elegant aluminium sliding windows and glass partitions. Designed to maximize natural light and space, our residential solutions offer a perfect blend of style and functionality. From balconies to room dividers, we bring a touch of sophistication to your living spaces.
+              </p>
+              <p style={{ color: 'var(--text-mid)', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '2rem' }}>
+                Our systems are engineered for energy efficiency and security, ensuring your home remains comfortable and safe while looking stunning.
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                <a href="tel:+919987020538" className="btn-phone" style={{ width: 'fit-content' }}>
+                  <span className="phone-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  </span> +91 9987020538
+                </a>
+                <p style={{ fontWeight: 800, color: 'var(--accent)', fontSize: '1.1rem', letterSpacing: '0.02em' }}>Book an expert consultation today!</p>
+              </div>
+            </div>
+            <div className="zigzag-image order-1 lg:order-2">
+              <Image
+                src="/residential-solutions.png"
+                alt="Residential Aluminum Sliding & Glass Partition"
+                width={700}
+                height={500}
+                className="w-full h-auto rounded-xl shadow-2xl"
+              />
+            </div>
+          </div>
+        </div>
+
+        <style jsx>{`
+          @media (min-width: 1025px) {
+            .zigzag-row:last-of-type {
+              grid-template-columns: 1fr 1fr;
+            }
+          }
+        `}</style>
       </section>
 
       {/* INDUSTRIES */}
@@ -296,17 +389,17 @@ export default function HomePage() {
       {/* PROCESS */}
       <section className="section-padding section-navy">
         <div className="container-main">
-          <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
             <div className="gold-bar" style={{ margin: '0 auto 1.25rem' }} />
-            <h2 className="section-title-white">From Enquiry to Installation-Ready Profiles in 4 Simple Steps</h2>
+            <h2 className="section-title">From Enquiry to Installation-Ready Profiles in 4 Simple Steps</h2>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem', position: 'relative' }}>
             {steps.map((step, i) => (
-              <div key={i} className="process-step" style={{ textAlign: 'center', padding: '2rem 1.5rem', background: 'rgba(255,255,255,0.05)', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)' }}>
-                <div className="step-circle">{step.num}</div>
-                <h3 style={{ color: 'white', fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.75rem' }}>{step.title}</h3>
-                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.9rem', lineHeight: 1.7 }}>{step.desc}</p>
+              <div key={i} className="process-step" style={{ textAlign: 'center', padding: '2rem 1.5rem', background: 'var(--white)', borderRadius: '12px', border: '1px solid var(--silver-dark)', boxShadow: '0 4px 20px rgba(0,0,0,0.03)' }}>
+                <div className="step-circle" style={{ background: 'var(--accent)', color: 'white' }}>{step.num}</div>
+                <h3 style={{ color: 'var(--navy)', fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.75rem' }}>{step.title}</h3>
+                <p style={{ color: 'var(--text-mid)', fontSize: '0.9rem', lineHeight: 1.7 }}>{step.desc}</p>
               </div>
             ))}
           </div>
@@ -316,7 +409,7 @@ export default function HomePage() {
       {/* TESTIMONIALS */}
       <section className="section-padding section-white">
         <div className="container-main">
-          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
             <div className="gold-bar" style={{ margin: '0 auto 1.25rem' }} />
             <h2 className="section-title">What Architects &amp; Contractors Say</h2>
           </div>
@@ -326,17 +419,21 @@ export default function HomePage() {
       </section>
 
       {/* CTA BAND */}
-      <section style={{ background: 'linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%)', padding: '5rem 0', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: '-80px', right: '-80px', width: '400px', height: '400px', borderRadius: '50%', background: 'rgba(201,168,76,0.08)', pointerEvents: 'none' }} />
+      <section style={{ background: '#F8FAFC', padding: '3rem 0', position: 'relative', overflow: 'hidden', borderTop: '1px solid var(--silver-dark)' }}>
+        <div style={{ position: 'absolute', top: '-80px', right: '-80px', width: '400px', height: '400px', borderRadius: '50%', background: 'rgba(185, 28, 28, 0.03)', pointerEvents: 'none' }} />
         <div className="container-main" style={{ textAlign: 'center', position: 'relative', zIndex: 1 }}>
-          <h2 className="section-title-white" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}>Ready to Specify? Get a Quotation in 24 Hours.</h2>
-          <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '1.05rem', maxWidth: '600px', margin: '1rem auto 2.5rem', lineHeight: 1.7 }}>
+          <h2 className="section-title" style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', color: 'var(--navy)' }}>Ready to Specify? Get a Quotation in 24 Hours.</h2>
+          <p style={{ color: 'var(--text-mid)', fontSize: '1.05rem', maxWidth: '600px', margin: '1rem auto 2.5rem', lineHeight: 1.7 }}>
             Submit your project requirements and our technical team will respond with product recommendations, a detailed quotation, and free sample dispatch where required.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/contact" className="btn-gold">▶ Get a Free Quote</Link>
-            <a href="tel:+91" className="btn-outline-white">📞 Call Us Now</a>
-            <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="btn-outline-white">💬 WhatsApp Us</a>
+            <a href="tel:+919987020538" className="btn-phone">
+              <span className="phone-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </span> +91 9987020538
+            </a>
+            <a href="https://wa.me/919987020538" target="_blank" rel="noopener noreferrer" className="btn-outline-navy">💬 WhatsApp Us</a>
           </div>
         </div>
       </section>

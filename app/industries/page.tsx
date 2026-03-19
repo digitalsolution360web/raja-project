@@ -63,7 +63,7 @@ export default function IndustriesPage() {
               <div key={idx} className="card-glass" style={{ padding: '0', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
                 <div style={{ position: 'relative', height: '240px' }}>
                   <Image src={sector.img} alt={sector.title} fill style={{ objectFit: 'cover' }} />
-                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10,22,40,0.8) 0%, transparent 60%)' }} />
+                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(15, 23, 42, 0.8) 0%, transparent 60%)' }} />
                   <h3 style={{ position: 'absolute', bottom: '1.25rem', left: '1.5rem', right: '1.5rem', color: 'white', fontSize: '1.25rem', fontWeight: 800 }}>{sector.title}</h3>
                 </div>
                 <div style={{ padding: '2rem', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>

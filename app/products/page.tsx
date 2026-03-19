@@ -103,8 +103,8 @@ const accessories = [
 export default function ProductsPage() {
   const [activeFilter, setActiveFilter] = useState('All Products');
 
-  const filteredProducts = activeFilter === 'All Products' 
-    ? products 
+  const filteredProducts = activeFilter === 'All Products'
+    ? products
     : products.filter(p => p.category === activeFilter);
 
   return (
@@ -113,7 +113,7 @@ export default function ProductsPage() {
       <section className="page-hero">
         <div className="container-main">
           <div className="gold-bar" />
-          <h1 className="section-title-white" style={{ marginBottom: '1.5rem' }}>Aluminium Profile Product Range</h1>
+          <h1 className="section-title-white" style={{ marginBottom: '1rem' }}>Aluminium Profile Product Range</h1>
           <p className="section-subtitle-white" style={{ maxWidth: '800px' }}>
             Engineered for architects, interior designers and contractors who demand precision, consistency and choice. Our complete range of aluminium partition profiles and accessories covers every application from slim office dividers to high-performance acoustic walls.
           </p>
@@ -121,7 +121,7 @@ export default function ProductsPage() {
       </section>
 
       {/* Filter Bar */}
-      <section style={{ padding: '3rem 0 1rem', background: 'var(--white)' }}>
+      <section style={{ padding: '2rem 0 1rem', background: 'var(--white)' }}>
         <div className="container-main">
           <div className="filter-tabs">
             {filters.map(filter => (
@@ -141,19 +141,19 @@ export default function ProductsPage() {
       <section className="section-padding section-white" style={{ paddingTop: '1rem' }}>
         <div className="container-main">
           {activeFilter !== 'Accessories' ? (
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
               {filteredProducts.map((product, idx) => (
-                <div key={product.sku} className="zigzag-row" style={{ gridTemplateColumns: idx % 2 === 0 ? '1.2fr 1fr' : '1fr 1.2fr', borderBottom: 'none', padding: '0' }}>
+                <div key={product.sku} className="zigzag-row" style={{ gridTemplateColumns: '1fr 1fr', alignItems: 'center', borderBottom: 'none', padding: '0' }}>
                   <div className={`zigzag-image ${idx % 2 !== 0 ? 'order-last' : ''}`} style={{ order: idx % 2 === 0 ? 0 : 1 }}>
-                    <Image src={product.img} alt={product.name} width={600} height={400} style={{ width: '100%', height: '500px', objectFit: 'cover' }} />
+                    <Image src={product.img} alt={product.name} width={600} height={400} style={{ width: '100%', height: '600px', objectFit: 'cover', borderRadius: '16px' }} />
                   </div>
-                  <div style={{ padding: '1rem 0' }}>
+                  <div style={{ padding: '0' }}>
                     <div className="product-badge" style={{ marginBottom: '1rem' }}>{product.category}</div>
                     <div style={{ color: 'var(--gold-dark)', fontWeight: 700, fontSize: '0.8rem', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>SKU: {product.sku}</div>
-                    <h2 style={{ fontSize: '1.75rem', marginBottom: '1.5rem' }}>{product.name}</h2>
-                    
-                    <div style={{ marginBottom: '2rem' }}>
-                      <h4 style={{ fontSize: '0.9rem', color: 'var(--navy)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '1rem', borderBottom: '2px solid var(--gold)', display: 'inline-block' }}>Technical Specifications</h4>
+                    <h2 style={{ fontSize: '1.75rem', marginBottom: '0.8rem' }}>{product.name}</h2>
+
+                    <div style={{ marginBottom: '1rem' }}>
+                      <h4 style={{ fontSize: '0.88rem', color: 'var(--navy)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.6rem', borderBottom: '2px solid var(--gold)', display: 'inline-block' }}>Technical Specifications</h4>
                       <table className="spec-table">
                         <tbody>
                           {product.specs.map(spec => (
@@ -167,7 +167,7 @@ export default function ProductsPage() {
                     </div>
 
                     <div>
-                      <h4 style={{ fontSize: '0.9rem', color: 'var(--navy)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '1rem', borderBottom: '2px solid var(--gold)', display: 'inline-block' }}>Ideal Applications</h4>
+                      <h4 style={{ fontSize: '0.88rem', color: 'var(--navy)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.6rem', borderBottom: '2px solid var(--gold)', display: 'inline-block' }}>Ideal Applications</h4>
                       <ul style={{ listStyle: 'none', display: 'grid', gridTemplateColumns: '1fr', gap: '0.5rem' }}>
                         {product.applications.map(app => (
                           <li key={app} style={{ fontSize: '0.9rem', color: 'var(--text-mid)', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -177,7 +177,7 @@ export default function ProductsPage() {
                       </ul>
                     </div>
 
-                    <div style={{ marginTop: '2.5rem' }}>
+                    <div style={{ marginTop: '1.5rem' }}>
                       <Link href="/contact" className="btn-navy">Request Sample / Quote</Link>
                     </div>
                   </div>
@@ -216,10 +216,10 @@ export default function ProductsPage() {
       </section>
 
       {/* CTA Band */}
-      <section style={{ background: 'var(--navy)', padding: '4rem 0' }}>
+      <section style={{ background: '#F8FAFC', padding: '3rem 0', borderTop: '1px solid var(--silver-dark)' }}>
         <div className="container-main" style={{ textAlign: 'center' }}>
-          <h2 className="section-title-white" style={{ marginBottom: '1.5rem' }}>Need a Custom Extrusion?</h2>
-          <p className="section-subtitle-white" style={{ margin: '0 auto 2.5rem' }}>
+          <h2 className="section-title" style={{ marginBottom: '1rem' }}>Need a Custom Extrusion?</h2>
+          <p className="section-subtitle" style={{ margin: '0 auto 2rem' }}>
             Our Bikaner manufacturing facility can produce custom aluminium profiles to your exact architectural requirements. Discuss your project with our technical team today.
           </p>
           <Link href="/contact" className="btn-gold">Consult Our Technical Team</Link>

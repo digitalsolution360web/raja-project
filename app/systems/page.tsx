@@ -78,22 +78,22 @@ export default function SystemsPage() {
       {/* Systems Content */}
       <section className="section-padding section-white">
         <div className="container-main">
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '6rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
             {systems.map((system, idx) => (
-              <div key={system.id} className="zigzag-row" style={{ gridTemplateColumns: idx % 2 === 0 ? '1.2fr 1fr' : '1fr 1.2fr', alignItems: 'flex-start', borderBottom: 'none', padding: '0' }}>
+              <div key={system.id} className="zigzag-row" style={{ gridTemplateColumns: '1fr 1fr', alignItems: 'center', borderBottom: 'none', padding: '0' }}>
                 <div className={`zigzag-image ${idx % 2 !== 0 ? 'order-last' : ''}`} style={{ order: idx % 2 === 0 ? 0 : 1 }}>
-                  <Image src={system.img} alt={system.title} width={600} height={450} style={{ width: '100%', height: '520px', objectFit: 'cover', borderRadius: '16px' }} />
+                  <Image src={system.img} alt={system.title} width={600} height={450} style={{ width: '100%', height: '600px', objectFit: 'cover', borderRadius: '16px' }} />
                 </div>
                 
-                <div style={{ paddingTop: '1rem' }}>
-                  <h2 style={{ fontSize: '2.25rem', color: 'var(--navy)', marginBottom: '1.5rem' }}>{system.title}</h2>
-                  <p style={{ fontSize: '1.05rem', color: 'var(--text-mid)', lineHeight: 1.75, marginBottom: '2rem' }}>
+                <div style={{ paddingTop: '0' }}>
+                  <h2 style={{ fontSize: '1.85rem', color: 'var(--navy)', marginBottom: '0.8rem' }}>{system.title}</h2>
+                  <p style={{ fontSize: '0.98rem', color: 'var(--text-mid)', lineHeight: 1.6, marginBottom: '1.25rem' }}>
                     {system.intro}
                   </p>
 
                   {system.specs && (
                     <div style={{ marginBottom: '2rem' }}>
-                      <h4 style={{ fontSize: '0.9rem', color: 'var(--navy)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '1.25rem', borderBottom: '2px solid var(--gold)', display: 'inline-block' }}>Key Specifications</h4>
+                      <h4 style={{ fontSize: '0.9rem', color: 'var(--navy)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.75rem', borderBottom: '2px solid var(--gold)', display: 'inline-block' }}>Key Specifications</h4>
                       <table className="spec-table">
                         <tbody>
                           {system.specs.map(spec => (
@@ -109,14 +109,14 @@ export default function SystemsPage() {
 
                   {system.whyItems && (
                     <div style={{ marginBottom: '2rem' }}>
-                      <h4 style={{ fontSize: '0.9rem', color: 'var(--navy)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '1.25rem', borderBottom: '2px solid var(--gold)', display: 'inline-block' }}>Why Choose Demountable?</h4>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                      <h4 style={{ fontSize: '0.9rem', color: 'var(--navy)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.75rem', borderBottom: '2px solid var(--gold)', display: 'inline-block' }}>Why Choose Demountable?</h4>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                         {system.whyItems.map(item => (
                           <div key={item.title}>
-                            <h5 style={{ fontSize: '0.95rem', color: 'var(--navy)', fontWeight: 700, marginBottom: '0.25rem' }}>
-                              <span style={{ color: 'var(--gold)', marginRight: '0.5rem' }}>✦</span> {item.title}
+                            <h5 style={{ fontSize: '0.92rem', color: 'var(--navy)', fontWeight: 700, marginBottom: '0.15rem' }}>
+                              <span style={{ color: 'var(--gold)', marginRight: '0.4rem' }}>✦</span> {item.title}
                             </h5>
-                            <p style={{ fontSize: '0.9rem', color: 'var(--text-mid)', paddingLeft: '1.5rem' }}>{item.text}</p>
+                            <p style={{ fontSize: '0.88rem', color: 'var(--text-mid)', paddingLeft: '1.4rem' }}>{item.text}</p>
                           </div>
                         ))}
                       </div>
@@ -125,7 +125,7 @@ export default function SystemsPage() {
 
                   {system.bestSuited && (
                     <div style={{ marginBottom: '2rem' }}>
-                      <h4 style={{ fontSize: '0.9rem', color: 'var(--navy)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '1.25rem', borderBottom: '2px solid var(--gold)', display: 'inline-block' }}>Best Suited For</h4>
+                      <h4 style={{ fontSize: '0.9rem', color: 'var(--navy)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.75rem', borderBottom: '2px solid var(--gold)', display: 'inline-block' }}>Best Suited For</h4>
                       <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                         {system.bestSuited.map(item => (
                           <li key={item} style={{ fontSize: '0.95rem', color: 'var(--text-mid)', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
@@ -137,9 +137,9 @@ export default function SystemsPage() {
                     </div>
                   )}
 
-                  <div style={{ marginTop: '2.5rem', display: 'flex', gap: '1rem' }}>
+                  <div style={{ marginTop: '1.5rem', display: 'flex', gap: '1rem' }}>
                     <Link href="/contact" className="btn-navy">Request System Specs</Link>
-                    <Link href="/gallery" className="btn-outline-white" style={{ borderColor: 'var(--navy)', color: 'var(--navy)' }}>View Projects</Link>
+                    <Link href="/gallery" className="btn-outline-navy">View Projects</Link>
                   </div>
                 </div>
               </div>
@@ -149,9 +149,9 @@ export default function SystemsPage() {
       </section>
 
       {/* Technical FAQ Band */}
-      <section style={{ background: 'var(--silver)', padding: '5rem 0' }}>
+      <section style={{ background: 'var(--silver)', padding: '3rem 0' }}>
         <div className="container-main">
-          <div className="card-glass" style={{ display: 'flex', flexWrap: 'wrap', gap: '3rem', alignItems: 'center', background: 'var(--navy)', color: 'white', padding: '3.5rem' }}>
+          <div className="card-glass" style={{ display: 'flex', flexWrap: 'wrap', gap: '3rem', alignItems: 'center', background: 'var(--navy)', color: 'white', padding: '2.5rem' }}>
             <div style={{ flex: '1 1 400px' }}>
               <h2 className="section-title-white" style={{ marginBottom: '1rem' }}>Technical Installation Support</h2>
               <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '2rem' }}>

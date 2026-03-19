@@ -35,14 +35,14 @@ export default function Navbar() {
         className={`navbar ${scrolled ? 'scrolled' : ''}`}
         style={{
           background: 'var(--white)',
-          boxShadow: scrolled || menuOpen ? '0 4px 24px rgba(10,22,40,0.1)' : '0 2px 10px rgba(0,0,0,0.05)',
-          borderBottom: '1px solid rgba(10,22,40,0.05)',
+          boxShadow: scrolled || menuOpen ? '0 4px 24px rgba(15, 23, 42, 0.08)' : '0 2px 10px rgba(15, 23, 42, 0.04)',
+          borderBottom: '1px solid rgba(15, 23, 42, 0.05)',
         }}
       >
-        <div className="container-main" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 1.5rem', height: '85px' }}>
+        <div className="container-main" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 1.5rem', height: '70px' }}>
           {/* Logo */}
           <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', height: '100%' }}>
-            <div style={{ position: 'relative', height: '65px', width: '220px' }}>
+            <div style={{ position: 'relative', height: '55px', width: '220px' }}>
               <Image 
                 src="/logoo.png" 
                 alt="Raja Aluminium Logo" 
@@ -107,7 +107,7 @@ export default function Navbar() {
             overflow: 'hidden',
             maxHeight: menuOpen ? '500px' : '0',
             transition: 'max-height 0.4s ease',
-            borderTop: menuOpen ? '1px solid rgba(10,22,40,0.05)' : 'none',
+            borderTop: menuOpen ? '1px solid rgba(15, 23, 42, 0.05)' : 'none',
           }}
           className="mobile-drawer"
         >
