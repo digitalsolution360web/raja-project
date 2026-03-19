@@ -21,11 +21,11 @@ const stats = [
 ];
 
 const products = [
-  { sku: 'RAP-2545', name: '25×45 Single Glaze Slimline Profile', desc: 'Snap-fit single glazed system for executive offices and corporate fit-outs. Accepts 10–12mm glass.', img: '/6.jpeg', tag: 'Single Glaze' },
-  { sku: 'RAP-2525', name: '25×25 Ultra-Slim Partition Profile', desc: 'Minimalist frame for contemporary residential and boutique retail spaces. 8–10mm glass.', img: '/7.jpeg', tag: 'Single Glaze' },
-  { sku: 'RAP-100SG', name: '25×100 Single Glazing System', desc: 'Structural heavy-section frame for full-height office partitions and institutional buildings.', img: '/8.jpeg', tag: 'Structural' },
-  { sku: 'RAP-100DG', name: '25×100 Double Glazing System', desc: 'Thermally broken double-glazed cavity frame for premium corporate HQs and executive suites.', img: '/10.jpeg', tag: 'Double Glaze' },
-  { sku: 'RJ-100', name: 'RJ-100 Acoustic Double Glaze (52dB)', desc: 'High-performance acoustic wall rated up to 52dB Rw — ideal for boardrooms and healthcare.', img: '/11.jpeg', tag: 'Acoustic' },
+  { sku: 'RAP-2545', name: 'Single glass 25 /* 45', desc: 'Snap-fit single glazed system for executive offices and corporate fit-outs. Accepts 10–12mm glass.', img: '/g1.jpeg', tag: 'Single Glaze' },
+  { sku: 'RAP-2525', name: 'Single glazing partition', desc: 'Minimalist frame for contemporary residential and boutique retail spaces. 8–10mm glass.', img: '/g2.jpeg', tag: 'Single Glaze' },
+  { sku: 'RAP-100SG', name: 'Single single glazing partition', desc: 'Structural heavy-section frame for full-height office partitions and institutional buildings.', img: '/g3.jpeg', tag: 'Structural' },
+  { sku: 'RAP-100DG', name: 'Double glaze partition', desc: 'Thermally broken double-glazed cavity frame for premium corporate HQs and executive suites.', img: '/g4.jpeg', tag: 'Double Glaze' },
+  { sku: 'RJ-100', name: '25x45 single glaze partition', desc: 'High-performance acoustic wall rated up to 52dB Rw — ideal for boardrooms and healthcare.', img: '/g5.jpeg', tag: 'Acoustic' },
   { sku: 'RAP-FRAME', name: 'Custom Extrusion Solutions', desc: 'Bespoke profiles engineered to your exact specification — any dimension, any finish.', img: '/12.jpeg', tag: 'Custom' },
 ];
 
@@ -415,6 +415,82 @@ export default function HomePage() {
           </div>
 
           <TestimonialSlider />
+        </div>
+      </section>
+
+      {/* FEATURED PROJECTS */}
+      <section className="section-padding section-white">
+        <div className="container-main">
+          <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+            <div className="gold-bar" style={{ margin: '0 auto 1.25rem' }} />
+            <h2 className="section-title">Featured Project Showcase</h2>
+            <p className="section-subtitle" style={{ margin: '0 auto' }}>A preview of our premium aluminium and glass partition installations across commercial and retail spaces.</p>
+          </div>
+
+          <div className="project-grid-pro">
+            {[
+              { img: '/h1.jpeg', title: 'Premium Office Partition' },
+              { img: '/h2.jpeg', title: 'Luxury Retail Glass' },
+              { img: '/h3.jpeg', title: 'Modern Commercial System' },
+              { img: '/h4.jpeg', title: 'Acoustic Workspace Solution' }
+            ].map((proj, i) => (
+              <div key={i} className="project-card-pro">
+                <div className="project-img-wrapper">
+                  <Image src={proj.img} alt={proj.title} fill style={{ objectFit: 'cover' }} />
+                  <div className="project-overlay-pro">
+                    <span style={{ fontWeight: 800, fontSize: '0.9rem', letterSpacing: '0.05em' }}>{proj.title}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <style jsx>{`
+            .project-grid-pro {
+              display: grid;
+              grid-template-columns: repeat(4, 1fr);
+              gap: 1.5rem;
+            }
+            .project-card-pro {
+              position: relative;
+              border-radius: 12px;
+              overflow: hidden;
+              aspect-ratio: 4/5;
+              box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+              cursor: pointer;
+            }
+            .project-img-wrapper {
+              position: relative;
+              width: 100%;
+              height: 100%;
+              transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+            .project-card-pro:hover .project-img-wrapper {
+              transform: scale(1.08);
+            }
+            .project-overlay-pro {
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              background: linear-gradient(transparent, rgba(15, 23, 42, 0.8));
+              color: white;
+              padding: 2rem 1.5rem 1.25rem;
+              opacity: 0;
+              transition: opacity 0.4s ease;
+              display: flex;
+              align-items: flex-end;
+            }
+            .project-card-pro:hover .project-overlay-pro {
+              opacity: 1;
+            }
+            @media (max-width: 1024px) {
+              .project-grid-pro { grid-template-columns: repeat(2, 1fr); }
+            }
+            @media (max-width: 640px) {
+              .project-grid-pro { grid-template-columns: 1fr; }
+            }
+          `}</style>
         </div>
       </section>
 

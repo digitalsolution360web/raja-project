@@ -8,7 +8,7 @@ const filters = ['All Products', 'Single Glaze', 'Double Glaze', 'Acoustic', 'Fr
 const products = [
   {
     sku: 'RAP-2545',
-    name: '25×45 Single Glaze Slimline Profile',
+    name: 'Single glass 25 /* 45',
     category: 'Single Glaze',
     specs: [
       { label: 'Profile Dimensions', value: '25mm × 45mm' },
@@ -18,11 +18,11 @@ const products = [
       { label: 'Finishes', value: 'Anodised Silver, Matt Black, Champagne' }
     ],
     applications: ['Executive offices and boardrooms', 'Open-plan corporate interiors', 'Commercial retail fit-outs', 'Hotel lobby dividers', 'Reception area partitioning'],
-    img: '/1.webp'
+    img: '/g1.jpeg'
   },
   {
     sku: 'RAP-2525',
-    name: '25×25 Ultra-Slim Partition Profile',
+    name: 'Single glazing partition',
     category: 'Single Glaze',
     specs: [
       { label: 'Profile Dimensions', value: '25mm × 25mm' },
@@ -31,11 +31,11 @@ const products = [
       { label: 'Frame Construction', value: 'Lightweight aluminium extrusion' }
     ],
     applications: ['Contemporary residential interiors', 'Boutique retail spaces', 'Co-working and hot-desk environments', 'Feature walls and room dividers', 'Design studios and creative offices'],
-    img: '/2.webp'
+    img: '/g2.jpeg'
   },
   {
     sku: 'RAP-100SG',
-    name: '25×100 Single Glazing System',
+    name: 'Single single glazing partition',
     category: 'Single Glaze',
     specs: [
       { label: 'Profile Dimensions', value: '25mm × 100mm' },
@@ -44,11 +44,11 @@ const products = [
       { label: 'Frame Construction', value: 'Heavy-section extruded aluminium' }
     ],
     applications: ['Full-height office partitions (floor to ceiling)', 'Healthcare and clinic partitioning', 'Government and institutional buildings', 'Commercial banking halls', 'Airport lounges and transit areas'],
-    img: '/3.webp'
+    img: '/g3.jpeg'
   },
   {
     sku: 'RAP-100DG',
-    name: '25×100 Double Glazing System',
+    name: 'Double glaze partition',
     category: 'Double Glaze',
     specs: [
       { label: 'Profile Dimensions', value: '25mm × 100mm' },
@@ -57,11 +57,11 @@ const products = [
       { label: 'Frame Construction', value: 'Thermally broken heavy-section aluminium' }
     ],
     applications: ['Premium corporate headquarters', 'Executive suites and C-Suite offices', 'Financial institutions and trading floors', 'Premium residential apartments', 'High-end hospitality interiors'],
-    img: '/4.webp'
+    img: '/g4.jpeg'
   },
   {
     sku: 'RJ-100-DG-AC',
-    name: 'RJ-100 Acoustic Double Glaze System',
+    name: '25x45 single glaze partition',
     category: 'Acoustic',
     specs: [
       { label: 'Profile Dimensions', value: '100mm system depth' },
@@ -70,7 +70,7 @@ const products = [
       { label: 'Acoustic Rating', value: 'Up to 52dB Rw' }
     ],
     applications: ['Conference rooms and boardrooms', 'Medical consultation and procedure rooms', 'Legal offices and chambers', 'Judiciary and government facilities', 'Recording studios and media rooms'],
-    img: '/5.webp'
+    img: '/g5.jpeg'
   },
   {
     sku: 'RAP-FRAME',
@@ -138,48 +138,129 @@ export default function ProductsPage() {
       </section>
 
       {/* Products Grid */}
-      <section className="section-padding section-white" style={{ paddingTop: '1rem' }}>
-        <div className="container-main">
+      <section className="section-padding section-white">
+        <div className="container-main" style={{ maxWidth: '1200px' }}>
+          <style jsx>{`
+            .product-badge-red {
+              background: #B91C1C;
+              color: white;
+              padding: 4px 12px;
+              border-radius: 4px;
+              font-weight: 700;
+              text-transform: uppercase;
+              font-size: 0.75rem;
+              display: inline-block;
+            }
+            .sku-red {
+              color: #B91C1C;
+              font-weight: 700;
+              font-size: 0.85rem;
+              margin-bottom: 0.5rem;
+            }
+            .product-title-navy {
+              color: #0F172A;
+              font-weight: 800;
+              font-size: 1.85rem;
+              line-height: 1.2;
+              margin-bottom: 1rem;
+            }
+            .section-header-red {
+              color: #B91C1C;
+              font-size: 0.85rem;
+              font-weight: 800;
+              text-transform: uppercase;
+              border-bottom: 3px solid #B91C1C;
+              padding-bottom: 2px;
+              margin: 1.5rem 0 1rem;
+              display: inline-block;
+            }
+            .specs-table-pro {
+              width: 100%;
+              border-collapse: collapse;
+            }
+            .specs-table-pro td {
+              padding: 8px 12px;
+              font-size: 0.9rem;
+              border-bottom: 1px solid #F1F5F9;
+            }
+            .specs-table-pro tr:nth-child(even) {
+              background-color: #F8FAFC;
+            }
+            .app-list-pro {
+              list-style: none;
+              padding: 0;
+              margin: 0;
+            }
+            .app-item-pro {
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              font-size: 0.95rem;
+              color: #475569;
+              margin-bottom: 6px;
+            }
+            .checkmark-red {
+              color: #B91C1C;
+              font-weight: 900;
+            }
+            .btn-request {
+              background: #0F172A;
+              color: white;
+              padding: 10px 24px;
+              border-radius: 4px;
+              text-decoration: none;
+              font-weight: 700;
+              font-size: 0.9rem;
+              display: inline-block;
+              margin-top: 1.5rem;
+              transition: opacity 0.2s;
+            }
+            .btn-request:hover {
+              opacity: 0.9;
+            }
+            @media (max-width: 768px) {
+              .zigzag-row {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+              }
+              .order-last { order: 0 !important; }
+            }
+          `}</style>
+
           {activeFilter !== 'Accessories' ? (
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '5rem' }}>
               {filteredProducts.map((product, idx) => (
-                <div key={product.sku} className="zigzag-row" style={{ gridTemplateColumns: '1fr 1fr', alignItems: 'center', borderBottom: 'none', padding: '0' }}>
-                  <div className={`zigzag-image ${idx % 2 !== 0 ? 'order-last' : ''}`} style={{ order: idx % 2 === 0 ? 0 : 1 }}>
-                    <Image src={product.img} alt={product.name} width={600} height={400} style={{ width: '100%', height: '600px', objectFit: 'cover', borderRadius: '16px' }} />
+                <div key={product.sku} className="zigzag-row" style={{ display: 'grid', gridTemplateColumns: 'minmax(300px, 1fr) minmax(300px, 1.2fr)', gap: '3rem', alignItems: 'start' }}>
+                  <div className={`zigzag-image ${idx % 2 !== 0 ? 'lg:order-last' : ''}`} style={{ order: idx % 2 === 0 ? 0 : 1 }}>
+                    <Image src={product.img} alt={product.name} width={600} height={450} style={{ width: '100%', height: '450px', objectFit: 'cover', borderRadius: '8px', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }} />
                   </div>
-                  <div style={{ padding: '0' }}>
-                    <div className="product-badge" style={{ marginBottom: '1rem' }}>{product.category}</div>
-                    <div style={{ color: 'var(--gold-dark)', fontWeight: 700, fontSize: '0.8rem', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>SKU: {product.sku}</div>
-                    <h2 style={{ fontSize: '1.75rem', marginBottom: '0.8rem' }}>{product.name}</h2>
+                  <div>
+                    <div className="product-badge-red">{product.category}</div>
+                    <div className="sku-red" style={{ marginTop: '0.75rem' }}>SKU: {product.sku}</div>
+                    <h2 className="product-title-navy">{product.name}</h2>
 
-                    <div style={{ marginBottom: '1rem' }}>
-                      <h4 style={{ fontSize: '0.88rem', color: 'var(--navy)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.6rem', borderBottom: '2px solid var(--gold)', display: 'inline-block' }}>Technical Specifications</h4>
-                      <table className="spec-table">
-                        <tbody>
-                          {product.specs.map(spec => (
-                            <tr key={spec.label}>
-                              <td style={{ fontWeight: 700, color: 'var(--navy)', width: '40%' }}>{spec.label}</td>
-                              <td>{spec.value}</td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-
-                    <div>
-                      <h4 style={{ fontSize: '0.88rem', color: 'var(--navy)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.6rem', borderBottom: '2px solid var(--gold)', display: 'inline-block' }}>Ideal Applications</h4>
-                      <ul style={{ listStyle: 'none', display: 'grid', gridTemplateColumns: '1fr', gap: '0.5rem' }}>
-                        {product.applications.map(app => (
-                          <li key={app} style={{ fontSize: '0.9rem', color: 'var(--text-mid)', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                            <span style={{ color: 'var(--gold)', fontWeight: 900 }}>✓</span> {app}
-                          </li>
+                    <h4 className="section-header-red">Technical Specifications</h4>
+                    <table className="specs-table-pro">
+                      <tbody>
+                        {product.specs.map(spec => (
+                          <tr key={spec.label}>
+                            <td style={{ fontWeight: 700, color: '#0F172A', width: '40%' }}>{spec.label}</td>
+                            <td>{spec.value}</td>
+                          </tr>
                         ))}
-                      </ul>
-                    </div>
+                      </tbody>
+                    </table>
 
-                    <div style={{ marginTop: '1.5rem' }}>
-                      <Link href="/contact" className="btn-navy">Request Sample / Quote</Link>
-                    </div>
+                    <h4 className="section-header-red">Ideal Applications</h4>
+                    <ul className="app-list-pro">
+                      {product.applications.map(app => (
+                        <li key={app} className="app-item-pro">
+                          <span className="checkmark-red">✓</span> {app}
+                        </li>
+                      ))}
+                    </ul>
+
+                    <Link href="/contact" className="btn-request">Request Sample / Quote</Link>
                   </div>
                 </div>
               ))}
