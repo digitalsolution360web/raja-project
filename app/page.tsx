@@ -426,10 +426,10 @@ export default function HomePage() {
 
           <div className="project-grid-pro">
             {[
-              { img: '/hm1 (1).jpeg', title: 'Premium Office Partition' },
-              { img: '/hm1 (2).jpeg', title: 'Modern Glass Room' },
-              { img: '/hm1 (3).jpeg', title: 'Executive Cabin System' },
-              { img: '/hm1 (4).jpeg', title: 'Luxury Glass Workspace' }
+              { img: '/h1.jpeg', title: 'Premium Office Partition' },
+              { img: '/h2.jpeg', title: 'Luxury Retail Glass' },
+              { img: '/h3.jpeg', title: 'Modern Commercial System' },
+              { img: '/h4.jpeg', title: 'Acoustic Workspace Solution' }
             ].map((proj, i) => (
               <div key={i} className="project-card-pro">
                 <div className="project-img-wrapper">
