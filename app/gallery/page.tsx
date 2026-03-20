@@ -15,6 +15,11 @@ const galleryImages = [
   { src: '/4.webp', alt: 'Acoustic double glazing' },
   { src: '/5.webp', alt: 'Aluminium profile finishes' },
   { src: '/6.webp', alt: 'Corporate boardroom project' },
+  // Added as per your request (with headings)
+  { src: '/03 (3).jpeg', alt: 'Single Glazing Partition System' },
+  { src: '/03 (1).jpeg', alt: 'Double Glaze Partition System' },
+  { src: '/03 (4).jpeg', alt: 'Demountable Partition System' },
+  { src: '/04.jpeg', alt: 'Frameless Glass System' },
 ];
 
 export default function GalleryPage() {

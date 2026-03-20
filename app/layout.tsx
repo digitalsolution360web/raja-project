@@ -11,7 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Raja Aluminium Profile — Premium Glass Partition Systems | Bikaner & Navi Mumbai",
+  title: "Aerospace Aluminium Alloys — Premium Glass Partition Systems | Navi Mumbai",
   description: "Manufacturer & Supplier of Demountable Glass Partition Profiles — Single Glaze, Double Glaze, Acoustic Systems, and Custom Extrusions. Serving Architects, Contractors and Developers Across India.",
   keywords: "aluminium profile, glass partition, demountable partition, single glaze, double glaze, acoustic partition, Bikaner, Navi Mumbai, India",
 };

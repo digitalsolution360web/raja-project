@@ -17,16 +17,13 @@ const stats = [
   { value: '20+', label: 'Product SKUs', sub: 'Profiles, Systems & Accessories' },
   { value: '50+', label: 'Cities Served', sub: 'Pan India Supply Network' },
   { value: '10+', label: 'Years in Business', sub: 'Established Expertise' },
-  { value: '2', label: 'Office Locations', sub: 'Bikaner HQ · Navi Mumbai' },
+  { value: '2', label: 'Office Locations', sub: 'Mindspace Airoli East · Navi Mumbai' },
 ];
 
 const products = [
-  { sku: 'RAP-2545', name: 'Single glass 25 /* 45', desc: 'Snap-fit single glazed system for executive offices and corporate fit-outs. Accepts 10–12mm glass.', img: '/g1.jpeg', tag: 'Single Glaze' },
-  { sku: 'RAP-2525', name: 'Single glazing partition', desc: 'Minimalist frame for contemporary residential and boutique retail spaces. 8–10mm glass.', img: '/g2.jpeg', tag: 'Single Glaze' },
-  { sku: 'RAP-100SG', name: 'Single single glazing partition', desc: 'Structural heavy-section frame for full-height office partitions and institutional buildings.', img: '/g3.jpeg', tag: 'Structural' },
-  { sku: 'RAP-100DG', name: 'Double glaze partition', desc: 'Thermally broken double-glazed cavity frame for premium corporate HQs and executive suites.', img: '/g4.jpeg', tag: 'Double Glaze' },
-  { sku: 'RJ-100', name: '25x45 single glaze partition', desc: 'High-performance acoustic wall rated up to 52dB Rw — ideal for boardrooms and healthcare.', img: '/g5.jpeg', tag: 'Acoustic' },
-  { sku: 'RAP-FRAME', name: 'Custom Extrusion Solutions', desc: 'Bespoke profiles engineered to your exact specification — any dimension, any finish.', img: '/12.jpeg', tag: 'Custom' },
+  { sku: 'RAP-AC-123', name: 'Acoustic Double Glaze System', desc: 'Premium sound-insulated system for sensitive office environments and boardrooms. Up to 52dB rating.', img: '/123.jpg', tag: 'Acoustic' },
+  { sku: 'RAP-FL-124', name: 'Frameless Glass Series', desc: 'Minimalist frameless design with slim floor tracks for luxury retail showrooms and modern office partitions.', img: '/124.jpg', tag: 'Frameless' },
+  { sku: 'RAP-EX-125', name: 'Premium Office Enclosure', desc: 'Top-tier executive workspace solution with multiple finish options and high structural integrity.', img: '/125.jpg', tag: 'Suite' },
 ];
 
 const differentiators = [
@@ -34,7 +31,7 @@ const differentiators = [
   { icon: '📐', title: 'Wide Profile Range', desc: 'From slim 25×25 dividers to heavy-duty 25×100 double-glazed systems — one supplier for your entire project.' },
   { icon: '🎨', title: 'Multiple Finishes', desc: 'Anodised Silver, Powder Coated (RAL range), Champagne, Matt Black, Bronze — match any interior specification.' },
   { icon: '🔇', title: 'Acoustic Performance', desc: 'RJ-100 double-glaze system rated up to 52dB — ideal for executive offices, boardrooms and healthcare.' },
-  { icon: '🚚', title: 'PAN India Supply', desc: 'Manufacturing in Bikaner & supply hub in Navi Mumbai — fast dispatch to all major metros.' },
+  { icon: '🚚', title: 'PAN India Supply', desc: 'Manufacturing in Navi Mumbai (Airoli) & supply hub — fast dispatch to all major metros.' },
   { icon: '📞', title: 'Full Technical Support', desc: 'CAD drawings, installation guides, site visit support and responsive WhatsApp service throughout.' },
 ];
 
@@ -174,7 +171,7 @@ export default function HomePage() {
 
       {/* TRUST BAR */}
       <div className="trust-bar " style={{ color: 'white' }}>
-        ✓ Trusted by 500+ Projects &nbsp;·&nbsp; PAN India Supply &nbsp;·&nbsp; Bikaner + Navi Mumbai Offices &nbsp;·&nbsp; ✓ WhatsApp Enquiries Welcome &nbsp;·&nbsp; 24-Hour Quotation Response
+        ✓ Trusted by 500+ Projects &nbsp;·&nbsp; PAN India Supply &nbsp;·&nbsp; Airoli, Navi Mumbai Office &nbsp;·&nbsp; ✓ WhatsApp Enquiries Welcome &nbsp;·&nbsp; 24-Hour Quotation Response
       </div>
 
       {/* STATS */}
@@ -293,10 +290,10 @@ export default function HomePage() {
                 ))}
               </ul>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                <a href="tel:+919987020538" className="btn-phone" style={{ width: 'fit-content' }}>
+                <a href="tel:+918854935836" className="btn-phone" style={{ width: 'fit-content' }}>
                   <span className="phone-icon">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                  </span> +91 9987020538
+                  </span> +91 8854935836
                 </a>
               </div>
             </div>
@@ -313,10 +310,10 @@ export default function HomePage() {
                 Our systems are engineered for energy efficiency and security, ensuring your home remains comfortable and safe while looking stunning.
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                <a href="tel:+919987020538" className="btn-phone" style={{ width: 'fit-content' }}>
+                <a href="tel:+918854935836" className="btn-phone" style={{ width: 'fit-content' }}>
                   <span className="phone-icon">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                  </span> +91 9987020538
+                  </span> +91 8854935836
                 </a>
                 <p style={{ fontWeight: 800, color: 'var(--accent)', fontSize: '1.1rem', letterSpacing: '0.02em' }}>Book an expert consultation today!</p>
               </div>
@@ -504,12 +501,12 @@ export default function HomePage() {
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/contact" className="btn-gold">▶ Get a Free Quote</Link>
-            <a href="tel:+919987020538" className="btn-phone">
+            <a href="tel:+918854935836" className="btn-phone">
               <span className="phone-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-              </span> +91 9987020538
+              </span> +91 8854935836
             </a>
-            <a href="https://wa.me/919987020538" target="_blank" rel="noopener noreferrer" className="btn-outline-navy">💬 WhatsApp Us</a>
+            <a href="https://wa.me/918854935836" target="_blank" rel="noopener noreferrer" className="btn-outline-navy">💬 WhatsApp Us</a>
           </div>
         </div>
       </section>

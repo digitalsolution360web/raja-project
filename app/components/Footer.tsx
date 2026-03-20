@@ -76,12 +76,19 @@ export default function Footer() {
             <h4 style={{ color: 'var(--gold-dark)', fontWeight: 700, fontSize: '0.9rem', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '1.25rem' }}>Contact Us</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.875rem' }}>
               <div>
-                <div style={{ color: 'var(--gold-dark)', fontSize: '0.78rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.25rem' }}>🏢 Bikaner HQ</div>
-                <div style={{ color: 'var(--text-mid)', fontSize: '0.875rem', lineHeight: 1.5 }}>Bikaner, Rajasthan<br />Manufacturing + Warehouse</div>
+                <div style={{ color: 'var(--gold-dark)', fontSize: '0.78rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.25rem' }}>📞 Mobile</div>
+                <div style={{ color: 'var(--text-mid)', fontSize: '0.875rem', lineHeight: 1.5, fontWeight: 700 }}>+91 8854935836</div>
               </div>
               <div>
-                <div style={{ color: 'var(--gold-dark)', fontSize: '0.78rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.25rem' }}>🏢 Navi Mumbai</div>
-                <div style={{ color: 'var(--text-mid)', fontSize: '0.875rem', lineHeight: 1.5 }}>Aroli Naka, Navi Mumbai<br />Supply Hub</div>
+                <div style={{ color: 'var(--gold-dark)', fontSize: '0.78rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.25rem' }}>✉️ Email</div>
+                <div style={{ color: 'var(--text-mid)', fontSize: '0.875rem', lineHeight: 1.5 }}>aerospacealuminiumalloys@gmail.com</div>
+              </div>
+              <div>
+                <div style={{ color: 'var(--gold-dark)', fontSize: '0.78rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.25rem' }}>📍 Address</div>
+                <div style={{ color: 'var(--text-mid)', fontSize: '0.875rem', lineHeight: 1.6 }}>
+                  MINDSPACE AIROLI EAST, 4, opposite Airoli Railway Station, Airoli, Navi Mumbai, Maharashtra<br />
+                  400708
+                </div>
               </div>
               <div>
                 <div style={{ color: 'var(--text-mid)', fontSize: '0.875rem' }}>💬 WhatsApp Enquiries Welcome</div>
@@ -95,10 +102,10 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div style={{ borderTop: '1px solid rgba(0,0,0,0.08)', padding: '1.5rem 0', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '0.75rem' }}>
           <p style={{ color: 'var(--text-light)', fontSize: '0.83rem' }}>
-            © 2026 Raja Aluminium Profile. All rights reserved. GST Registered Entity.
+            © 2026 Aerospace Aluminium Alloys. All rights reserved. GST Registered Entity.
           </p>
           <p style={{ color: 'var(--text-light)', fontSize: '0.83rem' }}>
-            Bikaner, Rajasthan &middot; Navi Mumbai, Maharashtra &middot; PAN India Supply
+            Navi Mumbai, Maharashtra &middot; PAN India Supply
           </p>
         </div>
       </div>

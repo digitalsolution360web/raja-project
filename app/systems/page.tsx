@@ -80,12 +80,12 @@ export default function SystemsPage() {
         <div className="container-main">
           <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
             {systems.map((system, idx) => (
-              <div key={system.id} className="zigzag-row" style={{ gridTemplateColumns: '1fr 1fr', alignItems: 'center', borderBottom: 'none', padding: '0' }}>
-                <div className={`zigzag-image ${idx % 2 !== 0 ? 'order-last' : ''}`} style={{ order: idx % 2 === 0 ? 0 : 1 }}>
-                  <Image src={system.img} alt={system.title} width={600} height={450} style={{ width: '100%', height: '600px', objectFit: 'cover', borderRadius: '16px' }} />
+              <div key={system.id} className="zigzag-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', borderBottom: '1px solid var(--silver-dark)', padding: '4rem 0' }}>
+                <div className="zigzag-image" style={{ position: 'relative', height: '500px', width: '100%', order: idx % 2 === 0 ? 0 : 1 }}>
+                  <Image src={system.img} alt={system.title} fill style={{ objectFit: 'cover', borderRadius: '16px' }} priority={idx < 2} />
                 </div>
                 
-                <div style={{ paddingTop: '0' }}>
+                <div className="zigzag-text" style={{ paddingTop: '0', order: idx % 2 === 0 ? 1 : 0 }}>
                   <h2 style={{ fontSize: '1.85rem', color: 'var(--navy)', marginBottom: '0.8rem' }}>{system.title}</h2>
                   <p style={{ fontSize: '0.98rem', color: 'var(--text-mid)', lineHeight: 1.6, marginBottom: '1.25rem' }}>
                     {system.intro}
@@ -181,7 +181,9 @@ export default function SystemsPage() {
 
       <style>{`
         @media (max-width: 1024px) {
-          .order-last { order: 0 !important; }
+          .zigzag-row { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+          .zigzag-image { order: 1 !important; height: 350px !important; }
+          .zigzag-text { order: 2 !important; }
         }
       `}</style>
     </div>

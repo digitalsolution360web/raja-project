@@ -78,34 +78,26 @@ export default function ContactPage() {
               
               <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
                 <div className="card-glass" style={{ borderLeft: '4px solid var(--gold)' }}>
-                  <h3 style={{ fontSize: '1.1rem', color: 'var(--navy)', marginBottom: '0.75rem' }}>RAJASTHAN HEADQUARTERS</h3>
+                  <h3 style={{ fontSize: '1.1rem', color: 'var(--navy)', marginBottom: '0.75rem' }}>MINDSPACE AIROLI EAST</h3>
                   <p style={{ fontSize: '0.95rem', color: 'var(--text-mid)', lineHeight: 1.6 }}>
-                    Bikaner, Rajasthan<br />
-                    Manufacturing Hub &amp; Main Warehouse
+                    Airoli, Navi Mumbai, Maharashtra<br />
+                    Manufacturing + Supply Hub
                   </p>
                   <div style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                    <div style={{ fontSize: '0.85rem' }}>📧 info@rajaaluminium.com</div>
+                    <div style={{ fontSize: '0.85rem' }}>📧 aerospacealuminiumalloys@gmail.com</div>
                     <div style={{ fontSize: '0.85rem' }}>
-                      <svg width="14" height="14" style={{verticalAlign: 'middle', marginRight: '4px'}} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                      +91 [Number]
+                      <svg width="14" height="14" style={{ verticalAlign: 'middle', marginRight: '4px' }} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                      </svg>
+                      +91 8854935836
+                    </div>
+                    <div style={{ fontSize: '0.85rem', color: 'var(--text-mid)' }}>
+                      📍 MINDSPACE AIROLI EAST, 4, opposite Airoli Railway Station, Airoli, Navi Mumbai<br />
+                      Maharashtra 400708
                     </div>
                   </div>
                 </div>
-
-                <div className="card-glass" style={{ borderLeft: '4px solid var(--gold)' }}>
-                  <h3 style={{ fontSize: '1.1rem', color: 'var(--navy)', marginBottom: '0.75rem' }}>NAVI MUMBAI SUPPLY HUB</h3>
-                  <p style={{ fontSize: '0.95rem', color: 'var(--text-mid)', lineHeight: 1.6 }}>
-                    Aroli Naka, Navi Mumbai<br />
-                    Maharashtra Supply Center
-                  </p>
-                  <div style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                    <div style={{ fontSize: '0.85rem' }}>📧 mumbai@rajaaluminium.com</div>
-                    <div style={{ fontSize: '0.85rem' }}>
-                      <svg width="14" height="14" style={{verticalAlign: 'middle', marginRight: '4px'}} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                      +91 [Number]
-                    </div>
-                  </div>
-                </div>
+                {/* Old offices removed; updated company contact block inserted above. */}
 
                 <div>
                   <h3 style={{ fontSize: '1.1rem', color: 'var(--navy)', marginBottom: '1.25rem' }}>Connect With Us</h3>
@@ -138,7 +130,7 @@ export default function ContactPage() {
         <div style={{ textAlign: 'center' }}>
            <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>📍</div>
            <h3 style={{ color: 'var(--navy)' }}>Interactive Map Coming Soon</h3>
-           <p style={{ color: 'var(--text-mid)' }}>Serving Bikaner, Mumbai, Delhi, Ahmedabad and Pan-India Metros.</p>
+           <p style={{ color: 'var(--text-mid)' }}>Serving Pan-India Metros.</p>
         </div>
       </section>
     </div>

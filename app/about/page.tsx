@@ -25,7 +25,7 @@ export default function AboutPage() {
           <div className="gold-bar" />
           <h1 className="section-title-white" style={{ marginBottom: '1.5rem' }}>Built on Precision. Trusted by Professionals.</h1>
           <p className="section-subtitle-white" style={{ maxWidth: '800px' }}>
-            Raja Aluminium Profile was founded with a single purpose: to supply India's architecture and construction industry with aluminium partition profiles that meet the highest standards of dimensional accuracy and durability.
+            Aerospace Aluminium Alloys was founded with a single purpose: to supply India's architecture and construction industry with aluminium partition profiles that meet the highest standards of dimensional accuracy and durability.
           </p>
         </div>
       </section>
@@ -40,19 +40,19 @@ export default function AboutPage() {
             <div>
               <h2 className="section-title">Our Story</h2>
               <p style={{ color: 'var(--text-mid)', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '1.5rem' }}>
-                Established in the heart of Rajasthan's industrial belt, Raja Aluminium Profile began as a specialist supplier to local contractors who needed reliable, high-quality profiles at competitive pricing.
+                Established with a focus on engineering quality, Aerospace Aluminium Alloys began as a specialist supplier to contractors who needed reliable, high-quality profiles at competitive pricing.
               </p>
               <p style={{ color: 'var(--text-mid)', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '1.5rem' }}>
-                Our facility in Bikaner is equipped with precision extrusion capability, enabling us to maintain tight dimensional tolerances across every batch. Our Navi Mumbai supply hub serves Maharashtra and the western seaboard, ensuring fast lead times.
+                Our Airoli (Navi Mumbai) facility is equipped with precision extrusion capability, enabling us to maintain tight dimensional tolerances across every batch. Our supply operations serve Maharashtra and the western seaboard, ensuring fast lead times.
               </p>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginTop: '2rem' }}>
                 <div>
                   <h4 style={{ color: 'var(--gold-dark)', fontWeight: 800, fontSize: '0.8rem', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Headquarters</h4>
-                  <p style={{ fontSize: '0.9rem', fontWeight: 600 }}>Bikaner, Rajasthan</p>
+                  <p style={{ fontSize: '0.9rem', fontWeight: 600 }}>Airoli, Navi Mumbai</p>
                 </div>
                 <div>
                   <h4 style={{ color: 'var(--gold-dark)', fontWeight: 800, fontSize: '0.8rem', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Supply Hub</h4>
-                  <p style={{ fontSize: '0.9rem', fontWeight: 600 }}>Navi Mumbai, Maharashtra</p>
+                  <p style={{ fontSize: '0.9rem', fontWeight: 600 }}>Airoli, Navi Mumbai</p>
                 </div>
               </div>
             </div>
@@ -146,7 +146,7 @@ export default function AboutPage() {
       {/* CTA */}
       <section style={{ padding: '5rem 0', background: 'var(--navy)', textAlign: 'center' }}>
         <div className="container-main">
-          <h2 className="section-title-white" style={{ marginBottom: '1rem' }}>Experience Raja Precision</h2>
+          <h2 className="section-title-white" style={{ marginBottom: '1rem' }}>Experience Aerospace Precision</h2>
           <p className="section-subtitle-white" style={{ margin: '0 auto 2.5rem' }}>Download our company profile or request a sample pack today.</p>
           <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center' }}>
              <Link href="/contact" className="btn-gold">Request Sample Pack</Link>
