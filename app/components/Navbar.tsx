@@ -48,7 +48,7 @@ export default function Navbar() {
           >
             <div style={{ position: 'relative', height: '55px', width: '220px' }}>
               <Image
-                src="/logoo.png"
+                src="/logoo-non-tag.png"
                 alt="Aerospace Aluminium Alloys Logo"
                 fill
                 style={{ objectFit: 'contain', objectPosition: 'center' }}

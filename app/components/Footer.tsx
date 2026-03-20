@@ -16,7 +16,7 @@ export default function Footer() {
             >
               <div style={{ position: 'relative', height: '60px', width: '210px' }}>
                 <Image 
-                  src="/logoo.png" 
+                  src="/logoo-non-tag.png" 
                   alt="Company Logo" 
                   fill
                   style={{ objectFit: 'contain', objectPosition: 'center' }}
