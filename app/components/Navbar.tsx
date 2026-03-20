@@ -42,28 +42,14 @@ export default function Navbar() {
         <div className="container-main" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 1.5rem', height: '70px' }}>
           {/* Logo */}
           <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', height: '100%' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%' }}>
-              <div style={{ position: 'relative', height: '42px', width: '220px' }}>
-                <Image
-                  src="/logoo.png"
-                  alt="Aerospace Aluminium Alloys Logo"
-                  fill
-                  style={{ objectFit: 'contain', objectPosition: 'left' }}
-                  priority
-                />
-              </div>
-              <div
-                style={{
-                  fontSize: '0.62rem',
-                  fontWeight: 900,
-                  letterSpacing: '0.12em',
-                  color: 'var(--navy)',
-                  textTransform: 'uppercase',
-                  marginTop: '-2px',
-                }}
-              >
-                Aerospace Aluminium Alloys
-              </div>
+            <div style={{ position: 'relative', height: '55px', width: '220px' }}>
+              <Image
+                src="/logoo.png"
+                alt="Aerospace Aluminium Alloys Logo"
+                fill
+                style={{ objectFit: 'contain', objectPosition: 'center' }}
+                priority
+              />
             </div>
           </Link>
 

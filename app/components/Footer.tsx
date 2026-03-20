@@ -15,7 +15,7 @@ export default function Footer() {
                   src="/logoo.png" 
                   alt="Company Logo" 
                   fill
-                  style={{ objectFit: 'contain', objectPosition: 'left' }}
+                  style={{ objectFit: 'contain', objectPosition: 'center' }}
                 />
               </div>
             </Link>
