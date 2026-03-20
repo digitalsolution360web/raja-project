@@ -46,13 +46,12 @@ export default function Navbar() {
             aria-label="Go to homepage"
             style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', height: '100%', cursor: 'pointer' }}
           >
-            {/* Cropping to hide any tagline text inside the logo image */}
-            <div style={{ position: 'relative', height: '32px', width: '220px', overflow: 'hidden' }}>
+            <div style={{ position: 'relative', height: '55px', width: '220px' }}>
               <Image
                 src="/logoo.png"
                 alt="Aerospace Aluminium Alloys Logo"
                 fill
-                style={{ objectFit: 'cover', objectPosition: 'left top' }}
+                style={{ objectFit: 'contain', objectPosition: 'center' }}
                 priority
               />
             </div>
