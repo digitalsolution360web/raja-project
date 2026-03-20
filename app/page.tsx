@@ -430,6 +430,11 @@ export default function HomePage() {
               { img: '/h2.jpeg', title: 'Luxury Retail Glass' },
               { img: '/h3.jpeg', title: 'Modern Commercial System' },
               { img: '/h4.jpeg', title: 'Acoustic Workspace Solution' }
+              ,
+              { img: '/hm1 (1).jpeg', title: 'Premium Office Partition' },
+              { img: '/hm1 (2).jpeg', title: 'Modern Glass Room' },
+              { img: '/hm1 (3).jpeg', title: 'Executive Cabin System' },
+              { img: '/hm1 (4).jpeg', title: 'Luxury Glass Workspace' }
             ].map((proj, i) => (
               <div key={i} className="project-card-pro">
                 <div className="project-img-wrapper">
