@@ -9,7 +9,11 @@ export default function Footer() {
 
           {/* Brand */}
           <div>
-            <Link href="/" style={{ textDecoration: 'none', display: 'inline-block', marginBottom: '1.25rem' }}>
+            <Link
+              href="/"
+              aria-label="Go to homepage"
+              style={{ textDecoration: 'none', display: 'inline-block', marginBottom: '1.25rem', cursor: 'pointer' }}
+            >
               <div style={{ position: 'relative', height: '60px', width: '210px' }}>
                 <Image 
                   src="/logoo.png" 

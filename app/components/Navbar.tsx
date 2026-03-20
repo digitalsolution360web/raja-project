@@ -41,7 +41,11 @@ export default function Navbar() {
       >
         <div className="container-main" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 1.5rem', height: '70px' }}>
           {/* Logo */}
-          <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', height: '100%' }}>
+          <Link
+            href="/"
+            aria-label="Go to homepage"
+            style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', height: '100%', cursor: 'pointer' }}
+          >
             <div style={{ position: 'relative', height: '55px', width: '220px' }}>
               <Image
                 src="/logoo.png"
