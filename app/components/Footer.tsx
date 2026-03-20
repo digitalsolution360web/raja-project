@@ -14,11 +14,14 @@ export default function Footer() {
               aria-label="Go to homepage"
               style={{ textDecoration: 'none', display: 'inline-block', marginBottom: '1.25rem', cursor: 'pointer' }}
             >
-              <div style={{ position: 'relative', height: '60px', width: '210px' }}>
+              <div style={{ position: 'relative', height: '51px', width: '192px' }}>
                 <Image 
                   src="/logoo-non-tag.png" 
                   alt="Company Logo" 
                   fill
+                  sizes="192px"
+                  unoptimized
+                  quality={100}
                   style={{ objectFit: 'contain', objectPosition: 'center' }}
                 />
               </div>
