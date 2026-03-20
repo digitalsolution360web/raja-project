@@ -46,12 +46,12 @@ export default function Navbar() {
             aria-label="Go to homepage"
             style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', height: '100%', cursor: 'pointer' }}
           >
-            <div style={{ position: 'relative', height: '51px', width: '192px' }}>
+            <div style={{ position: 'relative', height: '55px', width: '220px' }}>
               <Image
-                src="/logoo-non-tag.png"
+                src="/logo-navbar-2x.png"
                 alt="Aerospace Aluminium Alloys Logo"
                 fill
-                sizes="192px"
+                sizes="220px"
                 unoptimized
                 quality={100}
                 style={{ objectFit: 'contain', objectPosition: 'center' }}
