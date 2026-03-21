@@ -48,7 +48,7 @@ export default function Navbar() {
           >
             <div style={{ position: 'relative', height: '55px', width: '220px' }}>
               <Image
-                src="/logo-navbar-2x.png"
+                src="/logooo.png"
                 alt="Aerospace Aluminium Alloys Logo"
                 fill
                 sizes="220px"
