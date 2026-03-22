@@ -119,7 +119,7 @@ export default function HomePage() {
         <div className="container-main">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <h2 className="section-title" style={{ fontSize: '1rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-mid)', fontWeight: 600 }}>Featured Systems</h2>
-            <h3 style={{ fontSize: 'clamp(1.5rem, 5vw, 2.75rem)', fontWeight: 900, color: 'var(--navy)' }}>1. AEROSPACE Aluminum Door Frame</h3>
+            <h3 style={{ fontSize: 'clamp(1.5rem, 5vw, 2.75rem)', fontWeight: 900, color: 'var(--navy)' }}>AEROSPACE Aluminum Door Frame</h3>
             <div className="gold-bar" style={{ margin: '1.5rem auto' }} />
           </div>
           <div className="responsive-spec-row" style={{ display: 'grid', gridTemplateColumns: 'minmax(300px, 1.2fr) minmax(300px, 1fr)', gap: '0', background: '#F8FAFC', borderRadius: '28px', overflow: 'hidden', boxShadow: '0 25px 60px -15px rgba(0,0,0,0.1)' }}>
@@ -153,7 +153,7 @@ export default function HomePage() {
         <div className="container-main">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <h2 className="section-title" style={{ fontSize: '1rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-mid)', fontWeight: 600 }}>Architectural Series</h2>
-            <h3 style={{ fontSize: 'clamp(1.5rem, 5vw, 2.75rem)', fontWeight: 900, color: 'var(--navy)' }}>2. Double Glazed Partition</h3>
+            <h3 style={{ fontSize: 'clamp(1.5rem, 5vw, 2.75rem)', fontWeight: 900, color: 'var(--navy)' }}>Double Glazed Partition</h3>
             <div className="gold-bar" style={{ margin: '1.5rem auto' }} />
           </div>
           <div className="responsive-spec-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '0', background: '#ffffff', borderRadius: '28px', overflow: 'hidden', boxShadow: '0 25px 60px -15px rgba(0,0,0,0.1)' }}>
@@ -189,7 +189,7 @@ export default function HomePage() {
         <div className="container-main">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <h2 className="section-title" style={{ fontSize: '1rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-mid)', fontWeight: 600 }}>Grid Series</h2>
-            <h3 style={{ fontSize: 'clamp(1.5rem, 5vw, 2.75rem)', fontWeight: 900, color: 'var(--navy)' }}>3. Grid Partition 24 X 45</h3>
+            <h3 style={{ fontSize: 'clamp(1.5rem, 5vw, 2.75rem)', fontWeight: 900, color: 'var(--navy)' }}>Grid Partition 24 X 45</h3>
             <div className="gold-bar" style={{ margin: '1.5rem auto' }} />
           </div>
           <div style={{ display: 'grid', gridTemplateRows: '450px auto', gap: '0', background: '#F8FAFC', borderRadius: '28px', overflow: 'hidden', boxShadow: '0 25px 60px -15px rgba(0,0,0,0.1)' }}>
@@ -220,7 +220,7 @@ export default function HomePage() {
         <div className="container-main">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <h2 className="section-title" style={{ fontSize: '1rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-mid)', fontWeight: 600 }}>Minimalist Series</h2>
-            <h3 style={{ fontSize: 'clamp(1.5rem, 5vw, 2.75rem)', fontWeight: 900, color: 'var(--navy)' }}>4. Single Glaze 25 X25 Partition</h3>
+            <h3 style={{ fontSize: 'clamp(1.5rem, 5vw, 2.75rem)', fontWeight: 900, color: 'var(--navy)' }}>Single Glaze 25 X25 Partition</h3>
             <div className="gold-bar" style={{ margin: '1.5rem auto' }} />
           </div>
           <div className="responsive-spec-row" style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '0', background: '#ffffff', borderRadius: '28px', overflow: 'hidden', boxShadow: '0 25px 60px -15px rgba(0,0,0,0.1)' }}>
@@ -264,44 +264,50 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SOLUTIONS SECTION (RESTORED Zig-Zag) */}
-      <section className="section-padding section-silver" style={{ padding: '3.5rem 0' }}>
+      {/* RESIDENTIAL & COMMERCIAL SOLUTIONS */}
+      <section style={{ padding: '3.5rem 0', background: '#f8fafc' }}>
         <div className="container-main">
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <div className="gold-bar" style={{ margin: '0 auto 1.5rem' }} />
-            <h2 className="section-title">High-Performance Sliding & Glass Solutions</h2>
-            <p className="section-subtitle" style={{ margin: '0 auto' }}>Architectural excellence for commercial and residential spaces.</p>
-          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '6rem' }}>
-            {/* Commercial */}
-            <div className="zigzag-row">
-              <div className="zigzag-image" style={{ borderRadius: '24px', overflow: 'hidden', boxShadow: '0 30px 60px rgba(0,0,0,0.12)' }}>
-                <Image src="/commercial-solutions.png" alt="Commercial" width={700} height={500} style={{ width: '100%', height: 'auto' }} />
+            {/* Residential Section */}
+            <div className="zigzag-row" style={{ gap: '3rem', alignItems: 'flex-start' }}>
+              <div className="zigzag-image" style={{ borderRadius: '24px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}>
+                <Image src="/residential-solutions.png" alt="Residential Aluminium Sliding" width={700} height={500} style={{ width: '100%', height: 'auto' }} />
               </div>
-              <div style={{ padding: '1rem' }}>
-                <h3 style={{ fontSize: '2rem', fontWeight: 900, color: 'var(--navy)', marginBottom: '1.5rem' }}>Commercial Partition Solutions</h3>
-                <p style={{ color: 'var(--text-mid)', fontSize: '1.1rem', lineHeight: 1.8, marginBottom: '2rem' }}>
-                  Specializing in high-performance commercial sliding systems designed for modern workspaces. Whether it's a sleek office partition or a heavy-duty sliding door, our solutions provide superior durability and acoustic excellence.
+              <div>
+                <h3 style={{ fontSize: '1.6rem', fontWeight: 900, color: 'var(--accent)', marginBottom: '1rem' }}>Residential Aluminum Sliding and Glass Partition Works</h3>
+                <p style={{ color: 'var(--text-mid)', fontSize: '0.95rem', lineHeight: 1.8, marginBottom: '1.25rem' }}>
+                  At <strong>Mumbai Aluminium and Glass</strong>, we specialize in providing top-quality <strong>aluminium sliding windows</strong>, doors, and <strong>glass partition solutions</strong> for both <strong>residential</strong> and <strong>commercial</strong> spaces. With years of expertise, we offer innovative designs that enhance the aesthetics, functionality, and security of any building.
                 </p>
-                <Link href="/contact" className="btn-gold">Request Commercial Quote</Link>
+                <h4 style={{ fontSize: '1.2rem', fontWeight: 900, color: 'var(--navy)', marginBottom: '0.75rem' }}>Residential Aluminium Sliding &amp; Glass Partition Solutions</h4>
+                <p style={{ color: 'var(--text-mid)', fontSize: '0.95rem', lineHeight: 1.8, marginBottom: '1.5rem' }}>
+                  For your home, we offer <strong>aluminium sliding windows</strong> that bring style, durability, and energy efficiency. Whether it&apos;s for the <strong>bedroom</strong>, <strong>living room</strong>, <strong>bathroom</strong>, or even <strong>balconies</strong>, our sliding windows are designed to suit your space and provide easy functionality. We also offer sleek and modern <strong>glass partitions</strong> for interiors like <strong>living rooms</strong>, <strong>home offices</strong>, or <strong>kitchen areas</strong>, creating a seamless flow between rooms while allowing for natural light to fill the space.
+                </p>
+                <a href="tel:+919987020538" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.75rem 1.5rem', border: '1px solid #e2e8f0', borderRadius: '50px', color: 'var(--navy)', fontWeight: 800, fontSize: '0.95rem', textDecoration: 'none', marginBottom: '0.5rem' }}>📞 +91 9987020538</a>
+                <p style={{ fontWeight: 800, color: 'var(--accent)', fontSize: '0.95rem', marginTop: '0.75rem' }}>Book an expert consultation today!</p>
               </div>
             </div>
 
-            {/* Residential */}
-            <div className="zigzag-row" style={{ direction: 'rtl' }}>
-              <div className="zigzag-image" style={{ direction: 'ltr', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 30px 60px rgba(0,0,0,0.12)' }}>
-                <Image src="/residential-solutions.png" alt="Residential" width={700} height={500} style={{ width: '100%', height: 'auto' }} />
-              </div>
-              <div style={{ direction: 'ltr', padding: '1rem' }}>
-                <h3 style={{ fontSize: '2rem', fontWeight: 900, color: 'var(--navy)', marginBottom: '1.5rem' }}>Residential Glass Works</h3>
-                <p style={{ color: 'var(--text-mid)', fontSize: '1.1rem', lineHeight: 1.8, marginBottom: '2rem' }}>
-                  Enhance your home with elegant aluminium sliding windows and glass partitions. Maximize natural light and sophistication in your living space.
+            {/* Commercial Section */}
+            <div className="zigzag-row" style={{ gap: '3rem', alignItems: 'flex-start' }}>
+              <div>
+                <h3 style={{ fontSize: '1.6rem', fontWeight: 900, color: 'var(--accent)', marginBottom: '1rem' }}>Commercial Aluminium Sliding &amp; Glass Partition Solutions</h3>
+                <p style={{ color: 'var(--text-mid)', fontSize: '0.95rem', lineHeight: 1.8, marginBottom: '1.25rem' }}>
+                  For commercial properties, we specialize in <strong>aluminium sliding doors and windows</strong> that provide security, ease of use, and modern design. These are perfect for <strong>offices</strong>, <strong>retail stores</strong>, and <strong>commercial buildings</strong>, offering both durability and elegance. Additionally, our <strong>aluminium glass partitions</strong> are ideal for <strong>office cabins</strong>, <strong>conference rooms</strong>, or open-plan spaces, providing a clean, modern look while maximizing natural light and enhancing productivity.
                 </p>
-                <p style={{ fontWeight: 800, color: 'var(--accent)', fontSize: '1.1rem', marginBottom: '1.5rem' }}>Book an expert consultation today!</p>
-                <a href="tel:+918854935836" className="btn-phone" style={{ width: 'fit-content' }}>+91 8854935836</a>
+                <ul style={{ listStyle: 'none', padding: 0, marginBottom: '1.5rem' }}>
+                  <li style={{ marginBottom: '0.5rem', fontSize: '0.9rem', color: 'var(--text-mid)' }}>• <strong>Expertise &amp; Customization:</strong> We offer customized solutions to fit the unique needs of your residential or commercial space.</li>
+                  <li style={{ marginBottom: '0.5rem', fontSize: '0.9rem', color: 'var(--text-mid)' }}>• <strong>Quality Products:</strong> We use high-quality materials, ensuring longevity and performance.</li>
+                  <li style={{ marginBottom: '0.5rem', fontSize: '0.9rem', color: 'var(--text-mid)' }}>• <strong>Timely Execution:</strong> We understand the importance of deadlines and ensure that projects are completed on time.</li>
+                  <li style={{ marginBottom: '0.5rem', fontSize: '0.9rem', color: 'var(--text-mid)' }}>• <strong>Professional Installation &amp; Repair Services:</strong> Our team handles installation and repair services with precision, ensuring perfect results every time.</li>
+                </ul>
+                <a href="tel:+919987020538" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.75rem 1.5rem', border: '1px solid #e2e8f0', borderRadius: '50px', color: 'var(--navy)', fontWeight: 800, fontSize: '0.95rem', textDecoration: 'none' }}>📞 +91 9987020538</a>
+              </div>
+              <div className="zigzag-image" style={{ borderRadius: '24px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}>
+                <Image src="/commercial-solutions.png" alt="Commercial Glass Partition" width={700} height={500} style={{ width: '100%', height: 'auto' }} />
               </div>
             </div>
+
           </div>
         </div>
       </section>
