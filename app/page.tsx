@@ -115,7 +115,7 @@ export default function HomePage() {
       </section>
 
       {/* MY NEW SECTION 1: ALUMINUM DOOR FRAME */}
-      <section style={{ padding: '6rem 0', background: '#ffffff' }}>
+      <section style={{ padding: '3.5rem 0', background: '#ffffff' }}>
         <div className="container-main">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <h2 className="section-title" style={{ fontSize: '1rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-mid)', fontWeight: 600 }}>Featured Systems</h2>
@@ -130,7 +130,7 @@ export default function HomePage() {
                    <h4 style={{ fontSize: '1.6rem', fontWeight: 800 }}>Aerospace Glass Partition Aluminum Door Frame</h4>
                 </div>
              </div>
-             <div style={{ display: 'grid', gridTemplateRows: 'repeat(3, 1fr)', gap: '1px', background: 'var(--silver-dark)' }}>
+             <div className="inner-spec-grid" style={{ display: 'grid', gridTemplateRows: 'repeat(3, 1fr)', gap: '1px', background: 'var(--silver-dark)' }}>
                 {[
                   { src: '/122.jpeg', label: 'Aerospace Glass Partition System Slim Line Door Frame 45x50 Mm (Black Finish) 2500mm' },
                   { src: '/124.jpeg', label: 'Aerospace Glass Partition System Style Door Fix 35x60mm (Black Finish) 2500mm' },
@@ -149,7 +149,7 @@ export default function HomePage() {
       </section>
 
       {/* MY NEW SECTION 2: DOUBLE GLAZED */}
-      <section style={{ padding: '6rem 0', background: '#F8FAFC' }}>
+      <section style={{ padding: '3.5rem 0', background: '#F8FAFC' }}>
         <div className="container-main">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <h2 className="section-title" style={{ fontSize: '1rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-mid)', fontWeight: 600 }}>Architectural Series</h2>
@@ -157,7 +157,7 @@ export default function HomePage() {
             <div className="gold-bar" style={{ margin: '1.5rem auto' }} />
           </div>
           <div className="responsive-spec-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '0', background: '#ffffff', borderRadius: '28px', overflow: 'hidden', boxShadow: '0 25px 60px -15px rgba(0,0,0,0.1)' }}>
-             <div style={{ display: 'grid', gridTemplateRows: '1fr 1fr', gap: '1px', background: 'var(--silver-dark)' }}>
+             <div className="inner-spec-grid" style={{ display: 'grid', gridTemplateRows: '1fr 1fr', gap: '1px', background: 'var(--silver-dark)' }}>
                 {[
                   { src: '/dg1 (3).jpeg', label: 'AEROSPACE Glass Partition System Slim Line Fix 25x45mm (Black Finish) 2500mm' },
                   { src: '/dg1 (1).jpeg', label: 'AEROSPACE Glass Partition System Slim Line Male Female 25x45mm (Black Finish) 2500mm' }
@@ -185,7 +185,7 @@ export default function HomePage() {
       </section>
 
       {/* MY NEW SECTION 3: GRID PARTITION */}
-      <section style={{ padding: '6rem 0', background: '#ffffff' }}>
+      <section style={{ padding: '3.5rem 0', background: '#ffffff' }}>
         <div className="container-main">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <h2 className="section-title" style={{ fontSize: '1rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-mid)', fontWeight: 600 }}>Grid Series</h2>
@@ -197,7 +197,7 @@ export default function HomePage() {
                 <Image src="/121.jpeg" alt="Grid Partition Main" fill style={{ objectFit: 'cover' }} />
                 <div style={{ position: 'absolute', inset: 0, background: 'rgba(15,23,42,0.2)' }} />
              </div>
-             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1px', background: 'var(--silver-dark)' }}>
+             <div className="inner-spec-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1px', background: 'var(--silver-dark)' }}>
                 {[
                   { label: 'AEROSPACE Glass Partition System Slim Line Fix 25x45mm (Black Finish) 2500mm', img: '/gp1 (1).jpeg' },
                   { label: 'AEROSPACE Glass Partition System Slim Line Male Female 25x45mm (Black Finish) 2500mm', img: '/gp1 (2).jpeg' },
@@ -216,7 +216,7 @@ export default function HomePage() {
       </section>
 
       {/* MY NEW SECTION 4: SINGLE GLAZE */}
-      <section style={{ padding: '6rem 0', background: '#F8FAFC' }}>
+      <section style={{ padding: '3.5rem 0', background: '#F8FAFC' }}>
         <div className="container-main">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <h2 className="section-title" style={{ fontSize: '1rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-mid)', fontWeight: 600 }}>Minimalist Series</h2>
@@ -227,7 +227,7 @@ export default function HomePage() {
              <div style={{ position: 'relative', height: '500px' }}>
                 <Image src="/hm1 (1).jpeg" alt="Single Glaze Main" fill style={{ objectFit: 'cover' }} />
              </div>
-             <div style={{ display: 'grid', gridTemplateRows: 'repeat(3, 1fr)', gap: '1px', background: 'var(--silver-dark)' }}>
+             <div className="inner-spec-grid" style={{ display: 'grid', gridTemplateRows: 'repeat(3, 1fr)', gap: '1px', background: 'var(--silver-dark)' }}>
                 {[
                   'AEROSPACE Glass Partition System Slim Line Fix 25x45mm (Black Finish) 2500mm',
                   'AEROSPACE Glass Partition System Slim Line Male Female 25x45mm (Black Finish) 2500mm',
@@ -246,13 +246,13 @@ export default function HomePage() {
       </section>
 
       {/* WHY CHOOSE US (RESTORED) */}
-      <section className="section-padding section-white">
+      <section className="section-padding section-white" style={{ padding: '3.5rem 0' }}>
         <div className="container-main">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <div className="gold-bar" style={{ margin: '0 auto 1.25rem' }} />
             <h2 className="section-title">The Aluminium Profile Partner Built for Pros</h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
+          <div className="differentiators-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
             {differentiators.map((item, i) => (
               <div key={i} className="card-glass" style={{ padding: '3rem', background: '#f8fafc', borderRadius: '24px', transition: 'all 0.3s' }}>
                 <div style={{ fontSize: '3rem', marginBottom: '1.5rem' }}>{item.icon}</div>
@@ -265,7 +265,7 @@ export default function HomePage() {
       </section>
 
       {/* SOLUTIONS SECTION (RESTORED Zig-Zag) */}
-      <section className="section-padding section-silver">
+      <section className="section-padding section-silver" style={{ padding: '3.5rem 0' }}>
         <div className="container-main">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <div className="gold-bar" style={{ margin: '0 auto 1.5rem' }} />
@@ -307,13 +307,13 @@ export default function HomePage() {
       </section>
 
       {/* INDUSTRIES GRID (RESTORED - 8 items in 4 columns) */}
-      <section className="section-padding section-white">
+      <section className="section-padding section-white" style={{ padding: '3.5rem 0' }}>
         <div className="container-main">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <div className="gold-bar" style={{ margin: '0 auto 1.25rem' }} />
             <h2 className="section-title">Built for Every Environment</h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.5rem' }}>
+          <div className="industries-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.5rem' }}>
             {industries.map((ind, i) => (
               <div key={i} className="hover-scale" style={{ position: 'relative', height: '260px', borderRadius: '20px', overflow: 'hidden', cursor: 'pointer' }}>
                 <Image src={ind.img} alt={ind.name} fill style={{ objectFit: 'cover' }} />
@@ -327,13 +327,13 @@ export default function HomePage() {
       </section>
 
       {/* PROCESS STEPS (RESTORED) */}
-      <section className="section-padding" style={{ background: 'var(--navy)' }}>
+      <section className="section-padding" style={{ padding: '3.5rem 0', background: 'var(--navy)' }}>
         <div className="container-main">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <div className="gold-bar" style={{ margin: '0 auto 1.5rem' }} />
             <h2 className="section-title" style={{ color: 'white' }}>Enquiry to Installation in 4 Steps</h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '2rem' }}>
+          <div className="steps-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '2rem' }}>
             {steps.map((step, i) => (
               <div key={i} style={{ padding: '3rem 2rem', background: 'rgba(255,255,255,0.03)', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.08)', textAlign: 'center' }}>
                 <div style={{ width: '60px', height: '60px', background: 'var(--gold)', color: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 900, fontSize: '1.3rem', margin: '0 auto 1.5rem' }}>{step.num}</div>
@@ -348,23 +348,19 @@ export default function HomePage() {
       <TestimonialSlider />
 
       {/* FEATURED PROJECTS SHOWCASE (RESTORED WITH ZOOM EFFECT) */}
-      <section className="section-padding section-white">
+      <section className="section-padding section-white" style={{ padding: '3.5rem 0' }}>
         <div className="container-main">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <div className="gold-bar" style={{ margin: '0 auto 1.25rem' }} />
             <h2 className="section-title">Featured Project Showcase</h2>
             <p className="section-subtitle" style={{ margin: '0 auto' }}>Premium aluminium and glass installations across India.</p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
+          <div className="projects-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
             {[
               { img: '/h1.jpeg', title: 'Premium Office Partition' },
               { img: '/h2.jpeg', title: 'Luxury Retail Glass' },
               { img: '/h3.jpeg', title: 'Modern Commercial System' },
-              { img: '/h4.jpeg', title: 'Acoustic Workspace Solution' },
-              { img: '/03 (3).jpeg', title: 'Single Glaze System' },
-              { img: '/03 (1).jpeg', title: 'Double Glaze System' },
-              { img: '/03 (4).jpeg', title: 'Demountable System' },
-              { img: '/04.jpeg', title: 'Frameless Glass System' }
+              { img: '/h4.jpeg', title: 'Acoustic Workspace Solution' }
             ].map((proj, i) => (
               <div key={i} className="hover-scale" style={{ position: 'relative', borderRadius: '24px', overflow: 'hidden', aspectRatio: '4/5', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}>
                 <Image src={proj.img} alt={proj.title} fill style={{ objectFit: 'cover' }} />
@@ -378,7 +374,7 @@ export default function HomePage() {
       </section>
 
       {/* FINAL CTA BAND (RESTORED Premium Style) */}
-      <section style={{ background: '#F8FAFC', padding: '6rem 0', position: 'relative', overflow: 'hidden', borderTop: '1px solid #e2e8f0' }}>
+      <section style={{ background: '#F8FAFC', padding: '3.5rem 0', position: 'relative', overflow: 'hidden', borderTop: '1px solid #e2e8f0' }}>
         <div style={{ position: 'absolute', top: '-100px', right: '-100px', width: '500px', height: '500px', borderRadius: '50%', background: 'rgba(185, 28, 28, 0.04)', pointerEvents: 'none' }} />
         <div className="container-main" style={{ textAlign: 'center', position: 'relative', zIndex: 1 }}>
           <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3.2rem)', color: 'var(--navy)', fontWeight: 950, marginBottom: '1.5rem' }}>Ready to Specify? Get a Quotation.</h2>
@@ -401,9 +397,24 @@ export default function HomePage() {
         .hover-scale { transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
         .hover-scale:hover { transform: scale(1.08); }
         .zigzag-row { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; alignItems: center; }
+
         @media (max-width: 1024px) {
            .zigzag-row { grid-template-columns: 1fr; gap: 3rem; }
            .industries-grid { grid-template-columns: repeat(2, 1fr) !important; }
+           .zigzag-image { order: -1; }
+        }
+
+        @media (max-width: 768px) {
+           .hero-slider { height: 70vh; }
+           .hero-content { padding: 0 5%; text-align: center; justify-content: center; }
+           .responsive-spec-row { grid-template-columns: 1fr !important; }
+           .inner-spec-grid { grid-template-columns: 1fr !important; }
+           .differentiators-grid { grid-template-columns: 1fr !important; }
+           .industries-grid { grid-template-columns: 1fr !important; }
+           .steps-grid { grid-template-columns: 1fr !important; }
+           .projects-grid { grid-template-columns: 1fr !important; }
+           .inner-spec-grid div { flex-direction: column; text-align: center; }
+           .responsive-spec-row div:first-child { height: 350px !important; }
         }
       `}</style>
     </div>
