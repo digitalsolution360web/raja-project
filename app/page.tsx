@@ -360,7 +360,11 @@ export default function HomePage() {
               { img: '/h1.jpeg', title: 'Premium Office Partition' },
               { img: '/h2.jpeg', title: 'Luxury Retail Glass' },
               { img: '/h3.jpeg', title: 'Modern Commercial System' },
-              { img: '/h4.jpeg', title: 'Acoustic Workspace Solution' }
+              { img: '/h4.jpeg', title: 'Acoustic Workspace Solution' },
+              { img: '/03 (3).jpeg', title: 'Single Glaze System' },
+              { img: '/03 (1).jpeg', title: 'Double Glaze System' },
+              { img: '/03 (4).jpeg', title: 'Demountable System' },
+              { img: '/04.jpeg', title: 'Frameless Glass System' }
             ].map((proj, i) => (
               <div key={i} className="hover-scale" style={{ position: 'relative', borderRadius: '24px', overflow: 'hidden', aspectRatio: '4/5', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}>
                 <Image src={proj.img} alt={proj.title} fill style={{ objectFit: 'cover' }} />
