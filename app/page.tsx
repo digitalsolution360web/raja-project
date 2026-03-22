@@ -123,27 +123,27 @@ export default function HomePage() {
             <div className="gold-bar" style={{ margin: '1.5rem auto' }} />
           </div>
           <div className="responsive-spec-row" style={{ display: 'grid', gridTemplateColumns: 'minmax(300px, 1.2fr) minmax(300px, 1fr)', gap: '0', background: '#F8FAFC', borderRadius: '28px', overflow: 'hidden', boxShadow: '0 25px 60px -15px rgba(0,0,0,0.1)' }}>
-             <div style={{ position: 'relative', height: '600px' }}>
-                <Image src="/111.jpeg" alt="Aerospace Door Frame" fill style={{ objectFit: 'cover' }} />
-                <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '3rem', background: 'linear-gradient(to top, rgba(15,23,42,1), transparent)', color: 'white' }}>
-                   <p style={{ fontSize: '0.8rem', fontWeight: 800, color: 'var(--accent-light)', marginBottom: '0.5rem', letterSpacing: '0.1em' }}>FLAGSHIP SERIES</p>
-                   <h4 style={{ fontSize: '1.6rem', fontWeight: 800 }}>Aerospace Glass Partition Aluminum Door Frame</h4>
-                </div>
-             </div>
-             <div className="inner-spec-grid" style={{ display: 'grid', gridTemplateRows: 'repeat(3, 1fr)', gap: '1px', background: 'var(--silver-dark)' }}>
-                {[
-                  { src: '/122.jpeg', label: 'Aerospace Glass Partition System Slim Line Door Frame 45x50 Mm (Black Finish) 2500mm' },
-                  { src: '/124.jpeg', label: 'Aerospace Glass Partition System Style Door Fix 35x60mm (Black Finish) 2500mm' },
-                  { src: '/126.jpeg', label: 'Aerospace Glass Partition Style Door Male Female Profile 35x60mm (Black Finish) 1800mm' }
-                ].map((item, i) => (
-                  <div key={i} style={{ background: '#ffffff', padding: '1.5rem', display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-                    <div style={{ width: '100px', height: '100px', position: 'relative', flexShrink: 0 }}>
-                      <Image src={item.src} alt="Profile" fill style={{ objectFit: 'contain' }} />
-                    </div>
-                    <p style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--navy)', lineHeight: 1.4 }}>{item.label}</p>
+            <div style={{ position: 'relative', height: '600px' }}>
+              <Image src="/111.jpeg" alt="Aerospace Door Frame" fill style={{ objectFit: 'cover' }} />
+              <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '3rem', background: 'linear-gradient(to top, rgba(15,23,42,1), transparent)', color: 'white' }}>
+                <p style={{ fontSize: '0.8rem', fontWeight: 800, color: 'var(--accent-light)', marginBottom: '0.5rem', letterSpacing: '0.1em' }}>FLAGSHIP SERIES</p>
+                <h4 style={{ fontSize: '1.6rem', fontWeight: 800 }}>Aerospace Glass Partition Aluminum Door Frame</h4>
+              </div>
+            </div>
+            <div className="inner-spec-grid" style={{ display: 'grid', gridTemplateRows: 'repeat(3, 1fr)', gap: '1px', background: 'var(--silver-dark)' }}>
+              {[
+                { src: '/122.jpeg', label: 'Aerospace Glass Partition System Slim Line Door Frame 45x50 Mm (Black Finish) 2500mm' },
+                { src: '/124.jpeg', label: 'Aerospace Glass Partition System Style Door Fix 35x60mm (Black Finish) 2500mm' },
+                { src: '/126.jpeg', label: 'Aerospace Glass Partition Style Door Male Female Profile 35x60mm (Black Finish) 1800mm' }
+              ].map((item, i) => (
+                <div key={i} style={{ background: '#ffffff', padding: '1.5rem', display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+                  <div style={{ width: '100px', height: '100px', position: 'relative', flexShrink: 0 }}>
+                    <Image src={item.src} alt="Profile" fill style={{ objectFit: 'contain' }} />
                   </div>
-                ))}
-             </div>
+                  <p style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--navy)', lineHeight: 1.4 }}>{item.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -157,29 +157,29 @@ export default function HomePage() {
             <div className="gold-bar" style={{ margin: '1.5rem auto' }} />
           </div>
           <div className="responsive-spec-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '0', background: '#ffffff', borderRadius: '28px', overflow: 'hidden', boxShadow: '0 25px 60px -15px rgba(0,0,0,0.1)' }}>
-             <div className="inner-spec-grid" style={{ display: 'grid', gridTemplateRows: '1fr 1fr', gap: '1px', background: 'var(--silver-dark)' }}>
-                {[
-                  { src: '/dg1 (3).jpeg', label: 'AEROSPACE Glass Partition System Slim Line Fix 25x45mm (Black Finish) 2500mm' },
-                  { src: '/dg1 (1).jpeg', label: 'AEROSPACE Glass Partition System Slim Line Male Female 25x45mm (Black Finish) 2500mm' }
-                ].map((item, i) => (
-                  <div key={i} style={{ background: '#ffffff', padding: '2rem', display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-                    <div style={{ width: '140px', height: '140px', position: 'relative', flexShrink: 0 }}>
-                      <Image src={item.src} alt="DG Profile" fill style={{ objectFit: 'contain' }} />
-                    </div>
-                    <div>
-                      <p style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--navy)', marginBottom: '0.5rem' }}>{item.label}</p>
-                      {i === 1 && <p style={{ fontSize: '0.75rem', color: 'var(--accent)', fontWeight: 700 }}>AEROSPACE Glass Partition System Slim Line Door Frame 45x50 Mm (Black Finish) 2500mm</p>}
-                    </div>
+            <div className="inner-spec-grid" style={{ display: 'grid', gridTemplateRows: '1fr 1fr', gap: '1px', background: 'var(--silver-dark)' }}>
+              {[
+                { src: '/dg1 (3).jpeg', label: 'AEROSPACE Glass Partition System Slim Line Fix 25x45mm (Black Finish) 2500mm' },
+                { src: '/dg1 (1).jpeg', label: 'AEROSPACE Glass Partition System Slim Line Male Female 25x45mm (Black Finish) 2500mm' }
+              ].map((item, i) => (
+                <div key={i} style={{ background: '#ffffff', padding: '2rem', display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+                  <div style={{ width: '140px', height: '140px', position: 'relative', flexShrink: 0 }}>
+                    <Image src={item.src} alt="DG Profile" fill style={{ objectFit: 'contain' }} />
                   </div>
-                ))}
-             </div>
-             <div style={{ position: 'relative', height: '600px' }}>
-                <Image src="/dg1 (2).jpeg" alt="Double Glazed Main" fill style={{ objectFit: 'cover' }} />
-                <div style={{ position: 'absolute', top: '40px', right: '40px', background: 'rgba(255,255,255,0.95)', backdropFilter: 'blur(10px)', padding: '1.5rem', borderRadius: '16px', border: '1px solid rgba(15,23,42,0.1)' }}>
-                  <p style={{ fontWeight: 900, color: 'var(--navy)', fontSize: '0.95rem' }}>Acoustic Rating: 52dB</p>
-                  <p style={{ fontSize: '0.8rem', color: 'var(--text-mid)', marginTop: '0.2rem' }}>Premium Demountable Profile</p>
+                  <div>
+                    <p style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--navy)', marginBottom: '0.5rem' }}>{item.label}</p>
+                    {i === 1 && <p style={{ fontSize: '0.75rem', color: 'var(--accent)', fontWeight: 700 }}>AEROSPACE Glass Partition System Slim Line Door Frame 45x50 Mm (Black Finish) 2500mm</p>}
+                  </div>
                 </div>
-             </div>
+              ))}
+            </div>
+            <div style={{ position: 'relative', height: '600px' }}>
+              <Image src="/dg1 (2).jpeg" alt="Double Glazed Main" fill style={{ objectFit: 'cover' }} />
+              <div style={{ position: 'absolute', top: '40px', right: '40px', background: 'rgba(255,255,255,0.95)', backdropFilter: 'blur(10px)', padding: '1.5rem', borderRadius: '16px', border: '1px solid rgba(15,23,42,0.1)' }}>
+                <p style={{ fontWeight: 900, color: 'var(--navy)', fontSize: '0.95rem' }}>Acoustic Rating: 52dB</p>
+                <p style={{ fontSize: '0.8rem', color: 'var(--text-mid)', marginTop: '0.2rem' }}>Premium Demountable Profile</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -193,24 +193,24 @@ export default function HomePage() {
             <div className="gold-bar" style={{ margin: '1.5rem auto' }} />
           </div>
           <div style={{ display: 'grid', gridTemplateRows: '450px auto', gap: '0', background: '#F8FAFC', borderRadius: '28px', overflow: 'hidden', boxShadow: '0 25px 60px -15px rgba(0,0,0,0.1)' }}>
-             <div style={{ position: 'relative' }}>
-                <Image src="/121.jpeg" alt="Grid Partition Main" fill style={{ objectFit: 'cover' }} />
-                <div style={{ position: 'absolute', inset: 0, background: 'rgba(15,23,42,0.2)' }} />
-             </div>
-             <div className="inner-spec-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1px', background: 'var(--silver-dark)' }}>
-                {[
-                  { label: 'AEROSPACE Glass Partition System Slim Line Fix 25x45mm (Black Finish) 2500mm', img: '/gp1 (1).jpeg' },
-                  { label: 'AEROSPACE Glass Partition System Slim Line Male Female 25x45mm (Black Finish) 2500mm', img: '/gp1 (2).jpeg' },
-                  { label: 'AEROSPACE Glass Partition System Slim Line Door Frame 45x50 Mm (Black Finish) 2500mm', img: '/gp1 (3).jpeg' }
-                ].map((item, i) => (
-                  <div key={i} style={{ background: '#ffffff', padding: '2rem', display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-                    <div style={{ width: '60px', height: '60px', position: 'relative', flexShrink: 0 }}>
-                      <Image src={item.img} alt="GP Profile" fill style={{ objectFit: 'contain' }} />
-                    </div>
-                    <p style={{ fontSize: '0.85rem', fontWeight: 800, color: 'var(--navy)' }}>{item.label}</p>
+            <div style={{ position: 'relative' }}>
+              <Image src="/121.jpeg" alt="Grid Partition Main" fill style={{ objectFit: 'cover' }} />
+              <div style={{ position: 'absolute', inset: 0, background: 'rgba(15,23,42,0.2)' }} />
+            </div>
+            <div className="inner-spec-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1px', background: 'var(--silver-dark)' }}>
+              {[
+                { label: 'AEROSPACE Glass Partition System Slim Line Fix 25x45mm (Black Finish) 2500mm', img: '/gp1 (1).jpeg' },
+                { label: 'AEROSPACE Glass Partition System Slim Line Male Female 25x45mm (Black Finish) 2500mm', img: '/gp1 (2).jpeg' },
+                { label: 'AEROSPACE Glass Partition System Slim Line Door Frame 45x50 Mm (Black Finish) 2500mm', img: '/gp1 (3).jpeg' }
+              ].map((item, i) => (
+                <div key={i} style={{ background: '#ffffff', padding: '2rem', display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+                  <div style={{ width: '60px', height: '60px', position: 'relative', flexShrink: 0 }}>
+                    <Image src={item.img} alt="GP Profile" fill style={{ objectFit: 'contain' }} />
                   </div>
-                ))}
-             </div>
+                  <p style={{ fontSize: '0.85rem', fontWeight: 800, color: 'var(--navy)' }}>{item.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -224,23 +224,23 @@ export default function HomePage() {
             <div className="gold-bar" style={{ margin: '1.5rem auto' }} />
           </div>
           <div className="responsive-spec-row" style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '0', background: '#ffffff', borderRadius: '28px', overflow: 'hidden', boxShadow: '0 25px 60px -15px rgba(0,0,0,0.1)' }}>
-             <div style={{ position: 'relative', height: '500px' }}>
-                <Image src="/hm1 (1).jpeg" alt="Single Glaze Main" fill style={{ objectFit: 'cover' }} />
-             </div>
-             <div className="inner-spec-grid" style={{ display: 'grid', gridTemplateRows: 'repeat(3, 1fr)', gap: '1px', background: 'var(--silver-dark)' }}>
-                {[
-                  'AEROSPACE Glass Partition System Slim Line Fix 25x45mm (Black Finish) 2500mm',
-                  'AEROSPACE Glass Partition System Slim Line Male Female 25x45mm (Black Finish) 2500mm',
-                  'AEROSPACE Glass Partition System Slim Line Door Frame 45x50 Mm (Black Finish) 2500mm'
-                ].map((spec, i) => (
-                  <div key={i} style={{ background: '#ffffff', padding: '1.5rem', display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-                    <div style={{ width: '80px', height: '80px', position: 'relative', flexShrink: 0 }}>
-                      <Image src={`/sg1 (${i + 1}).jpeg`} alt="Spec" fill style={{ objectFit: 'contain' }} />
-                    </div>
-                    <p style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--navy)' }}>{spec}</p>
+            <div style={{ position: 'relative', height: '500px' }}>
+              <Image src="/hm1 (1).jpeg" alt="Single Glaze Main" fill style={{ objectFit: 'cover' }} />
+            </div>
+            <div className="inner-spec-grid" style={{ display: 'grid', gridTemplateRows: 'repeat(3, 1fr)', gap: '1px', background: 'var(--silver-dark)' }}>
+              {[
+                'AEROSPACE Glass Partition System Slim Line Fix 25x45mm (Black Finish) 2500mm',
+                'AEROSPACE Glass Partition System Slim Line Male Female 25x45mm (Black Finish) 2500mm',
+                'AEROSPACE Glass Partition System Slim Line Door Frame 45x50 Mm (Black Finish) 2500mm'
+              ].map((spec, i) => (
+                <div key={i} style={{ background: '#ffffff', padding: '1.5rem', display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+                  <div style={{ width: '80px', height: '80px', position: 'relative', flexShrink: 0 }}>
+                    <Image src={`/sg1 (${i + 1}).jpeg`} alt="Spec" fill style={{ objectFit: 'contain' }} />
                   </div>
-                ))}
-             </div>
+                  <p style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--navy)' }}>{spec}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -267,44 +267,44 @@ export default function HomePage() {
       {/* RESIDENTIAL & COMMERCIAL SOLUTIONS */}
       <section style={{ padding: '3.5rem 0', background: '#f8fafc' }}>
         <div className="container-main">
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
 
             {/* Residential Section */}
-            <div className="zigzag-row" style={{ gap: '3rem', alignItems: 'flex-start' }}>
-              <div className="zigzag-image" style={{ borderRadius: '24px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}>
-                <Image src="/residential-solutions.png" alt="Residential Aluminium Sliding" width={700} height={500} style={{ width: '100%', height: 'auto' }} />
+            <div className="zigzag-row" style={{ gap: '2.5rem', alignItems: 'center' }}>
+              <div className="zigzag-image" style={{ borderRadius: '20px', overflow: 'hidden', boxShadow: '0 12px 30px rgba(0,0,0,0.08)', maxWidth: '420px' }}>
+                <Image src="/residential-solutions.png" alt="Residential Aluminium Sliding" width={500} height={380} style={{ width: '100%', height: 'auto' }} />
               </div>
               <div>
-                <h3 style={{ fontSize: '1.6rem', fontWeight: 900, color: 'var(--accent)', marginBottom: '1rem' }}>Residential Aluminum Sliding and Glass Partition Works</h3>
-                <p style={{ color: 'var(--text-mid)', fontSize: '0.95rem', lineHeight: 1.8, marginBottom: '1.25rem' }}>
+                <h3 style={{ fontSize: '1.4rem', fontWeight: 900, color: 'var(--accent)', marginBottom: '0.75rem' }}>Residential Aluminum Sliding and Glass Partition Works</h3>
+                <p style={{ color: 'var(--text-mid)', fontSize: '0.9rem', lineHeight: 1.75, marginBottom: '1rem' }}>
                   At <strong>Mumbai Aluminium and Glass</strong>, we specialize in providing top-quality <strong>aluminium sliding windows</strong>, doors, and <strong>glass partition solutions</strong> for both <strong>residential</strong> and <strong>commercial</strong> spaces. With years of expertise, we offer innovative designs that enhance the aesthetics, functionality, and security of any building.
                 </p>
-                <h4 style={{ fontSize: '1.2rem', fontWeight: 900, color: 'var(--navy)', marginBottom: '0.75rem' }}>Residential Aluminium Sliding &amp; Glass Partition Solutions</h4>
-                <p style={{ color: 'var(--text-mid)', fontSize: '0.95rem', lineHeight: 1.8, marginBottom: '1.5rem' }}>
+                <h4 style={{ fontSize: '1.05rem', fontWeight: 900, color: 'var(--navy)', marginBottom: '0.5rem' }}>Residential Aluminium Sliding &amp; Glass Partition Solutions</h4>
+                <p style={{ color: 'var(--text-mid)', fontSize: '0.9rem', lineHeight: 1.75, marginBottom: '1.25rem' }}>
                   For your home, we offer <strong>aluminium sliding windows</strong> that bring style, durability, and energy efficiency. Whether it&apos;s for the <strong>bedroom</strong>, <strong>living room</strong>, <strong>bathroom</strong>, or even <strong>balconies</strong>, our sliding windows are designed to suit your space and provide easy functionality. We also offer sleek and modern <strong>glass partitions</strong> for interiors like <strong>living rooms</strong>, <strong>home offices</strong>, or <strong>kitchen areas</strong>, creating a seamless flow between rooms while allowing for natural light to fill the space.
                 </p>
-                <a href="tel:+919987020538" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.75rem 1.5rem', border: '1px solid #e2e8f0', borderRadius: '50px', color: 'var(--navy)', fontWeight: 800, fontSize: '0.95rem', textDecoration: 'none', marginBottom: '0.5rem' }}>📞 +91 9987020538</a>
-                <p style={{ fontWeight: 800, color: 'var(--accent)', fontSize: '0.95rem', marginTop: '0.75rem' }}>Book an expert consultation today!</p>
+                <a href="tel:+918854935836" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.6rem 1.25rem', border: '1px solid #e2e8f0', borderRadius: '50px', color: 'var(--navy)', fontWeight: 800, fontSize: '0.9rem', textDecoration: 'none', marginBottom: '0.5rem' }}>📞 +91 8854935836</a>
+                <p style={{ fontWeight: 800, color: 'var(--accent)', fontSize: '0.9rem', marginTop: '0.5rem' }}>Book an expert consultation today!</p>
               </div>
             </div>
 
             {/* Commercial Section */}
-            <div className="zigzag-row" style={{ gap: '3rem', alignItems: 'flex-start' }}>
+            <div className="zigzag-row" style={{ gap: '2.5rem', alignItems: 'center' }}>
               <div>
-                <h3 style={{ fontSize: '1.6rem', fontWeight: 900, color: 'var(--accent)', marginBottom: '1rem' }}>Commercial Aluminium Sliding &amp; Glass Partition Solutions</h3>
-                <p style={{ color: 'var(--text-mid)', fontSize: '0.95rem', lineHeight: 1.8, marginBottom: '1.25rem' }}>
+                <h3 style={{ fontSize: '1.4rem', fontWeight: 900, color: 'var(--accent)', marginBottom: '0.75rem' }}>Commercial Aluminium Sliding &amp; Glass Partition Solutions</h3>
+                <p style={{ color: 'var(--text-mid)', fontSize: '0.9rem', lineHeight: 1.75, marginBottom: '1rem' }}>
                   For commercial properties, we specialize in <strong>aluminium sliding doors and windows</strong> that provide security, ease of use, and modern design. These are perfect for <strong>offices</strong>, <strong>retail stores</strong>, and <strong>commercial buildings</strong>, offering both durability and elegance. Additionally, our <strong>aluminium glass partitions</strong> are ideal for <strong>office cabins</strong>, <strong>conference rooms</strong>, or open-plan spaces, providing a clean, modern look while maximizing natural light and enhancing productivity.
                 </p>
-                <ul style={{ listStyle: 'none', padding: 0, marginBottom: '1.5rem' }}>
-                  <li style={{ marginBottom: '0.5rem', fontSize: '0.9rem', color: 'var(--text-mid)' }}>• <strong>Expertise &amp; Customization:</strong> We offer customized solutions to fit the unique needs of your residential or commercial space.</li>
-                  <li style={{ marginBottom: '0.5rem', fontSize: '0.9rem', color: 'var(--text-mid)' }}>• <strong>Quality Products:</strong> We use high-quality materials, ensuring longevity and performance.</li>
-                  <li style={{ marginBottom: '0.5rem', fontSize: '0.9rem', color: 'var(--text-mid)' }}>• <strong>Timely Execution:</strong> We understand the importance of deadlines and ensure that projects are completed on time.</li>
-                  <li style={{ marginBottom: '0.5rem', fontSize: '0.9rem', color: 'var(--text-mid)' }}>• <strong>Professional Installation &amp; Repair Services:</strong> Our team handles installation and repair services with precision, ensuring perfect results every time.</li>
+                <ul style={{ listStyle: 'none', padding: 0, marginBottom: '1.25rem' }}>
+                  <li style={{ marginBottom: '0.4rem', fontSize: '0.85rem', color: 'var(--text-mid)' }}>• <strong>Expertise &amp; Customization:</strong> We offer customized solutions to fit the unique needs of your residential or commercial space.</li>
+                  <li style={{ marginBottom: '0.4rem', fontSize: '0.85rem', color: 'var(--text-mid)' }}>• <strong>Quality Products:</strong> We use high-quality materials, ensuring longevity and performance.</li>
+                  <li style={{ marginBottom: '0.4rem', fontSize: '0.85rem', color: 'var(--text-mid)' }}>• <strong>Timely Execution:</strong> We understand the importance of deadlines and ensure that projects are completed on time.</li>
+                  <li style={{ marginBottom: '0.4rem', fontSize: '0.85rem', color: 'var(--text-mid)' }}>• <strong>Professional Installation &amp; Repair Services:</strong> Our team handles installation and repair services with precision, ensuring perfect results every time.</li>
                 </ul>
-                <a href="tel:+919987020538" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.75rem 1.5rem', border: '1px solid #e2e8f0', borderRadius: '50px', color: 'var(--navy)', fontWeight: 800, fontSize: '0.95rem', textDecoration: 'none' }}>📞 +91 9987020538</a>
+                <a href="tel:+918854935836" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.6rem 1.25rem', border: '1px solid #e2e8f0', borderRadius: '50px', color: 'var(--navy)', fontWeight: 800, fontSize: '0.9rem', textDecoration: 'none' }}>📞 +91 8854935836</a>
               </div>
-              <div className="zigzag-image" style={{ borderRadius: '24px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}>
-                <Image src="/commercial-solutions.png" alt="Commercial Glass Partition" width={700} height={500} style={{ width: '100%', height: 'auto' }} />
+              <div className="zigzag-image" style={{ borderRadius: '20px', overflow: 'hidden', boxShadow: '0 12px 30px rgba(0,0,0,0.08)', maxWidth: '420px' }}>
+                <Image src="/commercial-solutions.png" alt="Commercial Glass Partition" width={500} height={380} style={{ width: '100%', height: 'auto' }} />
               </div>
             </div>
 
