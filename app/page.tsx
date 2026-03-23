@@ -91,6 +91,27 @@ function HeroSlider() {
 }
 
 export default function HomePage() {
+  const doubleGlazeSlides = ['/dg1 (1).jpeg', '/do1.jpeg'];
+  const [doubleGlazeSlide, setDoubleGlazeSlide] = useState(0);
+  const singleGlazeSlides = ['/slide1.jpeg', '/slide2.jpeg', '/slide3.jpeg', '/slide4.jpeg', '/slide5.jpeg'];
+  const [singleGlazeSlide, setSingleGlazeSlide] = useState(0);
+
+  const nextDoubleGlazeSlide = useCallback(() => {
+    setDoubleGlazeSlide((prev) => (prev + 1) % doubleGlazeSlides.length);
+  }, [doubleGlazeSlides.length]);
+
+  useEffect(() => {
+    const timer = setInterval(nextDoubleGlazeSlide, 3500);
+    return () => clearInterval(timer);
+  }, [nextDoubleGlazeSlide]);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setSingleGlazeSlide((prev) => (prev + 1) % singleGlazeSlides.length);
+    }, 3200);
+    return () => clearInterval(timer);
+  }, [singleGlazeSlides.length]);
+
   return (
     <div>
       <HeroSlider />
@@ -153,30 +174,48 @@ export default function HomePage() {
         <div className="container-main">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <h2 className="section-title" style={{ fontSize: '1rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-mid)', fontWeight: 600 }}>Architectural Series</h2>
-            <h3 style={{ fontSize: 'clamp(1.5rem, 5vw, 2.75rem)', fontWeight: 900, color: 'var(--navy)' }}>Double Glazed Partition</h3>
+            <h3 style={{ fontSize: 'clamp(1.5rem, 5vw, 2.75rem)', fontWeight: 900, color: 'var(--navy)' }}>Double Glaze Partition</h3>
             <div className="gold-bar" style={{ margin: '1.5rem auto' }} />
           </div>
           <div className="responsive-spec-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '0', background: '#ffffff', borderRadius: '28px', overflow: 'hidden', boxShadow: '0 25px 60px -15px rgba(0,0,0,0.1)' }}>
-            <div className="inner-spec-grid" style={{ display: 'grid', gridTemplateRows: '1fr 1fr', gap: '1px', background: 'var(--silver-dark)' }}>
-              {[
-                { src: '/dg1 (3).jpeg', label: 'AEROSPACE Glass Partition System Slim Line Fix 25x100mm (Black Finish) 2500mm' }
-               
-              ].map((item, i) => (
-                <div key={i} style={{ background: '#ffffff', padding: '2rem', display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-                  <div style={{ width: '140px', height: '140px', position: 'relative', flexShrink: 0 }}>
-                 
-                  </div>
-                  <div>
-                    
-                  </div>
+            <div className="inner-spec-grid" style={{ display: 'grid', gridTemplateRows: '1fr', gap: '1px', background: 'var(--silver-dark)' }}>
+              <div style={{ background: '#ffffff', padding: '2rem', display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+                <div style={{ width: '140px', height: '140px', position: 'relative', flexShrink: 0, borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--silver-dark)' }}>
+                  <Image src="/dg1 (3).jpeg" alt="Double Glaze Partition Profile" fill style={{ objectFit: 'cover' }} />
                 </div>
-              ))}
+                <div>
+                  <p style={{ fontSize: '1rem', fontWeight: 800, color: 'var(--navy)', lineHeight: 1.4 }}>
+                    AEROSPACE Glass Partition System Slim Line Fix 25x100mm (Black Finish) 2500mm
+                  </p>
+                </div>
+              </div>
             </div>
             <div style={{ position: 'relative', height: '600px' }}>
-              <Image src="/dg1 (2).jpeg" alt="Double Glazed Main" fill style={{ objectFit: 'cover' }} />
+              {doubleGlazeSlides.map((slide, i) => (
+                <div key={slide} style={{ position: 'absolute', inset: 0, opacity: i === doubleGlazeSlide ? 1 : 0, transition: 'opacity 0.6s ease' }}>
+                  <Image src={slide} alt="Double Glaze Project" fill style={{ objectFit: 'cover' }} />
+                </div>
+              ))}
               <div style={{ position: 'absolute', top: '40px', right: '40px', background: 'rgba(255,255,255,0.95)', backdropFilter: 'blur(10px)', padding: '1.5rem', borderRadius: '16px', border: '1px solid rgba(15,23,42,0.1)' }}>
                 <p style={{ fontWeight: 900, color: 'var(--navy)', fontSize: '0.95rem' }}>Acoustic Rating: 52dB</p>
                 <p style={{ fontSize: '0.8rem', color: 'var(--text-mid)', marginTop: '0.2rem' }}>Premium Demountable Profile</p>
+              </div>
+              <div style={{ position: 'absolute', left: '50%', bottom: '18px', transform: 'translateX(-50%)', display: 'flex', gap: '0.5rem' }}>
+                {doubleGlazeSlides.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setDoubleGlazeSlide(i)}
+                    aria-label={`Slide ${i + 1}`}
+                    style={{
+                      width: '10px',
+                      height: '10px',
+                      borderRadius: '50%',
+                      border: 'none',
+                      cursor: 'pointer',
+                      background: i === doubleGlazeSlide ? '#b91c1c' : 'rgba(255,255,255,0.85)'
+                    }}
+                  />
+                ))}
               </div>
             </div>
           </div>
@@ -219,26 +258,49 @@ export default function HomePage() {
         <div className="container-main">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <h2 className="section-title" style={{ fontSize: '1rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-mid)', fontWeight: 600 }}>Minimalist Series</h2>
-            <h3 style={{ fontSize: 'clamp(1.5rem, 5vw, 2.75rem)', fontWeight: 900, color: 'var(--navy)' }}>Single Glaze 25 X25 Partition</h3>
+            <h3 style={{ fontSize: 'clamp(1.5rem, 5vw, 2.75rem)', fontWeight: 900, color: 'var(--navy)' }}>Single Glaze 25 X 25 Partition</h3>
             <div className="gold-bar" style={{ margin: '1.5rem auto' }} />
           </div>
-          <div className="responsive-spec-row" style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '0', background: '#ffffff', borderRadius: '28px', overflow: 'hidden', boxShadow: '0 25px 60px -15px rgba(0,0,0,0.1)' }}>
-            <div style={{ position: 'relative', height: '500px' }}>
-              <Image src="/hm1 (1).jpeg" alt="Single Glaze Main" fill style={{ objectFit: 'cover' }} />
-            </div>
+          <div className="responsive-spec-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '0', background: '#ffffff', borderRadius: '28px', overflow: 'hidden', boxShadow: '0 25px 60px -15px rgba(0,0,0,0.1)' }}>
             <div className="inner-spec-grid" style={{ display: 'grid', gridTemplateRows: 'repeat(3, 1fr)', gap: '1px', background: 'var(--silver-dark)' }}>
               {[
-                'AEROSPACE Glass Partition System Slim Line Fix 25x45mm (Black Finish) 2500mm',
-                'AEROSPACE Glass Partition System Slim Line Male Female 25x45mm (Black Finish) 2500mm',
-                'AEROSPACE Glass Partition System Slim Line Door Frame 45x50 Mm (Black Finish) 2500mm'
+                'AEROSPACE Glass Partition System Slim Line Fix 25x25mm (Black Finish) 2500mm',
+                'AEROSPACE Glass Partition System Slim Line Fix 25x25mm (Black Finish) 2500mm',
+                'AEROSPACE Glass Partition System Slim Line Fix 25x25mm (Black Finish) 2500mm',
               ].map((spec, i) => (
                 <div key={i} style={{ background: '#ffffff', padding: '1.5rem', display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-                  <div style={{ width: '80px', height: '80px', position: 'relative', flexShrink: 0 }}>
-                    <Image src={`/sg1 (${i + 1}).jpeg`} alt="Spec" fill style={{ objectFit: 'contain' }} />
+                  <div style={{ width: '100px', height: '100px', position: 'relative', flexShrink: 0 }}>
+                    <Image src="/g1.jpeg" alt="Slim Line Profile" fill style={{ objectFit: 'contain' }} />
                   </div>
-                  <p style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--navy)' }}>{spec}</p>
+                  <p style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--navy)', lineHeight: 1.4 }}>
+                    {spec}
+                  </p>
                 </div>
               ))}
+            </div>
+            <div style={{ position: 'relative', height: '560px' }}>
+              {singleGlazeSlides.map((slide, i) => (
+                <div key={slide} style={{ position: 'absolute', inset: 0, opacity: i === singleGlazeSlide ? 1 : 0, transition: 'opacity 0.6s ease' }}>
+                  <Image src={slide} alt={`Single Glaze Slide ${i + 1}`} fill style={{ objectFit: 'cover' }} />
+                </div>
+              ))}
+              <div style={{ position: 'absolute', left: '50%', bottom: '16px', transform: 'translateX(-50%)', display: 'flex', gap: '0.5rem' }}>
+                {singleGlazeSlides.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setSingleGlazeSlide(i)}
+                    aria-label={`Single glaze slide ${i + 1}`}
+                    style={{
+                      width: '10px',
+                      height: '10px',
+                      borderRadius: '50%',
+                      border: 'none',
+                      cursor: 'pointer',
+                      background: i === singleGlazeSlide ? '#b91c1c' : 'rgba(255,255,255,0.9)'
+                    }}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -367,10 +429,14 @@ export default function HomePage() {
           </div>
           <div className="projects-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
             {[
-              { img: '/h1.jpeg', title: 'Premium Office Partition' },
-              { img: '/h2.jpeg', title: 'Luxury Retail Glass' },
-              { img: '/h3.jpeg', title: 'Modern Commercial System' },
-              { img: '/h4.jpeg', title: 'Acoustic Workspace Solution' }
+              { img: '/showcase1.webp', title: 'Featured Project 01' },
+              { img: '/showcase2.webp', title: 'Featured Project 02' },
+              { img: '/showcase3.webp', title: 'Featured Project 03' },
+              { img: '/showcase4.webp', title: 'Featured Project 04' },
+              { img: '/showcase5.webp', title: 'Featured Project 05' },
+              { img: '/showcase6.webp', title: 'Featured Project 06' },
+              { img: '/showcase7.webp', title: 'Featured Project 07' },
+              { img: '/showcase8.webp', title: 'Featured Project 08' }
             ].map((proj, i) => (
               <div key={i} className="hover-scale" style={{ position: 'relative', borderRadius: '24px', overflow: 'hidden', aspectRatio: '4/5', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}>
                 <Image src={proj.img} alt={proj.title} fill style={{ objectFit: 'cover' }} />
@@ -448,8 +514,8 @@ export default function HomePage() {
            .industries-grid { grid-template-columns: 1fr !important; }
            .steps-grid { grid-template-columns: 1fr !important; }
            .projects-grid { grid-template-columns: 1fr !important; }
+           .responsive-spec-row > div:not(.inner-spec-grid) { height: 350px !important; }
            .inner-spec-grid div { flex-direction: column; text-align: center; }
-           .responsive-spec-row div:first-child { height: 350px !important; }
         }
       `}</style>
     </div>

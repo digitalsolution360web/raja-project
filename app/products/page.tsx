@@ -26,6 +26,10 @@ export default function ProductsPage() {
 
       <section className="section-padding section-white">
         <div className="container-main">
+          <div className="products-head">
+            <h2 className="products-head-title">Partition Collection</h2>
+            <p className="products-head-sub">Image-first catalogue for your key partition systems.</p>
+          </div>
           <div className="products-clean-grid">
             {products.map((product, idx) => (
               <article key={product.id} className="product-clean-card">
@@ -44,50 +48,82 @@ export default function ProductsPage() {
             ))}
           </div>
           <style jsx>{`
+            .products-head {
+              text-align: center;
+              margin-bottom: clamp(1.25rem, 3vw, 2.5rem);
+            }
+            .products-head-title {
+              margin: 0;
+              color: #0f172a;
+              font-size: clamp(1.5rem, 3vw, 2.2rem);
+              font-weight: 900;
+              letter-spacing: 0.01em;
+            }
+            .products-head-sub {
+              margin: 0.5rem 0 0;
+              color: #64748b;
+              font-size: 1rem;
+            }
             .products-clean-grid {
               display: grid;
-              grid-template-columns: repeat(3, minmax(0, 1fr));
+              grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+              justify-content: center;
               gap: 1.5rem;
             }
             .product-clean-card {
-              background: #fff;
-              border-radius: 16px;
+              background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+              border-radius: 20px;
               border: 1px solid #e2e8f0;
               overflow: hidden;
-              box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
-              transition: transform 0.25s ease, box-shadow 0.25s ease;
+              box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+              transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
             }
             .product-clean-card:hover {
               transform: translateY(-4px);
-              box-shadow: 0 16px 36px rgba(15, 23, 42, 0.1);
+              box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+              border-color: #cbd5e1;
             }
             .product-clean-image-wrap {
               position: relative;
               width: 100%;
-              aspect-ratio: 4 / 3;
+              aspect-ratio: 16 / 10;
               background: #f1f5f9;
+              border-bottom: 1px solid #e2e8f0;
             }
             .product-clean-title {
               margin: 0;
-              padding: 1rem 1rem 1.2rem;
+              min-height: 70px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 1rem 1.25rem;
               color: #0f172a;
-              font-size: 1rem;
-              font-weight: 800;
-              line-height: 1.35;
+              font-size: 1.05rem;
+              font-weight: 850;
+              line-height: 1.4;
               text-align: center;
             }
             @media (max-width: 1024px) {
               .products-clean-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
               }
             }
             @media (max-width: 640px) {
               .products-clean-grid {
                 grid-template-columns: 1fr;
-                gap: 1rem;
+                gap: 1.5rem;
+              }
+              .product-clean-image-wrap {
+                aspect-ratio: 4 / 3;
+              }
+              .products-head-title {
+                font-size: 1.6rem;
+              }
+              .products-head-sub {
+                font-size: 0.95rem;
               }
               .product-clean-title {
-                font-size: 0.95rem;
+                font-size: 1.1rem;
               }
             }
           `}</style>
