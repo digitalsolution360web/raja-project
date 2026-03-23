@@ -151,10 +151,14 @@ export default function AboutPage() {
       {/* Values */}
       <section className="section-padding section-white">
         <div className="container-main">
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 className="section-title">Our Values</h2>
+          <div style={{ textAlign: 'center', marginBottom: 'clamp(2.5rem, 5vw, 4rem)' }}>
+            <div className="gold-bar" style={{ margin: '0 auto 1.25rem' }} />
+            <h2 className="section-title" style={{ marginBottom: '0.5rem' }}>Our Values</h2>
+            <p className="section-subtitle" style={{ margin: '0 auto', maxWidth: '520px' }}>
+              How we work with architects, contractors and project teams every day.
+            </p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 'clamp(1.25rem, 3vw, 2rem)' }}>
             <div className="card-glass">
               <h3 style={{ color: 'var(--gold-dark)', marginBottom: '1rem' }}>01 / Precision First</h3>
               <p style={{ color: 'var(--text-mid)', lineHeight: 1.7 }}>Every extrusion is checked to dimensional tolerances before dispatch. We do not ship profiles that don't meet specification.</p>
