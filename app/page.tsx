@@ -159,16 +159,15 @@ export default function HomePage() {
           <div className="responsive-spec-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '0', background: '#ffffff', borderRadius: '28px', overflow: 'hidden', boxShadow: '0 25px 60px -15px rgba(0,0,0,0.1)' }}>
             <div className="inner-spec-grid" style={{ display: 'grid', gridTemplateRows: '1fr 1fr', gap: '1px', background: 'var(--silver-dark)' }}>
               {[
-                { src: '/dg1 (3).jpeg', label: 'AEROSPACE Glass Partition System Slim Line Fix 25x45mm (Black Finish) 2500mm' },
-                { src: '/dg1 (1).jpeg', label: 'AEROSPACE Glass Partition System Slim Line Male Female 25x45mm (Black Finish) 2500mm' }
+                { src: '/dg1 (3).jpeg', label: 'AEROSPACE Glass Partition System Slim Line Fix 25x100mm (Black Finish) 2500mm' }
+               
               ].map((item, i) => (
                 <div key={i} style={{ background: '#ffffff', padding: '2rem', display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
                   <div style={{ width: '140px', height: '140px', position: 'relative', flexShrink: 0 }}>
-                    <Image src={item.src} alt="DG Profile" fill style={{ objectFit: 'contain' }} />
+                 
                   </div>
                   <div>
-                    <p style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--navy)', marginBottom: '0.5rem' }}>{item.label}</p>
-                    {i === 1 && <p style={{ fontSize: '0.75rem', color: 'var(--accent)', fontWeight: 700 }}>AEROSPACE Glass Partition System Slim Line Door Frame 45x50 Mm (Black Finish) 2500mm</p>}
+                    
                   </div>
                 </div>
               ))}
@@ -189,7 +188,7 @@ export default function HomePage() {
         <div className="container-main">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <h2 className="section-title" style={{ fontSize: '1rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-mid)', fontWeight: 600 }}>Grid Series</h2>
-            <h3 style={{ fontSize: 'clamp(1.5rem, 5vw, 2.75rem)', fontWeight: 900, color: 'var(--navy)' }}>Single Glaze Grid Partition 24 X 45</h3>
+            <h3 style={{ fontSize: 'clamp(1.5rem, 5vw, 2.75rem)', fontWeight: 900, color: 'var(--navy)' }}>Single Glaze Grid Partition 25 X 45</h3>
             <div className="gold-bar" style={{ margin: '1.5rem auto' }} />
           </div>
           <div style={{ display: 'grid', gridTemplateRows: '450px auto', gap: '0', background: '#F8FAFC', borderRadius: '28px', overflow: 'hidden', boxShadow: '0 25px 60px -15px rgba(0,0,0,0.1)' }}>
