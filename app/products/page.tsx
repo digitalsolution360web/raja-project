@@ -47,7 +47,7 @@ const products = [
   {
     id: 'demountable-partition-system',
     sku: 'DM-100-003',
-    name: 'Demountable Partition System',
+    name: 'Double Gazed Partition',
     category: 'Demountable',
     specs: [
       { label: 'System Type', value: 'Fully demountable partition system (reusable components)' },
