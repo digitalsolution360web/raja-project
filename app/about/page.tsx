@@ -30,67 +30,120 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Story */}
-      <section className="section-padding section-white">
+      {/* Our Story — dedicated grid (fill needs explicit box; avoids broken layout) */}
+      <section className="section-padding section-white about-story-wrap">
         <div className="container-main">
-          <div className="zigzag-row">
-            <div className="zigzag-image">
-              <Image src="/4.webp" alt="Manufacturing Precision" fill style={{ objectFit: 'cover' }} />
+          <div className="about-story-grid">
+            <div className="about-story-media">
+              <Image
+                className="about-story-img"
+                src="/4.webp"
+                alt="Manufacturing and precision aluminium profiles"
+                fill
+                sizes="(max-width: 900px) 100vw, 50vw"
+                style={{ objectFit: 'cover' }}
+                priority
+              />
             </div>
-            <div>
-              <h2 className="section-title">Our Story</h2>
+            <div className="about-story-copy">
+              <div className="gold-bar" style={{ marginBottom: '1.25rem' }} />
+              <h2 className="section-title" style={{ textAlign: 'left' }}>Our Story</h2>
               <p style={{ color: 'var(--text-mid)', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '1.5rem' }}>
                 Established with a focus on engineering quality, Aerospace Aluminium Alloys began as a specialist supplier to contractors who needed reliable, high-quality profiles at competitive pricing.
               </p>
               <p style={{ color: 'var(--text-mid)', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: '1.5rem' }}>
                 Our Airoli (Navi Mumbai) facility is equipped with precision extrusion capability, enabling us to maintain tight dimensional tolerances across every batch. Our supply operations serve Maharashtra and the western seaboard, ensuring fast lead times.
               </p>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginTop: '2rem' }}>
+              <div className="about-story-locs">
                 <div>
                   <h4 style={{ color: 'var(--gold-dark)', fontWeight: 800, fontSize: '0.8rem', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Headquarters</h4>
-                  <p style={{ fontSize: '0.9rem', fontWeight: 600 }}>Airoli, Navi Mumbai</p>
+                  <p style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--navy)' }}>Airoli, Navi Mumbai</p>
                 </div>
                 <div>
                   <h4 style={{ color: 'var(--gold-dark)', fontWeight: 800, fontSize: '0.8rem', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Supply Hub</h4>
-                  <p style={{ fontSize: '0.9rem', fontWeight: 600 }}>Airoli, Navi Mumbai</p>
+                  <p style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--navy)' }}>Airoli, Navi Mumbai</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <style jsx>{`
+          .about-story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: center;
+            max-width: 100%;
+          }
+          .about-story-media {
+            position: relative;
+            width: 100%;
+            min-height: 320px;
+            aspect-ratio: 4 / 3;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+            background: linear-gradient(
+              145deg,
+              #f1f5f9 0%,
+              #e2e8f0 50%,
+              #f8fafc 100%
+            );
+          }
+          .about-story-img {
+            display: block;
+          }
+          .about-story-copy {
+            max-width: 560px;
+          }
+          .about-story-locs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            margin-top: 2rem;
+          }
+          @media (max-width: 900px) {
+            .about-story-grid {
+              grid-template-columns: 1fr;
+            }
+            .about-story-media {
+              order: -1;
+              min-height: 260px;
+              aspect-ratio: 16 / 10;
+            }
+            .about-story-copy {
+              max-width: none;
+            }
+            .about-story-locs {
+              grid-template-columns: 1fr;
+            }
+          }
+        `}</style>
       </section>
 
-      {/* Credentials Table */}
-      <section className="section-padding section-silver">
-        <div className="container-main">
-          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <h2 className="section-title">Key Facts &amp; Credentials</h2>
+      {/* Credentials — card grid (balanced, responsive, no harsh split columns) */}
+      <section className="section-padding section-silver about-credentials-section">
+        <div className="container-main about-credentials-inner">
+          <div className="about-credentials-intro">
+            <div className="gold-bar about-credentials-intro__bar" />
+            <h2 className="section-title about-credentials-intro__title">Key Facts &amp; Credentials</h2>
+            <p className="section-subtitle about-credentials-intro__sub">
+              GST-compliant supply, wide product range and PAN India reach — built for professional specification.
+            </p>
           </div>
-          <div className="card-glass" style={{ padding: 0, overflow: 'hidden' }}>
-            <table className="spec-table">
-              <tbody>
-                <tr>
-                  <td style={{ fontWeight: 700, background: 'var(--navy)', color: 'white', width: '30%' }}>GST Registered</td>
-                  <td>GST-compliant supply with full documentation for all orders</td>
-                </tr>
-                <tr>
-                  <td style={{ fontWeight: 700, background: 'var(--navy)', color: 'white' }}>Product Range</td>
-                  <td>25+ profile SKUs across single glaze, double glaze, acoustic and accessories</td>
-                </tr>
-                <tr>
-                  <td style={{ fontWeight: 700, background: 'var(--navy)', color: 'white' }}>Supply Reach</td>
-                  <td>PAN India — regular supply to Rajasthan, Maharashtra, Gujarat, Delhi NCR, MP</td>
-                </tr>
-                <tr>
-                  <td style={{ fontWeight: 700, background: 'var(--navy)', color: 'white' }}>Technical Support</td>
-                  <td>CAD drawings, installation guides, site visits for qualifying projects</td>
-                </tr>
-                <tr>
-                  <td style={{ fontWeight: 700, background: 'var(--navy)', color: 'white' }}>Finishes Available</td>
-                  <td>Mill Finish, Anodised (Silver, Champagne, Bronze), Powder Coat (Full RAL range)</td>
-                </tr>
-              </tbody>
-            </table>
+          <div className="about-credentials-grid" role="list">
+            {[
+              { label: 'GST Registered', desc: 'GST-compliant supply with full documentation for all orders' },
+              { label: 'Product Range', desc: '25+ profile SKUs across single glaze, double glaze, acoustic and accessories' },
+              { label: 'Supply Reach', desc: 'PAN India — regular supply to Rajasthan, Maharashtra, Gujarat, Delhi NCR, MP' },
+              { label: 'Technical Support', desc: 'CAD drawings, installation guides, site visits for qualifying projects' },
+              { label: 'Finishes Available', desc: 'Mill Finish, Anodised (Silver, Champagne, Bronze), Powder Coat (Full RAL range)' },
+            ].map((item, i) => (
+              <article key={i} className="about-credential-card" role="listitem">
+                <h3 className="about-credential-card__label">{item.label}</h3>
+                <p className="about-credential-card__desc">{item.desc}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -120,7 +173,7 @@ export default function AboutPage() {
 
       {/* FAQ */}
       <section className="section-padding section-silver">
-        <div className="container-main" style={{ maxWidth: '800px' }}>
+        <div className="container-main" style={{ maxWidth: '800px', paddingLeft: 'clamp(1rem, 4vw, 1.5rem)', paddingRight: 'clamp(1rem, 4vw, 1.5rem)' }}>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <div className="gold-bar" style={{ margin: '0 auto 1.25rem' }} />
             <h2 className="section-title">Frequently Asked Questions</h2>
@@ -144,11 +197,11 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section style={{ padding: '5rem 0', background: 'var(--navy)', textAlign: 'center' }}>
+      <section style={{ padding: 'clamp(3rem, 8vw, 5rem) 0', background: 'var(--navy)', textAlign: 'center' }}>
         <div className="container-main">
           <h2 className="section-title-white" style={{ marginBottom: '1rem' }}>Experience Aerospace Precision</h2>
-          <p className="section-subtitle-white" style={{ margin: '0 auto 2.5rem' }}>Download our company profile or request a sample pack today.</p>
-          <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center' }}>
+          <p className="section-subtitle-white" style={{ margin: '0 auto 2.5rem', padding: '0 1rem' }}>Download our company profile or request a sample pack today.</p>
+          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', padding: '0 1rem' }}>
              <Link href="/contact" className="btn-gold">Request Sample Pack</Link>
              <Link href="/products" className="btn-outline-white">View Full Catalogue</Link>
           </div>

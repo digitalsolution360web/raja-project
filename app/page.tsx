@@ -264,50 +264,55 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* RESIDENTIAL & COMMERCIAL SOLUTIONS */}
-      <section style={{ padding: '3.5rem 0', background: '#f8fafc' }}>
+      {/* RESIDENTIAL & COMMERCIAL SOLUTIONS SECTION */}
+      <section className="section-padding section-white sol-solutions" style={{ background: '#ffffff', borderTop: '1px solid #e2e8f0', borderBottom: '1px solid #e2e8f0' }}>
         <div className="container-main">
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
-
-            {/* Residential Section */}
-            <div className="zigzag-row" style={{ gap: '2.5rem', alignItems: 'center' }}>
-              <div className="zigzag-image" style={{ borderRadius: '20px', overflow: 'hidden', boxShadow: '0 12px 30px rgba(0,0,0,0.08)', maxWidth: '420px' }}>
-                <Image src="/residential-solutions.png" alt="Residential Aluminium Sliding" width={500} height={380} style={{ width: '100%', height: 'auto' }} />
+          <div className="sol-solutions__stack">
+            {/* Residential: image left, text right on desktop */}
+            <div className="sol-solutions__row sol-solutions__row--residential">
+              <div className="sol-solutions__media">
+                <Image src="/residential-solutions.png" alt="Residential aluminium sliding windows and glass partition works" fill sizes="(max-width: 1024px) 100vw, 50vw" style={{ objectFit: 'cover' }} priority />
               </div>
               <div>
-                <h3 style={{ fontSize: '1.4rem', fontWeight: 900, color: 'var(--accent)', marginBottom: '0.75rem' }}>Residential Aluminum Sliding and Glass Partition Works</h3>
-                <p style={{ color: 'var(--text-mid)', fontSize: '0.9rem', lineHeight: 1.75, marginBottom: '1rem' }}>
-                  At <strong>Mumbai Aluminium and Glass</strong>, we specialize in providing top-quality <strong>aluminium sliding windows</strong>, doors, and <strong>glass partition solutions</strong> for both <strong>residential</strong> and <strong>commercial</strong> spaces. With years of expertise, we offer innovative designs that enhance the aesthetics, functionality, and security of any building.
+                <h3 style={{ fontSize: '1.4rem', fontWeight: 900, color: '#D92D20', marginBottom: '0.75rem' }}>Residential Aluminum Sliding and Glass Partition Works</h3>
+                <p style={{ color: '#475467', fontSize: '0.95rem', lineHeight: 1.75, marginBottom: '1rem' }}>
+                  At <strong style={{ color: '#101828' }}>Mumbai Aluminium and Glass</strong>, we specialize in providing top-quality <strong style={{ color: '#101828' }}>aluminium sliding windows</strong>, doors, and <strong style={{ color: '#101828' }}>glass partition solutions</strong> for both <strong style={{ color: '#101828' }}>residential</strong> and <strong style={{ color: '#101828' }}>commercial</strong> spaces. With years of expertise, we offer innovative designs that enhance the aesthetics, functionality, and security of any building.
                 </p>
-                <h4 style={{ fontSize: '1.05rem', fontWeight: 900, color: 'var(--navy)', marginBottom: '0.5rem' }}>Residential Aluminium Sliding &amp; Glass Partition Solutions</h4>
-                <p style={{ color: 'var(--text-mid)', fontSize: '0.9rem', lineHeight: 1.75, marginBottom: '1.25rem' }}>
-                  For your home, we offer <strong>aluminium sliding windows</strong> that bring style, durability, and energy efficiency. Whether it&apos;s for the <strong>bedroom</strong>, <strong>living room</strong>, <strong>bathroom</strong>, or even <strong>balconies</strong>, our sliding windows are designed to suit your space and provide easy functionality. We also offer sleek and modern <strong>glass partitions</strong> for interiors like <strong>living rooms</strong>, <strong>home offices</strong>, or <strong>kitchen areas</strong>, creating a seamless flow between rooms while allowing for natural light to fill the space.
+
+                <h4 style={{ fontSize: '1.05rem', fontWeight: 900, color: '#101828', marginBottom: '0.5rem' }}>Residential Aluminium Sliding &amp; Glass Partition Solutions</h4>
+                <p style={{ color: '#475467', fontSize: '0.95rem', lineHeight: 1.75, marginBottom: '1.5rem' }}>
+                  For your home, we offer <strong style={{ color: '#101828' }}>aluminium sliding windows</strong> that bring style, durability, and energy efficiency. Whether it&apos;s for the <strong style={{ color: '#101828' }}>bedroom, living room, bathroom</strong>, or even <strong style={{ color: '#101828' }}>balconies</strong>, our sliding windows are designed to suit your space and provide easy functionality. We also offer sleek and modern <strong style={{ color: '#101828' }}>glass partitions</strong> for interiors like <strong style={{ color: '#101828' }}>living rooms, home offices</strong>, or <strong style={{ color: '#101828' }}>kitchen areas</strong>, creating a seamless flow between rooms while allowing for natural light to fill the space.
                 </p>
-                <a href="tel:+918854935836" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.6rem 1.25rem', border: '1px solid #e2e8f0', borderRadius: '50px', color: 'var(--navy)', fontWeight: 800, fontSize: '0.9rem', textDecoration: 'none', marginBottom: '0.5rem' }}>📞 +91 8854935836</a>
-                <p style={{ fontWeight: 800, color: 'var(--accent)', fontSize: '0.9rem', marginTop: '0.5rem' }}>Book an expert consultation today!</p>
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <a href="tel:+918854935836" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.6rem 1.25rem', border: '1px solid #E4E7EC', borderRadius: '50px', color: '#101828', fontWeight: 800, fontSize: '0.9rem', textDecoration: 'none' }}><span style={{ color: '#D92D20' }}>📞</span> +91 8854935836</a>
+                </div>
+                <Link href="/contact" style={{ display: 'block', color: '#D92D20', fontWeight: 800, fontSize: '0.95rem', textDecoration: 'none' }}>
+                  Book an expert consultation today!
+                </Link>
               </div>
             </div>
 
-            {/* Commercial Section */}
-            <div className="zigzag-row" style={{ gap: '2.5rem', alignItems: 'center' }}>
+            {/* Commercial: text left, image right on desktop; on mobile/tablet text then image (DOM order) */}
+            <div className="sol-solutions__row sol-solutions__row--commercial">
               <div>
-                <h3 style={{ fontSize: '1.4rem', fontWeight: 900, color: 'var(--accent)', marginBottom: '0.75rem' }}>Commercial Aluminium Sliding &amp; Glass Partition Solutions</h3>
-                <p style={{ color: 'var(--text-mid)', fontSize: '0.9rem', lineHeight: 1.75, marginBottom: '1rem' }}>
-                  For commercial properties, we specialize in <strong>aluminium sliding doors and windows</strong> that provide security, ease of use, and modern design. These are perfect for <strong>offices</strong>, <strong>retail stores</strong>, and <strong>commercial buildings</strong>, offering both durability and elegance. Additionally, our <strong>aluminium glass partitions</strong> are ideal for <strong>office cabins</strong>, <strong>conference rooms</strong>, or open-plan spaces, providing a clean, modern look while maximizing natural light and enhancing productivity.
+                <h3 style={{ fontSize: '1.4rem', fontWeight: 900, color: '#D92D20', marginBottom: '0.75rem' }}>Commercial Aluminium Sliding &amp; Glass Partition Solutions</h3>
+                <p style={{ color: '#475467', fontSize: '0.95rem', lineHeight: 1.75, marginBottom: '1.5rem' }}>
+                  For commercial properties, we specialize in <strong style={{ color: '#101828' }}>aluminium sliding doors and windows</strong> that provide security, ease of use, and modern design. These are perfect for <strong style={{ color: '#101828' }}>offices, retail stores</strong>, and <strong style={{ color: '#101828' }}>commercial buildings</strong>, offering both durability and elegance. Additionally, our <strong style={{ color: '#101828' }}>aluminium glass partitions</strong> are ideal for <strong style={{ color: '#101828' }}>office cabins, conference rooms</strong>, or open-plan spaces, providing a clean, modern look while maximizing natural light and enhancing productivity.
                 </p>
-                <ul style={{ listStyle: 'none', padding: 0, marginBottom: '1.25rem' }}>
-                  <li style={{ marginBottom: '0.4rem', fontSize: '0.85rem', color: 'var(--text-mid)' }}>• <strong>Expertise &amp; Customization:</strong> We offer customized solutions to fit the unique needs of your residential or commercial space.</li>
-                  <li style={{ marginBottom: '0.4rem', fontSize: '0.85rem', color: 'var(--text-mid)' }}>• <strong>Quality Products:</strong> We use high-quality materials, ensuring longevity and performance.</li>
-                  <li style={{ marginBottom: '0.4rem', fontSize: '0.85rem', color: 'var(--text-mid)' }}>• <strong>Timely Execution:</strong> We understand the importance of deadlines and ensure that projects are completed on time.</li>
-                  <li style={{ marginBottom: '0.4rem', fontSize: '0.85rem', color: 'var(--text-mid)' }}>• <strong>Professional Installation &amp; Repair Services:</strong> Our team handles installation and repair services with precision, ensuring perfect results every time.</li>
+
+                <ul style={{ listStyle: 'none', padding: 0, marginBottom: '2rem' }}>
+                  <li style={{ marginBottom: '0.6rem', fontSize: '0.85rem', color: '#475467' }}>• <strong style={{ color: '#101828' }}>Expertise &amp; Customization:</strong> We offer customized solutions to fit the unique needs of your residential or commercial space.</li>
+                  <li style={{ marginBottom: '0.6rem', fontSize: '0.85rem', color: '#475467' }}>• <strong style={{ color: '#101828' }}>Quality Products:</strong> We use high-quality materials, ensuring longevity and performance.</li>
+                  <li style={{ marginBottom: '0.6rem', fontSize: '0.85rem', color: '#475467' }}>• <strong style={{ color: '#101828' }}>Timely Execution:</strong> We understand the importance of deadlines and ensure that projects are completed on time.</li>
+                  <li style={{ marginBottom: '0.6rem', fontSize: '0.85rem', color: '#475467' }}>• <strong style={{ color: '#101828' }}>Professional Installation &amp; Repair Services:</strong> Our team handles installation and repair services with precision, ensuring perfect results every time.</li>
                 </ul>
-                <a href="tel:+918854935836" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.6rem 1.25rem', border: '1px solid #e2e8f0', borderRadius: '50px', color: 'var(--navy)', fontWeight: 800, fontSize: '0.9rem', textDecoration: 'none' }}>📞 +91 8854935836</a>
+
+                <a href="tel:+918854935836" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.6rem 1.25rem', border: '1px solid #E4E7EC', borderRadius: '50px', color: '#101828', fontWeight: 800, fontSize: '0.9rem', textDecoration: 'none' }}><span style={{ color: '#D92D20' }}>📞</span> +91 8854935836</a>
               </div>
-              <div className="zigzag-image" style={{ borderRadius: '20px', overflow: 'hidden', boxShadow: '0 12px 30px rgba(0,0,0,0.08)', maxWidth: '420px' }}>
-                <Image src="/commercial-solutions.png" alt="Commercial Glass Partition" width={500} height={380} style={{ width: '100%', height: 'auto' }} />
+              <div className="sol-solutions__media">
+                <Image src="/commercial-solutions.png" alt="Commercial aluminium sliding and glass partition solutions" fill sizes="(max-width: 1024px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -399,15 +404,40 @@ export default function HomePage() {
         .hero-slider { position: relative; height: 90vh; overflow: hidden; }
         .hero-slide { position: absolute; inset: 0; transition: opacity 1.2s ease-in-out; }
         .hero-overlay { position: absolute; inset: 0; background: rgba(15,23,42,0.45); }
-        .hero-content { position: absolute; inset: 0; display: flex; alignItems: center; padding: 0 10%; z-index: 5; }
+        .hero-content { position: absolute; inset: 0; display: flex; align-items: center; padding: 0 10%; z-index: 5; }
         .hover-scale { transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
         .hover-scale:hover { transform: scale(1.08); }
-        .zigzag-row { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; alignItems: center; }
+
+        /* Residential and commercial solutions — scoped under .sol-solutions */
+        .sol-solutions .sol-solutions__stack {
+          display: flex;
+          flex-direction: column;
+          gap: clamp(3rem, 6vw, 5rem);
+        }
+        .sol-solutions .sol-solutions__row {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: clamp(2rem, 4vw, 4rem);
+          align-items: center;
+        }
+        .sol-solutions .sol-solutions__media {
+          position: relative;
+          min-height: 320px;
+          aspect-ratio: 4 / 3;
+          border-radius: 20px;
+          overflow: hidden;
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        }
 
         @media (max-width: 1024px) {
-           .zigzag-row { grid-template-columns: 1fr; gap: 3rem; }
            .industries-grid { grid-template-columns: repeat(2, 1fr) !important; }
-           .zigzag-image { order: -1; }
+           .sol-solutions .sol-solutions__row {
+             grid-template-columns: 1fr;
+             gap: 2rem;
+           }
+           .sol-solutions .sol-solutions__row--residential .sol-solutions__media {
+             order: -1;
+           }
         }
 
         @media (max-width: 768px) {
