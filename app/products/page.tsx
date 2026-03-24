@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const products = [
   { id: 'single-glazing-partition', title: 'Single Glazing Partition', img: '/g1.jpeg' },
-  { id: 'single-glass-25-25', title: 'Single Glass 25*25', img: '/g2.jpeg' },
+  { id: 'single-glass-25-25', title: 'Single Glaze 25*25', img: '/g2.jpeg' },
   { id: 'double-glaze-25-100', title: 'Double Glaze Partition 25*100', img: '/g3.jpeg' },
   { id: 'single-glazing-25-25', title: 'Single Glazing Partition 25*25', img: '/g4.jpeg' },
   { id: 'single-glaze-25-45', title: 'Single Glaze Partition 25*45', img: '/g5.jpeg' },
