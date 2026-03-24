@@ -8,7 +8,7 @@ const products = [
   { id: 'single-glazing-25-25', title: 'Single Glazing Partition 25*25', img: '/g4.jpeg' },
   { id: 'single-glaze-25-45', title: 'Single Glaze Partition 25*45', img: '/g5.jpeg' },
   { id: 'single-glazing-25-100', title: 'Single Glazing Partition 25*100', img: '/p20.jpeg' },
-  { id: 'grid-partition', title: 'Grid Partition', img: '/p21.jpeg' },
+  { id: 'grid-partition', title: 'Double Glaze Grid Partition', img: '/p21.jpeg' },
 ];
 
 export default function ProductsPage() {
