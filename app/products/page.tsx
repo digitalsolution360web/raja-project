@@ -66,9 +66,9 @@ export default function ProductsPage() {
             }
             .products-clean-grid {
               display: grid;
-              grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+              grid-template-columns: repeat(2, 1fr);
               justify-content: center;
-              gap: 1.5rem;
+              gap: 2rem;
             }
             .product-clean-card {
               background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
@@ -105,7 +105,8 @@ export default function ProductsPage() {
             }
             @media (max-width: 1024px) {
               .products-clean-grid {
-                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
               }
             }
             @media (max-width: 640px) {
