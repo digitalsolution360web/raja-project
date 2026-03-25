@@ -66,9 +66,9 @@ export default function ProductsPage() {
             }
             .products-clean-grid {
               display: grid;
-              grid-template-columns: repeat(2, 1fr);
-              justify-content: center;
-              gap: 2rem;
+              grid-template-columns: repeat(3, minmax(0, 1fr));
+              justify-content: stretch;
+              gap: 1.5rem;
             }
             .product-clean-card {
               background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
@@ -105,8 +105,8 @@ export default function ProductsPage() {
             }
             @media (max-width: 1024px) {
               .products-clean-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 1.25rem;
               }
             }
             @media (max-width: 640px) {
@@ -125,6 +125,366 @@ export default function ProductsPage() {
               }
               .product-clean-title {
                 font-size: 1.1rem;
+              }
+            }
+          `}</style>
+        </div>
+      </section>
+
+      {/* Aluminium door — left hero + right 2×2 gallery */}
+      <section className="section-padding" style={{ background: '#f1f5f9', borderTop: '1px solid #e2e8f0' }}>
+        <div className="container-main">
+          <div style={{ textAlign: 'center', marginBottom: 'clamp(2rem, 4vw, 3rem)' }}>
+            <div className="gold-bar" style={{ margin: '0 auto 1rem' }} />
+            <h2 className="section-title">Aluminium Door</h2>
+          </div>
+          <div className="aluminium-door-grid">
+            <div className="aluminium-door-feature">
+              <Image
+                src="/left-image.jpeg"
+                alt="Aluminium glass partition"
+                fill
+                sizes="(max-width: 900px) 100vw, 48vw"
+                style={{ objectFit: 'cover' }}
+                priority
+              />
+            </div>
+            <div className="aluminium-door-tiles">
+              {[
+                { src: '/1.jpeg', alt: 'Partition profile 1' },
+                { src: '/2.jpeg', alt: 'Partition profile 2' },
+                { src: '/3.jpeg', alt: 'Partition profile 3' },
+                { src: '/4.jpeg', alt: 'Partition profile 4' },
+              ].map((item) => (
+                <div key={item.src} className="aluminium-door-tile">
+                  <Image src={item.src} alt={item.alt} fill sizes="(max-width: 900px) 50vw, 25vw" style={{ objectFit: 'cover' }} />
+                </div>
+              ))}
+            </div>
+          </div>
+          <style jsx>{`
+            .aluminium-door-grid {
+              display: grid;
+              grid-template-columns: 1.05fr 0.95fr;
+              gap: 1.25rem;
+              align-items: stretch;
+              max-width: 1200px;
+              margin: 0 auto;
+            }
+            .aluminium-door-feature {
+              position: relative;
+              border-radius: 20px;
+              overflow: hidden;
+              border: 1px solid #e2e8f0;
+              box-shadow: 0 12px 40px rgba(15, 23, 42, 0.1);
+              background: #f1f5f9;
+              min-height: 420px;
+              max-height: min(640px, 80vh);
+            }
+            .aluminium-door-tiles {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              grid-template-rows: 1fr 1fr;
+              gap: 1rem;
+              min-height: 0;
+            }
+            .aluminium-door-tile {
+              position: relative;
+              border-radius: 16px;
+              overflow: hidden;
+              border: 1px solid #e2e8f0;
+              background: #fff;
+              box-shadow: 0 8px 24px rgba(15, 23, 42, 0.07);
+              aspect-ratio: 4 / 3;
+              transition: transform 0.25s ease, box-shadow 0.25s ease;
+            }
+            .aluminium-door-tile:hover {
+              transform: translateY(-2px);
+              box-shadow: 0 14px 32px rgba(15, 23, 42, 0.11);
+            }
+            @media (max-width: 900px) {
+              .aluminium-door-grid {
+                grid-template-columns: 1fr;
+                max-width: none;
+              }
+              .aluminium-door-feature {
+                max-height: none;
+                min-height: 300px;
+                aspect-ratio: 4 / 3;
+              }
+              .aluminium-door-tiles {
+                grid-template-columns: repeat(2, 1fr);
+              }
+            }
+            @media (max-width: 480px) {
+              .aluminium-door-tiles {
+                grid-template-columns: 1fr;
+              }
+              .aluminium-door-tile {
+                aspect-ratio: 16 / 10;
+              }
+            }
+          `}</style>
+        </div>
+      </section>
+
+      {/* New Premium Collection section — left gallery + right hero */}
+      <section className="section-padding" style={{ background: '#fafafa', borderTop: '1px solid #e2e8f0' }}>
+        <div className="container-main">
+          <div style={{ textAlign: 'center', marginBottom: 'clamp(2rem, 4vw, 3rem)' }}>
+            <div className="gold-bar" style={{ margin: '0 auto 1rem' }} />
+            <h2 className="section-title">Premium Collection</h2>
+            <p className="products-head-sub" style={{ marginTop: '0.5rem', fontSize: '1.05rem', color: '#64748b' }}>
+              Explore our top-tier designs with unparalleled aesthetics.
+            </p>
+          </div>
+          <div className="premium-showcase-grid">
+            {/* Left side: 3 images */}
+            <div className="premium-left-gallery">
+              <div className="premium-tile tile-large group">
+                <Image src="/ad-31.jpeg" alt="Premium Option 1" fill sizes="(max-width: 900px) 100vw, 35vw" style={{ objectFit: 'cover' }} />
+              </div>
+              <div className="premium-tile group">
+                <Image src="/ad32.jpeg" alt="Premium Option 2" fill sizes="(max-width: 900px) 50vw, 15vw" style={{ objectFit: 'cover' }} />
+              </div>
+              <div className="premium-tile group">
+                <Image src="/ad33.jpeg" alt="Premium Option 3" fill sizes="(max-width: 900px) 50vw, 15vw" style={{ objectFit: 'cover' }} />
+              </div>
+            </div>
+
+            {/* Right side: 1 large image */}
+            <div className="premium-right-feature group">
+              <Image src="/cc.jpeg" alt="Premium Main Concept" fill sizes="(max-width: 900px) 100vw, 55vw" style={{ objectFit: 'cover' }} priority />
+            </div>
+          </div>
+          <style jsx>{`
+            .premium-showcase-grid {
+              display: grid;
+              grid-template-columns: 0.8fr 1.2fr;
+              gap: 1.5rem;
+              align-items: stretch;
+              max-width: 1200px;
+              margin: 0 auto;
+            }
+            .premium-left-gallery {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              grid-template-rows: auto 1fr;
+              gap: 1.25rem;
+              min-height: 0;
+            }
+            .tile-large {
+              grid-column: 1 / -1;
+              aspect-ratio: 16 / 10;
+              min-height: 240px;
+            }
+            .premium-tile {
+              position: relative;
+              border-radius: 16px;
+              overflow: hidden;
+              border: 1px solid #e2e8f0;
+              background: #fff;
+              box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            }
+            .premium-tile:not(.tile-large) {
+              aspect-ratio: 1 / 1;
+            }
+            .premium-right-feature {
+              position: relative;
+              border-radius: 20px;
+              overflow: hidden;
+              border: 1px solid #e2e8f0;
+              background: #fff;
+              box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+              min-height: 520px;
+            }
+            
+            .group {
+              cursor: pointer;
+            }
+            .group :global(img) {
+              transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1) !important;
+            }
+            .group:hover :global(img) {
+              transform: scale(1.05);
+            }
+            
+            @media (max-width: 900px) {
+              .premium-showcase-grid {
+                grid-template-columns: 1fr;
+              }
+              .premium-right-feature {
+                min-height: 400px;
+                aspect-ratio: 16 / 10;
+                order: -1; /* feature image first on mobile */
+              }
+              .premium-left-gallery {
+                gap: 1rem;
+              }
+            }
+            @media (max-width: 480px) {
+              .premium-left-gallery {
+                grid-template-columns: 1fr;
+              }
+              .premium-tile:not(.tile-large) {
+                aspect-ratio: 4 / 3;
+              }
+            }
+          `}</style>
+        </div>
+      </section>
+
+      {/* New Comprehensive Collection section — left hero + right gallery (6 images) */}
+      <section className="section-padding" style={{ background: '#ffffff', borderTop: '1px solid #e2e8f0' }}>
+        <div className="container-main">
+          <div style={{ textAlign: 'center', marginBottom: 'clamp(2rem, 4vw, 3rem)' }}>
+            <div className="gold-bar" style={{ margin: '0 auto 1rem' }} />
+            <h2 className="section-title">Comprehensive Selection</h2>
+            <p className="products-head-sub" style={{ marginTop: '0.5rem', fontSize: '1.05rem', color: '#64748b' }}>
+              Discover the full breadth of our premium partition systems.
+            </p>
+          </div>
+          <div className="comprehensive-showcase-grid">
+            {/* Left side: 1 large image */}
+            <div className="comprehensive-left-feature group">
+              <Image src="/p15.jpeg" alt="Comprehensive Main Concept" fill sizes="(max-width: 900px) 100vw, 45vw" style={{ objectFit: 'cover' }} priority />
+            </div>
+
+            {/* Right side: 6 images grid */}
+            <div className="comprehensive-right-gallery">
+              <div className="comp-tile group"><Image src="/p14.jpeg" alt="Selection 1" fill sizes="(max-width: 900px) 33vw, 18vw" style={{ objectFit: 'cover' }} /></div>
+              <div className="comp-tile group"><Image src="/p13.jpeg" alt="Selection 2" fill sizes="(max-width: 900px) 33vw, 18vw" style={{ objectFit: 'cover' }} /></div>
+              <div className="comp-tile group"><Image src="/p12.jpeg" alt="Selection 3" fill sizes="(max-width: 900px) 33vw, 18vw" style={{ objectFit: 'cover' }} /></div>
+              <div className="comp-tile group"><Image src="/p11.jpeg" alt="Selection 4" fill sizes="(max-width: 900px) 33vw, 18vw" style={{ objectFit: 'cover' }} /></div>
+              <div className="comp-tile group"><Image src="/p20.jpeg" alt="Selection 5" fill sizes="(max-width: 900px) 33vw, 18vw" style={{ objectFit: 'cover' }} /></div>
+              <div className="comp-tile group"><Image src="/p21.jpeg" alt="Selection 6" fill sizes="(max-width: 900px) 33vw, 18vw" style={{ objectFit: 'cover' }} /></div>
+            </div>
+          </div>
+          <style jsx>{`
+            .comprehensive-showcase-grid {
+              display: grid;
+              grid-template-columns: 1fr 1.3fr;
+              gap: 1.5rem;
+              align-items: stretch;
+              max-width: 1200px;
+              margin: 0 auto;
+            }
+            .comprehensive-left-feature {
+              position: relative;
+              border-radius: 20px;
+              overflow: hidden;
+              border: 1px solid #e2e8f0;
+              background: #fff;
+              box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+              min-height: 500px;
+            }
+            .comprehensive-right-gallery {
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              grid-template-rows: repeat(2, 1fr);
+              gap: 1rem;
+              min-height: 0;
+            }
+            .comp-tile {
+              position: relative;
+              border-radius: 12px;
+              overflow: hidden;
+              border: 1px solid #e2e8f0;
+              background: #fff;
+              box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+              aspect-ratio: 1 / 1;
+            }
+            
+            .group {
+              cursor: pointer;
+            }
+            .group :global(img) {
+              transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1) !important;
+            }
+            .group:hover :global(img) {
+              transform: scale(1.05);
+            }
+            
+            @media (max-width: 900px) {
+              .comprehensive-showcase-grid {
+                grid-template-columns: 1fr;
+              }
+              .comprehensive-left-feature {
+                min-height: 360px;
+                aspect-ratio: 16 / 10;
+              }
+              .comprehensive-right-gallery {
+                 gap: 0.75rem;
+              }
+            }
+            @media (max-width: 480px) {
+              .comprehensive-right-gallery {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+              }
+            }
+          `}</style>
+        </div>
+      </section>
+
+      {/* Profile systems showcase — pp2 left, pp right */}
+      <section className="section-padding section-white" style={{ borderTop: '1px solid #e2e8f0' }}>
+        <div className="container-main">
+          <div className="pp-showcase-grid">
+            <div className="pp-showcase-panel pp-showcase-panel--left">
+              <Image
+                src="/pp2.jpeg"
+                alt="AEROSPACE glass partition profile series"
+                fill
+                sizes="(max-width: 900px) 100vw, 48vw"
+                style={{ objectFit: 'contain', objectPosition: 'center' }}
+              />
+            </div>
+            <div className="pp-showcase-panel pp-showcase-panel--right">
+              <Image
+                src="/pp.jpeg"
+                alt="AEROSPACE glass partition installation"
+                fill
+                sizes="(max-width: 900px) 100vw, 48vw"
+                style={{ objectFit: 'cover' }}
+              />
+            </div>
+          </div>
+          <style jsx>{`
+            .pp-showcase-grid {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 1.5rem;
+              align-items: stretch;
+              max-width: 1200px;
+              margin: 0 auto;
+            }
+            .pp-showcase-panel {
+              position: relative;
+              border-radius: 20px;
+              overflow: hidden;
+              border: 1px solid #e2e8f0;
+              box-shadow: 0 10px 36px rgba(15, 23, 42, 0.09);
+              background: #f8fafc;
+              min-height: 340px;
+              aspect-ratio: 4 / 3;
+              transition: box-shadow 0.3s ease, transform 0.3s ease;
+            }
+            .pp-showcase-panel:hover {
+              box-shadow: 0 16px 48px rgba(15, 23, 42, 0.12);
+              transform: translateY(-2px);
+            }
+            .pp-showcase-panel--left {
+              background: #0f172a;
+            }
+            @media (max-width: 900px) {
+              .pp-showcase-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+              }
+              .pp-showcase-panel {
+                min-height: 260px;
+                aspect-ratio: 16 / 10;
               }
             }
           `}</style>

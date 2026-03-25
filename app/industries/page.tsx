@@ -127,7 +127,9 @@ export default function IndustriesPage() {
             <Link href="/contact" className="btn-gold">Consult an Expert</Link>
             <Link href="/gallery" className="btn-outline-white">Browse Project Gallery</Link>
           </div>
+           
         </div>
+        
       </section>
     </div>
   );
