@@ -233,10 +233,8 @@ export default function ProductsPage() {
         <div className="container-main">
           <div style={{ textAlign: 'center', marginBottom: 'clamp(2rem, 4vw, 3rem)' }}>
             <div className="gold-bar" style={{ margin: '0 auto 1rem' }} />
-            <h2 className="section-title">Premium Collection</h2>
-            <p className="products-head-sub" style={{ marginTop: '0.5rem', fontSize: '1.05rem', color: '#64748b' }}>
-              Explore our top-tier designs with unparalleled aesthetics.
-            </p>
+            <h2 className="section-title">Aluminium Door</h2>
+
           </div>
           <div className="premium-showcase-grid">
             {/* Left side: 3 images */}
@@ -254,13 +252,13 @@ export default function ProductsPage() {
 
             {/* Right side: 1 large image */}
             <div className="premium-right-feature group">
-              <Image 
-                src="/cc.jpeg" 
-                alt="Premium Main Concept" 
-                fill 
-                sizes="(max-width: 900px) 100vw, 55vw" 
-                style={{ objectFit: 'contain', background: '#0f172a' }} 
-                priority 
+              <Image
+                src="/cc.jpeg"
+                alt="Premium Main Concept"
+                fill
+                sizes="(max-width: 900px) 100vw, 55vw"
+                style={{ objectFit: 'contain', background: '#0f172a' }}
+                priority
               />
             </div>
           </div>
@@ -346,12 +344,10 @@ export default function ProductsPage() {
         <div className="container-main">
           <div style={{ textAlign: 'center', marginBottom: 'clamp(2rem, 4vw, 3rem)' }}>
             <div className="gold-bar" style={{ margin: '0 auto 1rem' }} />
-            <h2 className="section-title">Systems & Project Specifications</h2>
-            <p className="products-head-sub" style={{ marginTop: '0.5rem', fontSize: '1.05rem', color: '#64748b' }}>
-              Detailed profile documentation and premium office partition installations.
-            </p>
+            <h2 className="section-title">Aluminium Door</h2>
+
           </div>
-          
+
           <div className="comprehensive-dual-grid">
             {/* Left Side: p15 (Large) + p14, p21 (Small) */}
             <div className="comp-dual-column">
@@ -383,7 +379,7 @@ export default function ProductsPage() {
               </div>
             </div>
           </div>
-          
+
           <style jsx>{`
             .comprehensive-dual-grid {
               display: grid;
@@ -443,10 +439,8 @@ export default function ProductsPage() {
         <div className="container-main">
           <div style={{ textAlign: 'center', marginBottom: 'clamp(2rem, 4vw, 3rem)' }}>
             <div className="gold-bar" style={{ margin: '0 auto 1rem' }} />
-            <h2 className="section-title">Premium Entrance & Mats</h2>
-            <p className="products-head-sub" style={{ marginTop: '0.5rem', fontSize: '1.05rem', color: '#64748b' }}>
-              Superior quality floor mats and entrance solutions for a clean, professional look.
-            </p>
+            <h2 className="section-title">Aluminium Door</h2>
+
           </div>
           <div className="entrance-showcase-grid">
             {/* Left side: 3 images gallery */}
@@ -464,12 +458,12 @@ export default function ProductsPage() {
 
             {/* Right side: 1 large image */}
             <div className="entrance-left-feature group">
-              <Image 
-                src="/door-5.webp" 
-                alt="Entrance Solution" 
-                fill 
-                sizes="(max-width: 900px) 100vw, 45vw" 
-                style={{ objectFit: 'cover' }} 
+              <Image
+                src="/door-5.webp"
+                alt="Entrance Solution"
+                fill
+                sizes="(max-width: 900px) 100vw, 45vw"
+                style={{ objectFit: 'cover' }}
               />
             </div>
           </div>
@@ -555,10 +549,8 @@ export default function ProductsPage() {
         <div className="container-main">
           <div style={{ textAlign: 'center', marginBottom: 'clamp(2rem, 4vw, 3rem)' }}>
             <div className="gold-bar" style={{ margin: '0 auto 1rem' }} />
-            <h2 className="section-title">AEROSPACE Technical Specs & Projects</h2>
-            <p className="products-head-sub" style={{ marginTop: '0.5rem', fontSize: '1.05rem', color: '#64748b' }}>
-              Precision-designed partition profiles alongside high-end installation examples.
-            </p>
+            <h2 className="section-title">Aluminium Door</h2>
+
           </div>
           <div className="pp-showcase-grid">
             <div className="pp-showcase-panel pp-showcase-panel--left">
