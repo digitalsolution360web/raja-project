@@ -1,7 +1,59 @@
 'use client';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
-const products = [
+// --- Custom Image Slider Component ---
+const ImageSlider = ({ images, interval = 4000, className = "" }: { images: string[], interval?: number, className?: string }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (images.length <= 1) return;
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, interval);
+    return () => clearInterval(timer);
+  }, [images.length, interval]);
+
+  return (
+    <div className={`relative w-full h-full overflow-hidden ${className}`}>
+      {images.map((src, idx) => (
+        <div
+          key={idx}
+          className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+            idx === currentIndex ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-110 z-0'
+          }`}
+        >
+          <Image
+            src={src}
+            alt={`Slide ${idx}`}
+            fill
+            sizes="(max-width: 900px) 100vw, 50vw"
+            className="object-cover"
+            priority={idx === 0}
+          />
+        </div>
+      ))}
+      
+      {/* Indicator Dots */}
+      {images.length > 1 && (
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+          {images.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrentIndex(idx)}
+              className={`w-2 h-2 rounded-full transition-all ${
+                idx === currentIndex ? 'bg-white w-6' : 'bg-white/40 hover:bg-white/60'
+              }`}
+              aria-label={`Go to slide ${idx + 1}`}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
+const partitionProducts = [
   { id: 'single-glazing-partition', title: 'Single Glazing Partition', img: '/g1.jpeg' },
   { id: 'single-glass-25-25', title: 'Single Gaze Grid Partition 25*45', img: '/g2.jpeg' },
   { id: 'double-glaze-25-100', title: 'Double Glaze Partition 25*100', img: '/g3.jpeg' },
@@ -13,605 +65,488 @@ const products = [
 
 export default function ProductsPage() {
   return (
-    <div className="animate-fade-in">
+    <div className="animate-fade-in bg-slate-50">
+      {/* Hero Section */}
       <section className="page-hero">
         <div className="container-main">
           <div className="gold-bar" />
-          <h1 className="section-title-white" style={{ marginBottom: '1rem' }}>Our Partition Product Range</h1>
+          <h1 className="section-title-white" style={{ marginBottom: '1rem' }}>Our Premium Product Range</h1>
           <p className="section-subtitle-white" style={{ maxWidth: '800px' }}>
-            Professional systems for residential and commercial spaces.
+            Innovative partition systems and architectural solutions designed for modern living and professional workspaces.
           </p>
         </div>
       </section>
 
+      {/* 1. Partition Collection */}
       <section className="section-padding section-white">
         <div className="container-main">
-          <div className="products-head">
-            <h2 className="products-head-title">Partition Collection</h2>
-            <p className="products-head-sub">Image-first catalogue for your key partition systems.</p>
+          <div className="section-head-modern">
+            <span className="section-tag">Partition Systems</span>
+            <h2 className="section-title-main">Partition Collection</h2>
+            <p className="section-desc">Versatile and elegant glazing solutions for Every space.</p>
           </div>
+          
           <div className="products-clean-grid">
-            {products.map((product, idx) => (
-              <article key={product.id} className="product-clean-card">
+            {partitionProducts.map((product, idx) => (
+              <article key={product.id} className="product-clean-card group">
                 <div className="product-clean-image-wrap">
                   <Image
                     src={product.img}
                     alt={product.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    style={{ objectFit: 'cover' }}
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                     priority={idx < 2}
                   />
+                  <div className="product-overlay-gradient"></div>
                 </div>
-                <h2 className="product-clean-title">{product.title}</h2>
+                <div className="product-clean-info">
+                  <h3 className="product-clean-title">{product.title}</h3>
+                </div>
               </article>
             ))}
           </div>
-          <style jsx>{`
-            .products-head {
-              text-align: center;
-              margin-bottom: clamp(1.25rem, 3vw, 2.5rem);
-            }
-            .products-head-title {
-              margin: 0;
-              color: #0f172a;
-              font-size: clamp(1.5rem, 3vw, 2.2rem);
-              font-weight: 900;
-              letter-spacing: 0.01em;
-            }
-            .products-head-sub {
-              margin: 0.5rem 0 0;
-              color: #64748b;
-              font-size: 1rem;
-            }
-            .products-clean-grid {
-              display: grid;
-              grid-template-columns: repeat(3, minmax(0, 1fr));
-              justify-content: stretch;
-              gap: 1.5rem;
-            }
-            .product-clean-card {
-              background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-              border-radius: 20px;
-              border: 1px solid #e2e8f0;
-              overflow: hidden;
-              box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
-              transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-            }
-            .product-clean-card:hover {
-              transform: translateY(-4px);
-              box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
-              border-color: #cbd5e1;
-            }
-            .product-clean-image-wrap {
-              position: relative;
-              width: 100%;
-              aspect-ratio: 16 / 10;
-              background: #f1f5f9;
-              border-bottom: 1px solid #e2e8f0;
-            }
-            .product-clean-title {
-              margin: 0;
-              min-height: 70px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              padding: 1rem 1.25rem;
-              color: #0f172a;
-              font-size: 1.05rem;
-              font-weight: 850;
-              line-height: 1.4;
-              text-align: center;
-            }
-            @media (max-width: 1024px) {
-              .products-clean-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: 1.25rem;
-              }
-            }
-            @media (max-width: 640px) {
-              .products-clean-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-              }
-              .product-clean-image-wrap {
-                aspect-ratio: 4 / 3;
-              }
-              .products-head-title {
-                font-size: 1.6rem;
-              }
-              .products-head-sub {
-                font-size: 0.95rem;
-              }
-              .product-clean-title {
-                font-size: 1.1rem;
-              }
-            }
-          `}</style>
         </div>
       </section>
 
-      {/* Aluminium door — left hero + right 2×2 gallery */}
-      <section className="section-padding" style={{ background: '#f1f5f9', borderTop: '1px solid #e2e8f0' }}>
+      {/* 2. Aluminium Door - Classic Showcase */}
+      <section className="section-padding bg-slate-100/50 border-y border-slate-200">
         <div className="container-main">
-          <div style={{ textAlign: 'center', marginBottom: 'clamp(2rem, 4vw, 3rem)' }}>
-            <div className="gold-bar" style={{ margin: '0 auto 1rem' }} />
-            <h2 className="section-title">Aluminium Door</h2>
+          <div className="section-head-modern">
+            <span className="section-tag">Modern Doors</span>
+            <h2 className="section-title-main">Aluminium Door Series</h2>
+            <p className="section-desc">Durable, sleek, and high-performance entrance solutions.</p>
           </div>
+          
           <div className="aluminium-door-grid">
-            <div className="aluminium-door-feature">
-              <Image
-                src="/left-image.jpeg"
-                alt="Aluminium glass partition"
-                fill
-                sizes="(max-width: 900px) 100vw, 48vw"
-                style={{ objectFit: 'cover' }}
-                priority
+            <div className="aluminium-door-feature group overflow-hidden">
+              <ImageSlider 
+                images={['/left-image.jpeg', '/1.jpeg', '/2.jpeg']} 
+                className="transition-transform duration-700 group-hover:scale-105"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none z-10"></div>
             </div>
             <div className="aluminium-door-tiles">
               {[
-                { src: '/1.jpeg', alt: 'Partition profile 1' },
-                { src: '/2.jpeg', alt: 'Partition profile 2' },
-                { src: '/3.jpeg', alt: 'Partition profile 3' },
-                { src: '/4.jpeg', alt: 'Partition profile 4' },
-              ].map((item) => (
-                <div key={item.src} className="aluminium-door-tile">
-                  <Image src={item.src} alt={item.alt} fill sizes="(max-width: 900px) 50vw, 25vw" style={{ objectFit: 'cover' }} />
+                { src: '/1.jpeg', alt: 'Door profile 1' },
+                { src: '/2.jpeg', alt: 'Door profile 2' },
+                { src: '/3.jpeg', alt: 'Door profile 3' },
+                { src: '/4.jpeg', alt: 'Door profile 4' },
+              ].map((item, idx) => (
+                <div key={idx} className="aluminium-door-tile group">
+                  <Image 
+                    src={item.src} 
+                    alt={item.alt} 
+                    fill 
+                    sizes="(max-width: 900px) 50vw, 25vw" 
+                    className="object-cover transition-transform duration-500 group-hover:scale-110" 
+                  />
+                  <div className="tile-hover-indicator"></div>
                 </div>
               ))}
             </div>
           </div>
-          <style jsx>{`
-            .aluminium-door-grid {
-              display: grid;
-              grid-template-columns: 1.05fr 0.95fr;
-              gap: 1.25rem;
-              align-items: stretch;
-              max-width: 1200px;
-              margin: 0 auto;
-            }
-            .aluminium-door-feature {
-              position: relative;
-              border-radius: 20px;
-              overflow: hidden;
-              border: 1px solid #e2e8f0;
-              box-shadow: 0 12px 40px rgba(15, 23, 42, 0.1);
-              background: #f1f5f9;
-              min-height: 420px;
-              max-height: min(640px, 80vh);
-            }
-            .aluminium-door-tiles {
-              display: grid;
-              grid-template-columns: 1fr 1fr;
-              grid-template-rows: 1fr 1fr;
-              gap: 1rem;
-              min-height: 0;
-            }
-            .aluminium-door-tile {
-              position: relative;
-              border-radius: 16px;
-              overflow: hidden;
-              border: 1px solid #e2e8f0;
-              background: #fff;
-              box-shadow: 0 8px 24px rgba(15, 23, 42, 0.07);
-              aspect-ratio: 4 / 3;
-              transition: transform 0.25s ease, box-shadow 0.25s ease;
-            }
-            .aluminium-door-tile:hover {
-              transform: translateY(-2px);
-              box-shadow: 0 14px 32px rgba(15, 23, 42, 0.11);
-            }
-            @media (max-width: 900px) {
-              .aluminium-door-grid {
-                grid-template-columns: 1fr;
-                max-width: none;
-              }
-              .aluminium-door-feature {
-                max-height: none;
-                min-height: 300px;
-                aspect-ratio: 4 / 3;
-              }
-              .aluminium-door-tiles {
-                grid-template-columns: repeat(2, 1fr);
-              }
-            }
-            @media (max-width: 480px) {
-              .aluminium-door-tiles {
-                grid-template-columns: 1fr;
-              }
-              .aluminium-door-tile {
-                aspect-ratio: 16 / 10;
-              }
-            }
-          `}</style>
         </div>
       </section>
 
-      {/* New Premium Collection section — left gallery + right hero */}
-      <section className="section-padding" style={{ background: '#fafafa', borderTop: '1px solid #e2e8f0' }}>
+      {/* 3. Premium Glazing - Architectural Series */}
+      <section className="section-padding section-white border-b border-slate-200">
         <div className="container-main">
-          <div style={{ textAlign: 'center', marginBottom: 'clamp(2rem, 4vw, 3rem)' }}>
-            <div className="gold-bar" style={{ margin: '0 auto 1rem' }} />
-            <h2 className="section-title">Aluminium Door</h2>
-
+          <div className="section-head-modern">
+            <span className="section-tag">Architectural</span>
+            <h2 className="section-title-main">Premium Glazing Collection</h2>
+            <p className="section-desc">Elite systems for refined aesthetics and functional transparency.</p>
           </div>
+          
           <div className="premium-showcase-grid">
-            {/* Left side: 3 images */}
-            <div className="premium-left-gallery">
-              <div className="premium-tile tile-large group">
-                <Image src="/ad-31.jpeg" alt="Premium Option 1" fill sizes="(max-width: 900px) 100vw, 35vw" style={{ objectFit: 'cover' }} />
-              </div>
-              <div className="premium-tile group">
-                <Image src="/ad32.jpeg" alt="Premium Option 2" fill sizes="(max-width: 900px) 50vw, 15vw" style={{ objectFit: 'cover' }} />
-              </div>
-              <div className="premium-tile group">
-                <Image src="/ad33.jpeg" alt="Premium Option 3" fill sizes="(max-width: 900px) 50vw, 15vw" style={{ objectFit: 'cover' }} />
-              </div>
+            <div className="premium-left-gallery overflow-hidden rounded-[24px] border border-slate-200 shadow-lg">
+              <ImageSlider 
+                images={['/ad-31.jpeg', '/ad32.jpeg', '/ad33.jpeg']} 
+                className="h-full min-h-[400px]"
+              />
             </div>
 
-            {/* Right side: 1 large image */}
-            <div className="premium-right-feature group">
+            <div className="premium-right-feature group overflow-hidden bg-slate-900 border border-slate-200">
               <Image
                 src="/cc.jpeg"
-                alt="Premium Main Concept"
+                alt="Premium Concept"
                 fill
                 sizes="(max-width: 900px) 100vw, 55vw"
-                style={{ objectFit: 'contain', background: '#0f172a' }}
-                priority
+                className="object-contain p-4 group-hover:scale-105 transition-transform duration-1000"
               />
             </div>
           </div>
-          <style jsx>{`
-            .premium-showcase-grid {
-              display: grid;
-              grid-template-columns: 0.8fr 1.2fr;
-              gap: 1.5rem;
-              align-items: stretch;
-              max-width: 1200px;
-              margin: 0 auto;
-            }
-            .premium-left-gallery {
-              display: grid;
-              grid-template-columns: 1fr 1fr;
-              grid-template-rows: auto 1fr;
-              gap: 1.25rem;
-              min-height: 0;
-            }
-            .tile-large {
-              grid-column: 1 / -1;
-              aspect-ratio: 16 / 10;
-              min-height: 240px;
-            }
-            .premium-tile {
-              position: relative;
-              border-radius: 16px;
-              overflow: hidden;
-              border: 1px solid #e2e8f0;
-              background: #fff;
-              box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            }
-            .premium-tile:not(.tile-large) {
-              aspect-ratio: 1 / 1;
-            }
-            .premium-right-feature {
-              position: relative;
-              border-radius: 20px;
-              overflow: hidden;
-              border: 1px solid #e2e8f0;
-              background: #0f172a;
-              box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-              min-height: 520px;
-            }
-            
-            .group {
-              cursor: pointer;
-            }
-            .group :global(img) {
-              transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1) !important;
-            }
-            .group:hover :global(img) {
-              transform: scale(1.05);
-            }
-            
-            @media (max-width: 900px) {
-              .premium-showcase-grid {
-                grid-template-columns: 1fr;
-              }
-              .premium-right-feature {
-                min-height: 400px;
-                aspect-ratio: 16 / 10;
-                order: -1; /* feature image first on mobile */
-              }
-              .premium-left-gallery {
-                gap: 1rem;
-              }
-            }
-            @media (max-width: 480px) {
-              .premium-left-gallery {
-                grid-template-columns: 1fr;
-              }
-              .premium-tile:not(.tile-large) {
-                aspect-ratio: 4 / 3;
-              }
-            }
-          `}</style>
         </div>
       </section>
 
-      {/* Comprehensive Collection section — Custom 3-on-3 Layout */}
-      <section className="section-padding" style={{ background: '#ffffff', borderTop: '1px solid #e2e8f0' }}>
+      {/* 4. Comprehensive Systems - Profile Logic */}
+      <section className="section-padding bg-slate-50 border-b border-slate-200">
         <div className="container-main">
-          <div style={{ textAlign: 'center', marginBottom: 'clamp(2rem, 4vw, 3rem)' }}>
-            <div className="gold-bar" style={{ margin: '0 auto 1rem' }} />
-            <h2 className="section-title">Aluminium Door</h2>
-
+          <div className="section-head-modern">
+            <span className="section-tag">Technical Specs</span>
+            <h2 className="section-title-main">Comprehensive Profile Gallery</h2>
+            <p className="section-desc">A deep dive into our precision-engineered profile systems.</p>
           </div>
 
           <div className="comprehensive-dual-grid">
-            {/* Left Side: p15 (Large) + p14, p21 (Small) */}
+            {/* Left Side Group - Now a Slider */}
             <div className="comp-dual-column">
-              <div className="comp-dual-tile tile-hero group">
-                <Image src="/p15.jpeg" alt="Comprehensive Hero" fill sizes="(max-width: 900px) 100vw, 45vw" style={{ objectFit: 'cover' }} priority />
-              </div>
-              <div className="comp-dual-subgrid">
-                <div className="comp-dual-tile group">
-                  <Image src="/p14.jpeg" alt="Profile Logic 1" fill sizes="(max-width: 900px) 50vw, 22vw" style={{ objectFit: 'cover' }} />
-                </div>
-                <div className="comp-dual-tile group">
-                  <Image src="/p21.jpeg" alt="Profile Logic 2" fill sizes="(max-width: 900px) 50vw, 22vw" style={{ objectFit: 'cover' }} />
-                </div>
+              <div className="comp-dual-tile overflow-hidden shadow-xl" style={{ flex: 1, minHeight: '500px' }}>
+                <ImageSlider 
+                  images={['/p15.jpeg', '/p14.jpeg', '/p21.jpeg']}
+                />
               </div>
             </div>
 
-            {/* Right Side: p11 (Large) + p12, p13 (Small) */}
+            {/* Right Side Group */}
             <div className="comp-dual-column">
-              <div className="comp-dual-tile tile-hero group" style={{ background: '#f8fafc' }}>
-                <Image src="/p11.jpeg" alt="Profile Specs 1" fill sizes="(max-width: 900px) 100vw, 45vw" style={{ objectFit: 'contain' }} />
+              <div className="comp-dual-tile tile-hero group bg-white">
+                <Image src="/p11.jpeg" alt="Profile Specs 1" fill sizes="(max-width: 900px) 100vw, 45vw" className="object-contain p-4 group-hover:scale-105 transition-transform duration-700" />
               </div>
               <div className="comp-dual-subgrid">
-                <div className="comp-dual-tile group" style={{ background: '#f8fafc' }}>
-                  <Image src="/p12.jpeg" alt="Profile Specs 2" fill sizes="(max-width: 900px) 50vw, 22vw" style={{ objectFit: 'contain' }} />
+                <div className="comp-dual-tile group bg-white">
+                  <Image src="/p12.jpeg" alt="Profile Specs 2" fill sizes="(max-width: 900px) 50vw, 22vw" className="object-contain p-4 group-hover:scale-110 transition-transform duration-500" />
                 </div>
-                <div className="comp-dual-tile group" style={{ background: '#f8fafc' }}>
-                  <Image src="/p13.jpeg" alt="Profile Specs 3" fill sizes="(max-width: 900px) 50vw, 22vw" style={{ objectFit: 'contain' }} />
+                <div className="comp-dual-tile group bg-white">
+                  <Image src="/p13.jpeg" alt="Profile Specs 3" fill sizes="(max-width: 900px) 50vw, 22vw" className="object-contain p-4 group-hover:scale-110 transition-transform duration-500" />
                 </div>
               </div>
             </div>
           </div>
-
-          <style jsx>{`
-            .comprehensive-dual-grid {
-              display: grid;
-              grid-template-columns: 1fr 1fr;
-              gap: 2rem;
-              max-width: 1240px;
-              margin: 0 auto;
-            }
-            .comp-dual-column {
-              display: flex;
-              flex-direction: column;
-              gap: 1.5rem;
-            }
-            .comp-dual-tile {
-              position: relative;
-              border-radius: 20px;
-              overflow: hidden;
-              border: 1px solid #e2e8f0;
-              background: #fff;
-              box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
-              transition: all 0.3s ease;
-            }
-            .tile-hero {
-              aspect-ratio: 16 / 10;
-              flex-grow: 1;
-              min-height: 280px;
-            }
-            .comp-dual-subgrid {
-              display: grid;
-              grid-template-columns: 1fr 1fr;
-              gap: 1.5rem;
-            }
-            .comp-dual-subgrid .comp-dual-tile {
-              aspect-ratio: 1 / 1;
-            }
-            
-            .group { cursor: pointer; }
-            .group :global(img) { transition: transform 0.6s cubic-bezier(0.2, 1, 0.2, 1) !important; }
-            .group:hover :global(img) { transform: scale(1.05); }
-            .group:hover {
-              transform: translateY(-4px);
-              box-shadow: 0 20px 48px rgba(15, 23, 42, 0.1);
-              border-color: #cbd5e1;
-            }
-
-            @media (max-width: 900px) {
-              .comprehensive-dual-grid { grid-template-columns: 1fr; gap: 3rem; }
-              .tile-hero { aspect-ratio: 4 / 3; min-height: 240px; }
-              .comp-dual-subgrid { gap: 1rem; }
-            }
-          `}</style>
         </div>
       </section>
 
-      {/* Premium Entrance & Mat Collection — left hero + right gallery (3 images) */}
-      <section className="section-padding" style={{ background: '#f8fafc', borderTop: '1px solid #e2e8f0' }}>
+      {/* 5. Entrance & Matting Collection */}
+      <section className="section-padding section-white border-b border-slate-200">
         <div className="container-main">
-          <div style={{ textAlign: 'center', marginBottom: 'clamp(2rem, 4vw, 3rem)' }}>
-            <div className="gold-bar" style={{ margin: '0 auto 1rem' }} />
-            <h2 className="section-title">Aluminium Door</h2>
-
+          <div className="section-head-modern">
+            <span className="section-tag">First Impressions</span>
+            <h2 className="section-title-main">Entrance & Matting Solutions</h2>
+            <p className="section-desc">Combine luxury and utility with our specialized entrance systems.</p>
           </div>
+          
           <div className="entrance-showcase-grid">
-            {/* Left side: 3 images gallery */}
+            <div className="entrance-left-feature group overflow-hidden border border-slate-200 shadow-lg bg-slate-50">
+              <ImageSlider 
+                images={['/door-5.webp', '/mat1.webp', '/mat2.webp']}
+                className="transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none"></div>
+            </div>
+
             <div className="entrance-right-gallery">
               <div className="entrance-tile tile-large group">
-                <Image src="/mat1.webp" alt="Premium Mat 1" fill sizes="(max-width: 900px) 100vw, 35vw" style={{ objectFit: 'cover' }} />
+                <Image src="/mat1.webp" alt="Matting 1" fill sizes="(max-width: 900px) 100vw, 35vw" className="object-cover group-hover:scale-105 transition-transform" />
               </div>
               <div className="entrance-tile group">
-                <Image src="/mat2.webp" alt="Premium Mat 2" fill sizes="(max-width: 900px) 50vw, 15vw" style={{ objectFit: 'cover' }} />
+                <Image src="/mat2.webp" alt="Matting 2" fill sizes="(max-width: 900px) 50vw, 15vw" className="object-cover group-hover:scale-110 transition-transform" />
               </div>
               <div className="entrance-tile group">
-                <Image src="/mat3.webp" alt="Premium Mat 3" fill sizes="(max-width: 900px) 50vw, 15vw" style={{ objectFit: 'cover' }} />
+                <Image src="/mat3.webp" alt="Matting 3" fill sizes="(max-width: 900px) 50vw, 15vw" className="object-cover group-hover:scale-110 transition-transform" />
               </div>
-            </div>
-
-            {/* Right side: 1 large image */}
-            <div className="entrance-left-feature group">
-              <Image
-                src="/door-5.webp"
-                alt="Entrance Solution"
-                fill
-                sizes="(max-width: 900px) 100vw, 45vw"
-                style={{ objectFit: 'cover' }}
-              />
             </div>
           </div>
-          <style jsx>{`
-            .entrance-showcase-grid {
-              display: grid;
-              grid-template-columns: 0.8fr 1.2fr;
-              gap: 1.5rem;
-              align-items: stretch;
-              max-width: 1200px;
-              margin: 0 auto;
-            }
-            .entrance-left-feature {
-              position: relative;
-              border-radius: 20px;
-              overflow: hidden;
-              border: 1px solid #e2e8f0;
-              background: #fff;
-              box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-              min-height: 520px;
-            }
-            .entrance-right-gallery {
-              display: grid;
-              grid-template-columns: 1fr 1fr;
-              grid-template-rows: auto 1fr;
-              gap: 1.25rem;
-              min-height: 0;
-            }
-            .tile-large {
-              grid-column: 1 / -1;
-              aspect-ratio: 16 / 10;
-              min-height: 240px;
-            }
-            .entrance-tile {
-              position: relative;
-              border-radius: 16px;
-              overflow: hidden;
-              border: 1px solid #e2e8f0;
-              background: #fff;
-              box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            }
-            .entrance-tile:not(.tile-large) {
-              aspect-ratio: 1 / 1;
-            }
-            
-            .group {
-              cursor: pointer;
-            }
-            .group :global(img) {
-              transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1) !important;
-            }
-            .group:hover :global(img) {
-              transform: scale(1.05);
-            }
-            
-            @media (max-width: 900px) {
-              .entrance-showcase-grid {
-                grid-template-columns: 1fr;
-              }
-              .entrance-left-feature {
-                min-height: 400px;
-                aspect-ratio: 16 / 10;
-                order: -1; /* image first on mobile */
-              }
-              .entrance-right-gallery {
-                gap: 1rem;
-              }
-            }
-            @media (max-width: 480px) {
-              .entrance-right-gallery {
-                grid-template-columns: 1fr;
-              }
-              .entrance-tile:not(.tile-large) {
-                aspect-ratio: 4 / 3;
-              }
-            }
-          `}</style>
         </div>
       </section>
 
-      {/* Profile systems showcase — pp2 left, pp right */}
-      <section className="section-padding section-white" style={{ borderTop: '1px solid #e2e8f0' }}>
+      {/* 6. Precision Systems Showroom */}
+      <section className="section-padding bg-slate-50">
         <div className="container-main">
-          <div style={{ textAlign: 'center', marginBottom: 'clamp(2rem, 4vw, 3rem)' }}>
-            <div className="gold-bar" style={{ margin: '0 auto 1rem' }} />
-            <h2 className="section-title">Aluminium Door</h2>
-
+          <div className="section-head-modern">
+            <span className="section-tag">Aerospace Series</span>
+            <h2 className="section-title-main">Technical Profile Systems</h2>
+            <p className="section-desc">Advanced engineering for high-performance architectural glazing.</p>
           </div>
+          
           <div className="pp-showcase-grid">
-            <div className="pp-showcase-panel pp-showcase-panel--left">
-              <Image
-                src="/pp2.jpeg"
-                alt="AEROSPACE glass partition profile series"
-                fill
-                sizes="(max-width: 900px) 100vw, 48vw"
-                style={{ objectFit: 'contain', objectPosition: 'center' }}
+            <div className="pp-showcase-panel bg-slate-900 group shadow-lg">
+              <ImageSlider 
+                images={['/pp2.jpeg', '/pp.jpeg', '/p11.jpeg']}
+                className="p-8 group-hover:scale-105 transition-transform duration-700"
               />
             </div>
-            <div className="pp-showcase-panel pp-showcase-panel--right">
+            <div className="pp-showcase-panel group shadow-lg">
               <Image
                 src="/pp.jpeg"
-                alt="AEROSPACE glass partition installation"
+                alt="Technical Profile Panel 2"
                 fill
                 sizes="(max-width: 900px) 100vw, 48vw"
-                style={{ objectFit: 'cover' }}
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
               />
             </div>
           </div>
-          <style jsx>{`
-            .pp-showcase-grid {
-              display: grid;
-              grid-template-columns: 1fr 1fr;
-              gap: 1.5rem;
-              align-items: stretch;
-              max-width: 1200px;
-              margin: 0 auto;
-            }
-            .pp-showcase-panel {
-              position: relative;
-              border-radius: 20px;
-              overflow: hidden;
-              border: 1px solid #e2e8f0;
-              box-shadow: 0 10px 36px rgba(15, 23, 42, 0.09);
-              background: #f8fafc;
-              min-height: 340px;
-              aspect-ratio: 4 / 3;
-              transition: box-shadow 0.3s ease, transform 0.3s ease;
-            }
-            .pp-showcase-panel:hover {
-              box-shadow: 0 16px 48px rgba(15, 23, 42, 0.12);
-              transform: translateY(-2px);
-            }
-            .pp-showcase-panel--left {
-              background: #0f172a;
-            }
-            @media (max-width: 900px) {
-              .pp-showcase-grid {
-                grid-template-columns: 1fr;
-                gap: 1.25rem;
-              }
-              .pp-showcase-panel {
-                min-height: 260px;
-                aspect-ratio: 16 / 10;
-              }
-            }
-          `}</style>
         </div>
       </section>
+
+      {/* Reusable Styles Consolidated for Performance and Maintainability */}
+      <style jsx>{`
+        .section-head-modern {
+          text-align: center;
+          margin-bottom: clamp(3rem, 6vw, 4.5rem);
+        }
+        .section-tag {
+          display: inline-block;
+          color: var(--accent);
+          font-weight: 800;
+          text-transform: uppercase;
+          letter-spacing: 0.15em;
+          font-size: 0.85rem;
+          margin-bottom: 0.75rem;
+          position: relative;
+        }
+        .section-tag::after {
+          content: '';
+          position: absolute;
+          bottom: -4px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 30px;
+          height: 2px;
+          background: var(--accent);
+        }
+        .section-title-main {
+          font-size: clamp(2rem, 4vw, 3rem);
+          font-weight: 900;
+          color: #0f172a;
+          line-height: 1.1;
+          margin-bottom: 1rem;
+          letter-spacing: -0.02em;
+        }
+        .section-desc {
+          font-size: clamp(1rem, 2vw, 1.15rem);
+          color: #64748b;
+          max-width: 600px;
+          margin: 0 auto;
+        }
+
+        /* Partition Grid */
+        .products-clean-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+          gap: 2rem;
+        }
+        .product-clean-card {
+          background: #ffffff;
+          border-radius: 24px;
+          border: 1px solid #e2e8f0;
+          overflow: hidden;
+          box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+          transition: all 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+        .product-clean-card:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 20px 48px rgba(15, 23, 42, 0.1);
+          border-color: #cbd5e1;
+        }
+        .product-clean-image-wrap {
+          position: relative;
+          aspect-ratio: 4 / 3;
+          overflow: hidden;
+        }
+        .product-overlay-gradient {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(to top, rgba(0,0,0,0.3) 0%, transparent 40%);
+          opacity: 0;
+          transition: opacity 0.4s;
+        }
+        .product-clean-card:hover .product-overlay-gradient {
+          opacity: 1;
+        }
+        .product-clean-info {
+          padding: 1.5rem;
+          text-align: center;
+        }
+        .product-clean-title {
+          font-size: 1.15rem;
+          font-weight: 800;
+          color: #1e293b;
+          transition: color 0.3s;
+        }
+        .product-clean-card:hover .product-clean-title {
+          color: var(--accent);
+        }
+
+        /* Aluminium Door Grid */
+        .aluminium-door-grid {
+          display: grid;
+          grid-template-columns: 1.1fr 0.9fr;
+          gap: 1.5rem;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+        .aluminium-door-feature {
+          position: relative;
+          border-radius: 24px;
+          overflow: hidden;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+          aspect-ratio: 16 / 12;
+        }
+        .aluminium-door-tiles {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr 1fr;
+          gap: 1.25rem;
+        }
+        .aluminium-door-tile {
+          position: relative;
+          border-radius: 20px;
+          overflow: hidden;
+          background: #fff;
+          border: 1px solid #e2e8f0;
+          aspect-ratio: 1 / 1;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+
+        /* Premium Glazing Grid */
+        .premium-showcase-grid {
+          display: grid;
+          grid-template-columns: 0.9fr 1.1fr;
+          gap: 1.5rem;
+        }
+        .premium-left-gallery {
+          position: relative;
+          min-height: 400px;
+        }
+        .premium-right-feature {
+          position: relative;
+          border-radius: 24px;
+          min-height: 500px;
+        }
+
+        /* Comprehensive Duel Grid */
+        .comprehensive-dual-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 2.5rem;
+        }
+        .comp-dual-column {
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+        .comp-dual-tile {
+          position: relative;
+          border-radius: 24px;
+          overflow: hidden;
+          border: 1px solid #e2e8f0;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+          transition: all 0.4s ease;
+        }
+        .tile-hero {
+          aspect-ratio: 16 / 10;
+          flex: 1;
+        }
+        .comp-dual-subgrid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 1.5rem;
+        }
+        .comp-dual-subgrid .comp-dual-tile {
+          aspect-ratio: 1 / 1;
+        }
+        .comp-dual-tile:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+          border-color: #cbd5e1;
+        }
+
+        /* Entrance Showcase */
+        .entrance-showcase-grid {
+          display: grid;
+          grid-template-columns: 1.1fr 0.9fr;
+          gap: 1.5rem;
+        }
+        .entrance-left-feature {
+          position: relative;
+          border-radius: 24px;
+          min-height: 500px;
+          overflow: hidden;
+        }
+        .entrance-right-gallery {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: auto 1fr;
+          gap: 1.25rem;
+        }
+        .entrance-tile {
+          position: relative;
+          border-radius: 20px;
+          overflow: hidden;
+          border: 1px solid #e2e8f0;
+        }
+        .tile-large {
+          grid-column: 1 / -1;
+          aspect-ratio: 16 / 10;
+        }
+
+        /* PP Showcase */
+        .pp-showcase-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 1.5rem;
+        }
+        .pp-showcase-panel {
+          position: relative;
+          aspect-ratio: 16 / 11;
+          border-radius: 24px;
+          border: 1px solid #e2e8f0;
+          overflow: hidden;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+          transition: all 0.4s;
+        }
+        .pp-showcase-panel:hover {
+          transform: scale(1.02);
+          box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1024px) {
+          .products-clean-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        @media (max-width: 900px) {
+          .aluminium-door-grid, 
+          .premium-showcase-grid,
+          .comprehensive-dual-grid,
+          .entrance-showcase-grid,
+          .pp-showcase-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+          }
+          .entrance-left-feature, .premium-right-feature, .premium-left-gallery {
+            min-height: 350px;
+            aspect-ratio: 16 / 10;
+          }
+          .entrance-left-feature { order: -1; }
+          .premium-right-feature { order: -1; }
+          .premium-left-gallery { order: 1; } /* Moved below the dark feature on mobile */
+        }
+
+        @media (max-width: 640px) {
+          .products-clean-grid {
+            grid-template-columns: 1fr;
+          }
+          .section-title-main {
+            font-size: 1.8rem;
+          }
+          .aluminium-door-tiles, .comp-dual-subgrid, .entrance-right-gallery {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+          }
+          .aluminium-door-tile, .comp-dual-subgrid .comp-dual-tile, .entrance-right-gallery .entrance-tile:not(.tile-large) {
+            aspect-ratio: 16 / 10;
+          }
+          .tile-large {
+            aspect-ratio: 4 / 3;
+          }
+          .section-padding {
+            padding: 3rem 0;
+          }
+        }
+      `}</style>
     </div>
   );
 }
