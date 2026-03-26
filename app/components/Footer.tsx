@@ -31,7 +31,7 @@ export default function Footer() {
                   sizes="180px"
                   unoptimized
                   quality={100}
-                  style={{ objectFit: 'contain', objectPosition: 'center' }}
+                  style={{ objectFit: 'contain', objectPosition: 'left center' }}
                 />
               </div>
             </Link>
@@ -73,25 +73,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Catalog */}
-          <div>
-            <h4 style={{ color: 'white', fontWeight: 800, fontSize: '0.85rem', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '1.5rem' }}>Solution Catalog</h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              {[
-                'Single Glazing Partition',
-                'Single Glass 25*25',
-                'Double Glaze Partition 25*100',
-                'Single Glazing Partition 25*25',
-                'Single Glaze Partition 25*45',
-                'Single Glazing Partition 25*100',
-                'Grid Partition',
-              ].map(item => (
-                <li key={item} style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <span style={{ color: 'var(--accent)', fontSize: '0.7rem' }}>▶</span> {item}
-                </li>
-              ))}
-            </ul>
-          </div>
+
 
           {/* Service Areas */}
           <div>
@@ -138,7 +120,7 @@ export default function Footer() {
           <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.85rem', margin: 0 }}>
             © 2026 Aerospace Aluminium Alloys. GST Registered Entity.
           </p>
-          
+
           <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.85rem', margin: 0, textAlign: 'center' }}>
             Designed &amp; Developed by <a href="https://digitalsolution.com" target="_blank" rel="noopener noreferrer" style={{ color: '#D92D20', textDecoration: 'none', fontWeight: 800 }}>Digitalsolution.com</a>
           </p>

@@ -46,15 +46,15 @@ export default function Navbar() {
             aria-label="Go to homepage"
             style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', height: '100%', cursor: 'pointer' }}
           >
-            <div style={{ position: 'relative', height: '55px', width: '220px' }}>
+            <div style={{ position: 'relative', height: '55px', width: '220px' }} className="logo-container">
               <Image
                 src="/logooo.png"
                 alt="Aerospace Aluminium Alloys Logo"
                 fill
-                sizes="220px"
+                sizes="(max-width: 900px) 180px, 220px"
                 unoptimized
                 quality={100}
-                style={{ objectFit: 'contain', objectPosition: 'center' }}
+                style={{ objectFit: 'contain', objectPosition: 'left center' }}
                 priority
               />
             </div>
@@ -147,6 +147,7 @@ export default function Navbar() {
         @media (max-width: 900px) {
           .desktop-nav { display: none !important; }
           .hamburger-btn { display: flex !important; }
+          .logo-container { width: 180px !important; height: 45px !important; }
         }
       `}</style>
     </>
