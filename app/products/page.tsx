@@ -254,7 +254,14 @@ export default function ProductsPage() {
 
             {/* Right side: 1 large image */}
             <div className="premium-right-feature group">
-              <Image src="/cc.jpeg" alt="Premium Main Concept" fill sizes="(max-width: 900px) 100vw, 55vw" style={{ objectFit: 'cover' }} priority />
+              <Image 
+                src="/cc.jpeg" 
+                alt="Premium Main Concept" 
+                fill 
+                sizes="(max-width: 900px) 100vw, 55vw" 
+                style={{ objectFit: 'contain', background: '#0f172a' }} 
+                priority 
+              />
             </div>
           </div>
           <style jsx>{`
@@ -294,7 +301,7 @@ export default function ProductsPage() {
               border-radius: 20px;
               overflow: hidden;
               border: 1px solid #e2e8f0;
-              background: #fff;
+              background: #0f172a;
               box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
               min-height: 520px;
             }
@@ -334,64 +341,177 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {/* New Comprehensive Collection section — left hero + right gallery (6 images) */}
+      {/* Comprehensive Collection section — Custom 3-on-3 Layout */}
       <section className="section-padding" style={{ background: '#ffffff', borderTop: '1px solid #e2e8f0' }}>
         <div className="container-main">
           <div style={{ textAlign: 'center', marginBottom: 'clamp(2rem, 4vw, 3rem)' }}>
             <div className="gold-bar" style={{ margin: '0 auto 1rem' }} />
-            <h2 className="section-title">Comprehensive Selection</h2>
+            <h2 className="section-title">Systems & Project Specifications</h2>
             <p className="products-head-sub" style={{ marginTop: '0.5rem', fontSize: '1.05rem', color: '#64748b' }}>
-              Discover the full breadth of our premium partition systems.
+              Detailed profile documentation and premium office partition installations.
             </p>
           </div>
-          <div className="comprehensive-showcase-grid">
-            {/* Left side: 1 large image */}
-            <div className="comprehensive-left-feature group">
-              <Image src="/p15.jpeg" alt="Comprehensive Main Concept" fill sizes="(max-width: 900px) 100vw, 45vw" style={{ objectFit: 'cover' }} priority />
+          
+          <div className="comprehensive-dual-grid">
+            {/* Left Side: p15 (Large) + p14, p21 (Small) */}
+            <div className="comp-dual-column">
+              <div className="comp-dual-tile tile-hero group">
+                <Image src="/p15.jpeg" alt="Comprehensive Hero" fill sizes="(max-width: 900px) 100vw, 45vw" style={{ objectFit: 'cover' }} priority />
+              </div>
+              <div className="comp-dual-subgrid">
+                <div className="comp-dual-tile group">
+                  <Image src="/p14.jpeg" alt="Profile Logic 1" fill sizes="(max-width: 900px) 50vw, 22vw" style={{ objectFit: 'cover' }} />
+                </div>
+                <div className="comp-dual-tile group">
+                  <Image src="/p21.jpeg" alt="Profile Logic 2" fill sizes="(max-width: 900px) 50vw, 22vw" style={{ objectFit: 'cover' }} />
+                </div>
+              </div>
             </div>
 
-            {/* Right side: 6 images grid */}
-            <div className="comprehensive-right-gallery">
-              <div className="comp-tile group"><Image src="/p14.jpeg" alt="Selection 1" fill sizes="(max-width: 900px) 33vw, 18vw" style={{ objectFit: 'cover' }} /></div>
-              <div className="comp-tile group"><Image src="/p13.jpeg" alt="Selection 2" fill sizes="(max-width: 900px) 33vw, 18vw" style={{ objectFit: 'cover' }} /></div>
-              <div className="comp-tile group"><Image src="/p12.jpeg" alt="Selection 3" fill sizes="(max-width: 900px) 33vw, 18vw" style={{ objectFit: 'cover' }} /></div>
-              <div className="comp-tile group"><Image src="/p11.jpeg" alt="Selection 4" fill sizes="(max-width: 900px) 33vw, 18vw" style={{ objectFit: 'cover' }} /></div>
-              <div className="comp-tile group"><Image src="/p20.jpeg" alt="Selection 5" fill sizes="(max-width: 900px) 33vw, 18vw" style={{ objectFit: 'cover' }} /></div>
-              <div className="comp-tile group"><Image src="/p21.jpeg" alt="Selection 6" fill sizes="(max-width: 900px) 33vw, 18vw" style={{ objectFit: 'cover' }} /></div>
+            {/* Right Side: p11 (Large) + p12, p13 (Small) */}
+            <div className="comp-dual-column">
+              <div className="comp-dual-tile tile-hero group" style={{ background: '#f8fafc' }}>
+                <Image src="/p11.jpeg" alt="Profile Specs 1" fill sizes="(max-width: 900px) 100vw, 45vw" style={{ objectFit: 'contain' }} />
+              </div>
+              <div className="comp-dual-subgrid">
+                <div className="comp-dual-tile group" style={{ background: '#f8fafc' }}>
+                  <Image src="/p12.jpeg" alt="Profile Specs 2" fill sizes="(max-width: 900px) 50vw, 22vw" style={{ objectFit: 'contain' }} />
+                </div>
+                <div className="comp-dual-tile group" style={{ background: '#f8fafc' }}>
+                  <Image src="/p13.jpeg" alt="Profile Specs 3" fill sizes="(max-width: 900px) 50vw, 22vw" style={{ objectFit: 'contain' }} />
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <style jsx>{`
+            .comprehensive-dual-grid {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 2rem;
+              max-width: 1240px;
+              margin: 0 auto;
+            }
+            .comp-dual-column {
+              display: flex;
+              flex-direction: column;
+              gap: 1.5rem;
+            }
+            .comp-dual-tile {
+              position: relative;
+              border-radius: 20px;
+              overflow: hidden;
+              border: 1px solid #e2e8f0;
+              background: #fff;
+              box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+              transition: all 0.3s ease;
+            }
+            .tile-hero {
+              aspect-ratio: 16 / 10;
+              flex-grow: 1;
+              min-height: 280px;
+            }
+            .comp-dual-subgrid {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 1.5rem;
+            }
+            .comp-dual-subgrid .comp-dual-tile {
+              aspect-ratio: 1 / 1;
+            }
+            
+            .group { cursor: pointer; }
+            .group :global(img) { transition: transform 0.6s cubic-bezier(0.2, 1, 0.2, 1) !important; }
+            .group:hover :global(img) { transform: scale(1.05); }
+            .group:hover {
+              transform: translateY(-4px);
+              box-shadow: 0 20px 48px rgba(15, 23, 42, 0.1);
+              border-color: #cbd5e1;
+            }
+
+            @media (max-width: 900px) {
+              .comprehensive-dual-grid { grid-template-columns: 1fr; gap: 3rem; }
+              .tile-hero { aspect-ratio: 4 / 3; min-height: 240px; }
+              .comp-dual-subgrid { gap: 1rem; }
+            }
+          `}</style>
+        </div>
+      </section>
+
+      {/* Premium Entrance & Mat Collection — left hero + right gallery (3 images) */}
+      <section className="section-padding" style={{ background: '#f8fafc', borderTop: '1px solid #e2e8f0' }}>
+        <div className="container-main">
+          <div style={{ textAlign: 'center', marginBottom: 'clamp(2rem, 4vw, 3rem)' }}>
+            <div className="gold-bar" style={{ margin: '0 auto 1rem' }} />
+            <h2 className="section-title">Premium Entrance & Mats</h2>
+            <p className="products-head-sub" style={{ marginTop: '0.5rem', fontSize: '1.05rem', color: '#64748b' }}>
+              Superior quality floor mats and entrance solutions for a clean, professional look.
+            </p>
+          </div>
+          <div className="entrance-showcase-grid">
+            {/* Left side: 3 images gallery */}
+            <div className="entrance-right-gallery">
+              <div className="entrance-tile tile-large group">
+                <Image src="/mat1.webp" alt="Premium Mat 1" fill sizes="(max-width: 900px) 100vw, 35vw" style={{ objectFit: 'cover' }} />
+              </div>
+              <div className="entrance-tile group">
+                <Image src="/mat2.webp" alt="Premium Mat 2" fill sizes="(max-width: 900px) 50vw, 15vw" style={{ objectFit: 'cover' }} />
+              </div>
+              <div className="entrance-tile group">
+                <Image src="/mat3.webp" alt="Premium Mat 3" fill sizes="(max-width: 900px) 50vw, 15vw" style={{ objectFit: 'cover' }} />
+              </div>
+            </div>
+
+            {/* Right side: 1 large image */}
+            <div className="entrance-left-feature group">
+              <Image 
+                src="/door-5.webp" 
+                alt="Entrance Solution" 
+                fill 
+                sizes="(max-width: 900px) 100vw, 45vw" 
+                style={{ objectFit: 'cover' }} 
+              />
             </div>
           </div>
           <style jsx>{`
-            .comprehensive-showcase-grid {
+            .entrance-showcase-grid {
               display: grid;
-              grid-template-columns: 1fr 1.3fr;
+              grid-template-columns: 0.8fr 1.2fr;
               gap: 1.5rem;
               align-items: stretch;
               max-width: 1200px;
               margin: 0 auto;
             }
-            .comprehensive-left-feature {
+            .entrance-left-feature {
               position: relative;
               border-radius: 20px;
               overflow: hidden;
               border: 1px solid #e2e8f0;
               background: #fff;
               box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-              min-height: 500px;
+              min-height: 520px;
             }
-            .comprehensive-right-gallery {
+            .entrance-right-gallery {
               display: grid;
-              grid-template-columns: repeat(3, 1fr);
-              grid-template-rows: repeat(2, 1fr);
-              gap: 1rem;
+              grid-template-columns: 1fr 1fr;
+              grid-template-rows: auto 1fr;
+              gap: 1.25rem;
               min-height: 0;
             }
-            .comp-tile {
+            .tile-large {
+              grid-column: 1 / -1;
+              aspect-ratio: 16 / 10;
+              min-height: 240px;
+            }
+            .entrance-tile {
               position: relative;
-              border-radius: 12px;
+              border-radius: 16px;
               overflow: hidden;
               border: 1px solid #e2e8f0;
               background: #fff;
               box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            }
+            .entrance-tile:not(.tile-large) {
               aspect-ratio: 1 / 1;
             }
             
@@ -406,21 +526,24 @@ export default function ProductsPage() {
             }
             
             @media (max-width: 900px) {
-              .comprehensive-showcase-grid {
+              .entrance-showcase-grid {
                 grid-template-columns: 1fr;
               }
-              .comprehensive-left-feature {
-                min-height: 360px;
+              .entrance-left-feature {
+                min-height: 400px;
                 aspect-ratio: 16 / 10;
+                order: -1; /* image first on mobile */
               }
-              .comprehensive-right-gallery {
-                 gap: 0.75rem;
+              .entrance-right-gallery {
+                gap: 1rem;
               }
             }
             @media (max-width: 480px) {
-              .comprehensive-right-gallery {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 0.5rem;
+              .entrance-right-gallery {
+                grid-template-columns: 1fr;
+              }
+              .entrance-tile:not(.tile-large) {
+                aspect-ratio: 4 / 3;
               }
             }
           `}</style>
@@ -430,6 +553,13 @@ export default function ProductsPage() {
       {/* Profile systems showcase — pp2 left, pp right */}
       <section className="section-padding section-white" style={{ borderTop: '1px solid #e2e8f0' }}>
         <div className="container-main">
+          <div style={{ textAlign: 'center', marginBottom: 'clamp(2rem, 4vw, 3rem)' }}>
+            <div className="gold-bar" style={{ margin: '0 auto 1rem' }} />
+            <h2 className="section-title">AEROSPACE Technical Specs & Projects</h2>
+            <p className="products-head-sub" style={{ marginTop: '0.5rem', fontSize: '1.05rem', color: '#64748b' }}>
+              Precision-designed partition profiles alongside high-end installation examples.
+            </p>
+          </div>
           <div className="pp-showcase-grid">
             <div className="pp-showcase-panel pp-showcase-panel--left">
               <Image
