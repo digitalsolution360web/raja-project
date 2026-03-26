@@ -120,6 +120,63 @@ export default function AboutPage() {
           }
         `}</style>
       </section>
+      {/* Facility Showcase Section */}
+      <section className="section-padding section-white">
+        <div className="container-main">
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <div className="gold-bar" style={{ margin: '0 auto 1.25rem' }} />
+            <h2 className="section-title">Visit Our Facilities</h2>
+          </div>
+
+          <div>
+            <div style={{ position: 'relative' }}>
+              <div style={{ 
+                position: 'relative', 
+                borderRadius: '24px', 
+                overflow: 'hidden', 
+                boxShadow: '0 30px 60px rgba(15, 23, 42, 0.2)',
+                border: '10px solid white',
+                background: 'white'
+              }}>
+                <div style={{ position: 'relative', minHeight: '500px', width: '100%' }}>
+                  <Image
+                    src="/aero.jpeg"
+                    alt="Aerospace Facility"
+                    fill
+                    style={{ objectFit: 'cover', objectPosition: 'center' }}
+                  />
+                  <div style={{ 
+                    position: 'absolute', 
+                    inset: 0, 
+                    background: 'linear-gradient(to top, rgba(15, 23, 42, 0.5), transparent 70%)' 
+                  }} />
+                  <div style={{ 
+                    position: 'absolute', 
+                    bottom: '30px', 
+                    left: '30px', 
+                    color: 'white',
+                    zIndex: 2
+                  }}>
+                    <h3 style={{ color: 'white', marginBottom: '0.5rem', fontSize: '1.5rem' }}>Regional Coordination Center</h3>
+                    <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1rem' }}>Bikaner (Nokha), Rajasthan</p>
+                  </div>
+                </div>
+              </div>
+              <div style={{ 
+                position: 'absolute', 
+                top: '-30px', 
+                right: '-30px', 
+                width: '150px', 
+                height: '150px', 
+                background: 'var(--accent)', 
+                opacity: 0.05, 
+                borderRadius: '50%', 
+                zIndex: -1 
+              }} />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Credentials — card grid (balanced, responsive, no harsh split columns) */}
       <section className="section-padding section-silver about-credentials-section">

@@ -93,6 +93,26 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Service Areas */}
+          <div>
+            <h4 style={{ color: 'white', fontWeight: 800, fontSize: '0.85rem', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '1.5rem' }}>Service Areas</h4>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              {[
+                'Delhi',
+                'Pune',
+                'Mumbai',
+                'Bangalore',
+                'Hyderabad',
+                'Chandigarh',
+                'Rajasthan',
+              ].map(area => (
+                <li key={area} style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <span style={{ color: 'var(--accent)', fontSize: '0.7rem' }}>📍</span> {area}
+                </li>
+              ))}
+            </ul>
+          </div>
+
           {/* Contact */}
           <div>
             <h4 style={{ color: 'white', fontWeight: 800, fontSize: '0.85rem', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '1.5rem' }}>Contact Office</h4>

@@ -97,6 +97,31 @@ export default function ContactPage() {
                     </div>
                   </div>
                 </div>
+
+                <div className="card-glass" style={{ borderLeft: '4px solid var(--gold)' }}>
+                  <h3 style={{ fontSize: '1.1rem', color: 'var(--navy)', marginBottom: '1rem' }}>RAJASTHAN BRANCH OFFICE</h3>
+                  <div style={{ fontSize: '0.9rem', color: 'var(--text-mid)', lineHeight: 1.8, display: 'grid', gap: '0.25rem' }}>
+                    <div><strong>Floor No.:</strong> Second Floor</div>
+                    <div><strong>Building No./Flat No.:</strong> Shop No 104</div>
+                    <div><strong>Name Of Premises/Building:</strong> Choudhary Tower Patta no 48 Jon no 21</div>
+                    <div><strong>Road/Street:</strong> Near Police Station</div>
+                    <div><strong>Nearby Landmark:</strong> Nokha</div>
+                    <div><strong>Locality/Sub Locality:</strong> Nokha</div>
+                    <div><strong>City/Town/Village:</strong> Nokha</div>
+                    <div><strong>District:</strong> Bikaner</div>
+                    <div><strong>State:</strong> Rajasthan</div>
+                    <div><strong>PIN Code:</strong> 334803</div>
+                  </div>
+                  <div style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                    <div style={{ fontSize: '0.85rem' }}>📧 aerospacealuminiumalloys@gmail.com</div>
+                    <div style={{ fontSize: '0.85rem' }}>
+                      <svg width="14" height="14" style={{ verticalAlign: 'middle', marginRight: '4px' }} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                      </svg>
+                      +91 8000676442
+                    </div>
+                  </div>
+                </div>
                 {/* Old offices removed; updated company contact block inserted above. */}
 
                 <div>
