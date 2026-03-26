@@ -57,7 +57,7 @@ export default function ProductsPage() {
           <div className="container-main">
             <div className="centered-head">
               <div className="gold-bar" style={{ margin: '0 auto 1rem' }} />
-              <h2 className="section-title">Aluminium Door Systems</h2>
+              <h2 className="section-title">Aluminium Door</h2>
             </div>
             <div className="aluminium-door-grid">
               <div className="aluminium-door-feature">
@@ -79,7 +79,7 @@ export default function ProductsPage() {
           <div className="container-main">
             <div className="centered-head">
               <div className="gold-bar" style={{ margin: '0 auto 1rem' }} />
-              <h2 className="section-title">Elite Design Portfolio</h2>
+              <h2 className="section-title">Aluminium Door</h2>
             </div>
             <div className="premium-showcase-grid">
               <div className="premium-left-gallery">
@@ -97,7 +97,7 @@ export default function ProductsPage() {
           <div className="container-main">
             <div className="centered-head">
               <div className="gold-bar" style={{ margin: '0 auto 1rem' }} />
-              <h2 className="section-title">Architectural Profile Systems</h2>
+              <h2 className="section-title">Aluminium Door</h2>
             </div>
             <div className="comprehensive-dual-grid">
               <div className="comp-dual-column">
@@ -121,7 +121,7 @@ export default function ProductsPage() {
           <div className="container-main">
             <div className="centered-head">
               <div className="gold-bar" style={{ margin: '0 auto 1rem' }} />
-              <h2 className="section-title">Entrance & Matting Solutions</h2>
+              <h2 className="section-title">Aluminium Door</h2>
             </div>
             <div className="entrance-showcase-grid">
               <div className="entrance-right-gallery">
@@ -141,7 +141,7 @@ export default function ProductsPage() {
           <div className="container-main">
             <div className="centered-head">
               <div className="gold-bar" style={{ margin: '0 auto 1rem' }} />
-              <h2 className="section-title">Aerospace Profile Series</h2>
+              <h2 className="section-title">Aluminium Door</h2>
             </div>
             <div className="pp-showcase-grid">
               <div className="pp-showcase-panel pp-showcase-panel--left">
