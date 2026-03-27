@@ -158,7 +158,7 @@ export default function HomePage() {
                 { src: '/126.jpeg', label: 'Aerospace Glass Partition Style Door Male Female Profile 35x60mm (Black Finish) 1800mm' }
               ].map((item, i) => (
                 <div key={i} style={{ background: '#ffffff', padding: '1.5rem', display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-                  <div style={{ width: '100px', height: '100px', position: 'relative', flexShrink: 0 }}>
+                  <div className="architect-border" style={{ width: '100px', height: '100px', position: 'relative', flexShrink: 0 }}>
                     <Image src={item.src} alt="Profile" fill style={{ objectFit: 'contain' }} />
                   </div>
                   <p style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--navy)', lineHeight: 1.4 }}>{item.label}</p>
@@ -180,7 +180,7 @@ export default function HomePage() {
           <div className="responsive-spec-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '0', background: '#ffffff', borderRadius: '28px', overflow: 'hidden', boxShadow: '0 25px 60px -15px rgba(0,0,0,0.1)' }}>
             <div className="inner-spec-grid" style={{ display: 'grid', gridTemplateRows: '1fr', gap: '1px', background: 'var(--silver-dark)' }}>
               <div style={{ background: '#ffffff', padding: '2rem', display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-                <div style={{ width: '140px', height: '140px', position: 'relative', flexShrink: 0, borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--silver-dark)' }}>
+                <div className="architect-border" style={{ width: '140px', height: '140px', position: 'relative', flexShrink: 0 }}>
                   <Image src="/dg1 (3).jpeg" alt="Double Glaze Partition Profile" fill style={{ objectFit: 'cover' }} />
                 </div>
                 <div>
@@ -242,7 +242,7 @@ export default function HomePage() {
                 { label: 'AEROSPACE Glass Partition System Slim Line Door Frame 45x50 Mm (Black Finish) 2500mm', img: '/gp1 (3).jpeg' }
               ].map((item, i) => (
                 <div key={i} style={{ background: '#ffffff', padding: '2rem', display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-                  <div style={{ width: '60px', height: '60px', position: 'relative', flexShrink: 0 }}>
+                  <div className="architect-border" style={{ width: '60px', height: '60px', position: 'relative', flexShrink: 0 }}>
                     <Image src={item.img} alt="GP Profile" fill style={{ objectFit: 'contain' }} />
                   </div>
                   <p style={{ fontSize: '0.85rem', fontWeight: 800, color: 'var(--navy)' }}>{item.label}</p>
@@ -269,7 +269,7 @@ export default function HomePage() {
                 'AEROSPACE Glass Partition System Slim Line Fix 25x25mm (Black Finish) 2500mm',
               ].map((spec, i) => (
                 <div key={i} style={{ background: '#ffffff', padding: '1.5rem', display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-                  <div style={{ width: '100px', height: '100px', position: 'relative', flexShrink: 0 }}>
+                  <div className="architect-border" style={{ width: '100px', height: '100px', position: 'relative', flexShrink: 0 }}>
                     <Image src="/g1.jpeg" alt="Slim Line Profile" fill style={{ objectFit: 'contain' }} />
                   </div>
                   <p style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--navy)', lineHeight: 1.4 }}>

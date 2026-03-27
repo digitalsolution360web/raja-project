@@ -53,7 +53,7 @@ export default function ProductsPage() {
         </section>
 
         {/* Section 1: Aluminium Door Systems */}
-        <section className="section-padding" style={{ background: '#f1f5f9', borderTop: '1px solid #e2e8f0' }}>
+        <section className="section-padding" style={{ background: '#f8fafc', borderTop: '1px solid #e1e7ef' }}>
           <div className="container-main">
             <div className="centered-head">
               <div className="gold-bar" style={{ margin: '0 auto 1rem' }} />
@@ -65,7 +65,7 @@ export default function ProductsPage() {
               </div>
               <div className="aluminium-door-tiles">
                 {['/1.jpeg', '/2.jpeg', '/3.jpeg', '/4.jpeg'].map((src, idx) => (
-                  <div key={src} className="aluminium-door-tile">
+                  <div key={src} className="aluminium-door-tile architect-border">
                     <Image src={src} alt={`Partition profile ${idx + 1}`} fill sizes="(max-width: 900px) 50vw, 25vw" style={{ objectFit: 'cover' }} />
                   </div>
                 ))}
@@ -75,7 +75,7 @@ export default function ProductsPage() {
         </section>
 
         {/* Section 2: Elite Design Portfolio (Slider) */}
-        <section className="section-padding" style={{ background: '#fafafa', borderTop: '1px solid #e2e8f0' }}>
+        <section className="section-padding" style={{ background: '#fef2f2', borderTop: '1px solid #fee2e2' }}>
           <div className="container-main">
             <div className="centered-head">
               <div className="gold-bar" style={{ margin: '0 auto 1rem' }} />
@@ -93,7 +93,7 @@ export default function ProductsPage() {
         </section>
 
         {/* Section 3: Architectural Profile Systems (Slider) */}
-        <section className="section-padding" style={{ background: '#ffffff', borderTop: '1px solid #e2e8f0' }}>
+        <section className="section-padding" style={{ background: '#ffffff', borderTop: '1px solid #f1f5f9' }}>
           <div className="container-main">
             <div className="centered-head">
               <div className="gold-bar" style={{ margin: '0 auto 1rem' }} />
@@ -104,12 +104,12 @@ export default function ProductsPage() {
                 <ImageSlider images={['/p15.jpeg', '/p14.jpeg', '/p21.jpeg']} aspectRatio="auto" style={{ height: '100%' }} />
               </div>
               <div className="comp-dual-column">
-                <div className="comp-dual-tile tile-hero group" style={{ background: '#f8fafc' }}>
+                <div className="comp-dual-tile tile-hero group">
                   <Image src="/p11.jpeg" alt="Profile Specs 1" fill sizes="(max-width: 900px) 100vw, 45vw" style={{ objectFit: 'contain' }} />
                 </div>
                 <div className="comp-dual-subgrid">
-                  <div className="comp-dual-tile group" style={{ background: '#f8fafc' }}><Image src="/p12.jpeg" alt="Specs 2" fill sizes="25vw" style={{ objectFit: 'contain' }} /></div>
-                  <div className="comp-dual-tile group" style={{ background: '#f8fafc' }}><Image src="/p13.jpeg" alt="Specs 3" fill sizes="25vw" style={{ objectFit: 'contain' }} /></div>
+                  <div className="comp-dual-tile group"><Image src="/p12.jpeg" alt="Specs 2" fill sizes="25vw" style={{ objectFit: 'contain' }} /></div>
+                  <div className="comp-dual-tile group"><Image src="/p13.jpeg" alt="Specs 3" fill sizes="25vw" style={{ objectFit: 'contain' }} /></div>
                 </div>
               </div>
             </div>
@@ -117,7 +117,7 @@ export default function ProductsPage() {
         </section>
 
         {/* Section 4: Entrance & Matting Solutions */}
-        <section className="section-padding" style={{ background: '#f8fafc', borderTop: '1px solid #e2e8f0' }}>
+        <section className="section-padding" style={{ background: '#f0f9ff', borderTop: '1px solid #e0f2fe' }}>
           <div className="container-main">
             <div className="centered-head">
               <div className="gold-bar" style={{ margin: '0 auto 1rem' }} />
@@ -137,14 +137,14 @@ export default function ProductsPage() {
         </section>
 
         {/* Section 5: Aerospace Profile Series */}
-        <section className="section-padding section-white" style={{ borderTop: '1px solid #e2e8f0' }}>
+        <section className="section-padding" style={{ background: '#fafaf9', borderTop: '1px solid #f5f5f4' }}>
           <div className="container-main">
             <div className="centered-head">
               <div className="gold-bar" style={{ margin: '0 auto 1rem' }} />
               <h2 className="section-title">Aluminium Door</h2>
             </div>
             <div className="pp-showcase-grid">
-              <div className="pp-showcase-panel pp-showcase-panel--left">
+              <div className="pp-showcase-panel pp-showcase-panel--left architect-border">
                 <Image src="/pp2.jpeg" alt="Profile Series" fill sizes="45vw" style={{ objectFit: 'contain' }} />
               </div>
               <div className="pp-showcase-panel pp-showcase-panel--right">
@@ -165,36 +165,36 @@ export default function ProductsPage() {
         .gold-bar { width: 45px; height: 3px; background: linear-gradient(90deg, #b91c1c 0%, #ef4444 100%); border-radius: 100px; margin-bottom: 1.25rem; }
 
         .products-clean-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); justify-content: stretch; gap: 2.5rem; width: 100%; }
-        .product-clean-card { background: #fff; border-radius: 20px; border: 1px solid #f1f5f9; overflow: hidden; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03), 0 1px 2px rgba(15, 23, 42, 0.04); transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1); position: relative; }
-        .product-clean-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(15, 23, 42, 0.12); border-color: #e2e8f0; }
-        .product-clean-image-wrap { position: relative; width: 100%; aspect-ratio: 1 / 1; background: #f8fafc; overflow: hidden; }
-        .product-clean-title { margin: 0; min-height: 90px; display: flex; align-items: center; justify-content: center; padding: 1.5rem; color: #0f172a; font-size: 1.1rem; font-weight: 750; line-height: 1.4; text-align: center; background: #fff; }
+        .product-clean-card { background: #fff; border-radius: 12px; border: 3px solid #334155; overflow: hidden; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); transition: all 0.45s ease; position: relative; padding: 12px; }
+        .product-clean-card:hover { transform: translateY(-7px); box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2); border-color: var(--accent); }
+        .product-clean-image-wrap { position: relative; width: 100%; aspect-ratio: 1 / 1; background: #f8fafc; overflow: hidden; border-radius: 8px; border: 1.5px solid #e2e8f0; }
+        .product-clean-title { margin: 0; min-height: 60px; display: flex; align-items: center; justify-content: center; padding: 1rem; color: #0f172a; font-size: 1.05rem; font-weight: 850; line-height: 1.3; text-align: center; background: #fff; }
 
         .aluminium-door-grid { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 2.5rem; align-items: stretch; max-width: 1400px; margin: 0 auto; width: 100%; }
-        .aluminium-door-feature { position: relative; border-radius: 24px; overflow: hidden; border: 1px solid #f1f5f9; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05); background: #f8fafc; min-height: 550px; }
+        .aluminium-door-feature { position: relative; border-radius: 12px; overflow: hidden; border: 3px solid #334155; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); background: #f8fafc; min-height: 550px; padding: 12px; }
         .aluminium-door-tiles { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 1.5rem; }
-        .aluminium-door-tile { position: relative; border-radius: 18px; overflow: hidden; border: 1px solid #f1f5f9; background: #fff; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.025); aspect-ratio: 1 / 1; transition: all 0.4s ease; }
-
+        .aluminium-door-tile { position: relative; background: #fff; aspect-ratio: 1 / 1; transition: all 0.4s ease; }
+        
         .premium-showcase-grid { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 3rem; align-items: stretch; max-width: 1400px; margin: 0 auto; width: 100%; }
-        .premium-left-gallery { display: flex; flex-direction: column; min-height: 650px; border-radius: 24px; overflow: hidden; box-shadow: 0 25px 60px rgba(0,0,0,0.06); }
-        .premium-right-feature { position: relative; border-radius: 24px; overflow: hidden; border: 1px solid #1e293b; background: #0f172a; box-shadow: 0 30px 80px rgba(15, 23, 42, 0.15); min-height: 650px; }
+        .premium-left-gallery { display: flex; flex-direction: column; min-height: 650px; border-radius: 12px; overflow: hidden; border: 3px solid #334155; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); padding: 12px; background: #fff; }
+        .premium-right-feature { position: relative; border-radius: 12px; overflow: hidden; border: 3.5px solid #1e293b; background: #0f172a; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); min-height: 650px; padding: 12px; }
 
         .comprehensive-dual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; max-width: 1400px; margin: 0 auto; width: 100%; }
         .comp-dual-column { display: flex; flex-direction: column; gap: 2.5rem; justify-content: stretch; }
-        .comp-dual-tile { position: relative; border-radius: 24px; overflow: hidden; border: 1px solid #f1f5f9; background: #fff; box-shadow: 0 15px 40px rgba(15, 23, 42, 0.04); transition: all 0.4s ease; }
+        .comp-dual-tile { position: relative; border-radius: 12px; overflow: hidden; border: 3px solid #334155; background: #fff; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); transition: all 0.4s ease; padding: 12px; }
         .tile-hero { flex-grow: 1; min-height: 400px; }
         .comp-dual-subgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
         .comp-dual-subgrid .comp-dual-tile { aspect-ratio: 1 / 1; }
 
         .entrance-showcase-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: stretch; max-width: 1400px; margin: 0 auto; width: 100%; }
-        .entrance-left-feature { position: relative; border-radius: 24px; overflow: hidden; border: 1px solid #f1f5f9; background: #fff; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06); min-height: 650px; }
+        .entrance-left-feature { position: relative; border-radius: 12px; overflow: hidden; border: 3px solid #334155; background: #fff; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); min-height: 650px; padding: 12px; }
         .entrance-right-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
         .tile-large { grid-column: 1 / -1; aspect-ratio: 16 / 9; min-height: 320px; }
-        .entrance-tile { position: relative; border-radius: 20px; overflow: hidden; border: 1px solid #f1f5f9; background: #fff; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03); }
+        .entrance-tile { position: relative; border-radius: 12px; overflow: hidden; border: 3px solid #334155; background: #fff; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); padding: 12px; }
 
         .pp-showcase-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; max-width: 1400px; margin: 0 auto; width: 100%; }
-        .pp-showcase-panel { position: relative; border-radius: 24px; overflow: hidden; border: 1px solid #f1f5f9; box-shadow: 0 20px 50px rgba(15, 23, 42, 0.06); background: #f8fafc; min-height: 450px; aspect-ratio: 4 / 3; transition: all 0.4s ease; }
-        .pp-showcase-panel--left { background: #0f172a; border-color: #1e293b; }
+        .pp-showcase-panel { position: relative; border-radius: 12px; overflow: hidden; border: 3px solid #334155; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); background: #ffffff; min-height: 450px; aspect-ratio: 4 / 3; transition: all 0.4s ease; padding: 12px; }
+        .pp-showcase-panel--left { background: #ffffff; border-color: #334155; }
 
         .group { cursor: pointer; position: relative; }
         .group::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 65%, rgba(15, 23, 42, 0.05) 100%); opacity: 0; transition: opacity 0.4s ease; }
