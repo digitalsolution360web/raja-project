@@ -5,7 +5,7 @@ import ImageSlider from '@/app/components/ImageSlider';
 const products = [
   { id: 'single-glazing-partition', title: 'Single Glazing Partition', img: '/g1.jpeg' },
   { id: 'single-glass-25-25', title: 'Single Gaze Grid Partition 25*45', img: '/g2.jpeg' },
-  { id: 'double-glaze-25-100', title: 'Double Glaze Partition 25*100', img: '/g3.jpeg' },
+  { id: 'double-glaze-25-100', title: 'Double Glaze Partition 25*100', img: '/dou.jpeg' },
   { id: 'single-glazing-25-25', title: 'Single Glazing Partition 25*25', img: '/g4.jpeg' },
   { id: 'single-glaze-25-45', title: 'Single Glaze Partition 25*45', img: '/g5.jpeg' },
   { id: 'single-glazing-25-100', title: 'Single Glazing Partition 25*100', img: '/p20.jpeg' },
@@ -30,7 +30,7 @@ export default function ProductsPage() {
           <div className="container-main">
             <div className="products-head">
               <h2 className="products-head-title">Partition Collection</h2>
-              <p className="products-head-sub">Image-first catalogue for your key partition systems.</p>
+              <p className="products-head-sub">Catalogue for your key partition systems.</p>
             </div>
             <div className="products-clean-grid">
               {products.map((product, idx) => (
@@ -156,48 +156,52 @@ export default function ProductsPage() {
       </div>
 
       <style jsx>{`
-        .products-layout-wrapper { width: 100%; overflow-x: hidden; }
+        .products-layout-wrapper { width: 100%; overflow-x: hidden; background: #fff; }
         .animate-fade-in { width: 100%; }
-        .products-head, .centered-head { text-align: center; margin-bottom: clamp(1.25rem, 3vw, 2.5rem); }
-        .products-head-title { margin: 0; color: #0f172a; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 900; letter-spacing: 0.01em; }
-        .products-head-sub { margin: 0.5rem 0 0; color: #64748b; font-size: 1rem; }
+        .products-head, .centered-head { text-align: center; margin-bottom: clamp(2.5rem, 6vw, 5rem); position: relative; }
+        .products-head-title { margin: 0; color: #0f172a; font-size: clamp(1.8rem, 4.5vw, 3rem); font-weight: 850; letter-spacing: -0.03em; }
+        .products-head-sub { margin: 0.75rem auto 0; color: #64748b; font-size: 1.15rem; max-width: 650px; line-height: 1.6; }
         
-        .products-clean-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); justify-content: stretch; gap: 1.5rem; width: 100%; }
-        .product-clean-card { background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%); border-radius: 20px; border: 1px solid #e2e8f0; overflow: hidden; box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05); transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
-        .product-clean-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1); border-color: #cbd5e1; }
-        .product-clean-image-wrap { position: relative; width: 100%; aspect-ratio: 16 / 10; background: #f1f5f9; border-bottom: 1px solid #e2e8f0; }
-        .product-clean-title { margin: 0; min-height: 70px; display: flex; align-items: center; justify-content: center; padding: 1rem 1.25rem; color: #0f172a; font-size: 1.05rem; font-weight: 850; line-height: 1.4; text-align: center; }
+        .gold-bar { width: 45px; height: 3px; background: linear-gradient(90deg, #b91c1c 0%, #ef4444 100%); border-radius: 100px; margin-bottom: 1.25rem; }
 
-        .aluminium-door-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 1.25rem; align-items: stretch; max-width: 1200px; margin: 0 auto; width: 100%; }
-        .aluminium-door-feature { position: relative; border-radius: 20px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 12px 40px rgba(15, 23, 42, 0.1); background: #f1f5f9; min-height: 420px; }
-        .aluminium-door-tiles { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 1rem; min-height: 0; }
-        .aluminium-door-tile { position: relative; border-radius: 16px; overflow: hidden; border: 1px solid #e2e8f0; background: #fff; box-shadow: 0 8px 24px rgba(15, 23, 42, 0.07); aspect-ratio: 4 / 3; transition: transform 0.25s ease, box-shadow 0.25s ease; }
+        .products-clean-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); justify-content: stretch; gap: 2.5rem; width: 100%; }
+        .product-clean-card { background: #fff; border-radius: 20px; border: 1px solid #f1f5f9; overflow: hidden; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03), 0 1px 2px rgba(15, 23, 42, 0.04); transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1); position: relative; }
+        .product-clean-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(15, 23, 42, 0.12); border-color: #e2e8f0; }
+        .product-clean-image-wrap { position: relative; width: 100%; aspect-ratio: 1 / 1; background: #f8fafc; overflow: hidden; }
+        .product-clean-title { margin: 0; min-height: 90px; display: flex; align-items: center; justify-content: center; padding: 1.5rem; color: #0f172a; font-size: 1.1rem; font-weight: 750; line-height: 1.4; text-align: center; background: #fff; }
 
-        .premium-showcase-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 1.5rem; align-items: stretch; max-width: 1200px; margin: 0 auto; width: 100%; }
-        .premium-left-gallery { display: flex; flex-direction: column; min-height: 520px; }
-        .premium-right-feature { position: relative; border-radius: 20px; overflow: hidden; border: 1px solid #e2e8f0; background: #0f172a; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); min-height: 520px; }
+        .aluminium-door-grid { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 2.5rem; align-items: stretch; max-width: 1400px; margin: 0 auto; width: 100%; }
+        .aluminium-door-feature { position: relative; border-radius: 24px; overflow: hidden; border: 1px solid #f1f5f9; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05); background: #f8fafc; min-height: 550px; }
+        .aluminium-door-tiles { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 1.5rem; }
+        .aluminium-door-tile { position: relative; border-radius: 18px; overflow: hidden; border: 1px solid #f1f5f9; background: #fff; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.025); aspect-ratio: 1 / 1; transition: all 0.4s ease; }
 
-        .comprehensive-dual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 1200px; margin: 0 auto; width: 100%; }
-        .comp-dual-column { display: flex; flex-direction: column; gap: 1.5rem; justify-content: stretch; }
-        .comp-dual-tile { position: relative; border-radius: 20px; overflow: hidden; border: 1px solid #e2e8f0; background: #fff; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06); transition: all 0.3s ease; }
-        .tile-hero { aspect-ratio: 16 / 10; flex-grow: 1; min-height: 280px; }
-        .comp-dual-subgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .premium-showcase-grid { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 3rem; align-items: stretch; max-width: 1400px; margin: 0 auto; width: 100%; }
+        .premium-left-gallery { display: flex; flex-direction: column; min-height: 650px; border-radius: 24px; overflow: hidden; box-shadow: 0 25px 60px rgba(0,0,0,0.06); }
+        .premium-right-feature { position: relative; border-radius: 24px; overflow: hidden; border: 1px solid #1e293b; background: #0f172a; box-shadow: 0 30px 80px rgba(15, 23, 42, 0.15); min-height: 650px; }
+
+        .comprehensive-dual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; max-width: 1400px; margin: 0 auto; width: 100%; }
+        .comp-dual-column { display: flex; flex-direction: column; gap: 2.5rem; justify-content: stretch; }
+        .comp-dual-tile { position: relative; border-radius: 24px; overflow: hidden; border: 1px solid #f1f5f9; background: #fff; box-shadow: 0 15px 40px rgba(15, 23, 42, 0.04); transition: all 0.4s ease; }
+        .tile-hero { flex-grow: 1; min-height: 400px; }
+        .comp-dual-subgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
         .comp-dual-subgrid .comp-dual-tile { aspect-ratio: 1 / 1; }
 
-        .entrance-showcase-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 1.5rem; align-items: stretch; max-width: 1200px; margin: 0 auto; width: 100%; }
-        .entrance-left-feature { position: relative; border-radius: 20px; overflow: hidden; border: 1px solid #e2e8f0; background: #fff; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); min-height: 520px; }
-        .entrance-right-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
-        .tile-large { grid-column: 1 / -1; aspect-ratio: 16 / 10; min-height: 240px; }
-        .entrance-tile { position: relative; border-radius: 16px; overflow: hidden; border: 1px solid #e2e8f0; background: #fff; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); }
+        .entrance-showcase-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: stretch; max-width: 1400px; margin: 0 auto; width: 100%; }
+        .entrance-left-feature { position: relative; border-radius: 24px; overflow: hidden; border: 1px solid #f1f5f9; background: #fff; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06); min-height: 650px; }
+        .entrance-right-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .tile-large { grid-column: 1 / -1; aspect-ratio: 16 / 9; min-height: 320px; }
+        .entrance-tile { position: relative; border-radius: 20px; overflow: hidden; border: 1px solid #f1f5f9; background: #fff; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03); }
 
-        .pp-showcase-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 1200px; margin: 0 auto; width: 100%; }
-        .pp-showcase-panel { position: relative; border-radius: 20px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 10px 36px rgba(15, 23, 42, 0.09); background: #f8fafc; min-height: 340px; aspect-ratio: 4 / 3; transition: all 0.3s ease; }
-        .pp-showcase-panel--left { background: #0f172a; }
+        .pp-showcase-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; max-width: 1400px; margin: 0 auto; width: 100%; }
+        .pp-showcase-panel { position: relative; border-radius: 24px; overflow: hidden; border: 1px solid #f1f5f9; box-shadow: 0 20px 50px rgba(15, 23, 42, 0.06); background: #f8fafc; min-height: 450px; aspect-ratio: 4 / 3; transition: all 0.4s ease; }
+        .pp-showcase-panel--left { background: #0f172a; border-color: #1e293b; }
 
-        .group { cursor: pointer; }
-        .group :global(img) { transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1) !important; }
-        .group:hover :global(img) { transform: scale(1.05); }
-        .group:hover { transform: translateY(-4px); box-shadow: 0 20px 48px rgba(15, 23, 42, 0.1); }
+        .group { cursor: pointer; position: relative; }
+        .group::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 65%, rgba(15, 23, 42, 0.05) 100%); opacity: 0; transition: opacity 0.4s ease; }
+        .group:hover::after { opacity: 1; }
+        .group :global(img) { transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1) !important; }
+        .group:hover :global(img) { transform: scale(1.08); }
+        .group:hover { transform: translateY(-8px); box-shadow: 0 40px 80px rgba(16, 29, 64, 0.12); }
 
         @media (max-width: 1024px) {
           .products-clean-grid { grid-template-columns: repeat(2, 1fr); }
@@ -223,7 +227,7 @@ export default function ProductsPage() {
 
       <style jsx global>{`
         html, body { overflow-x: hidden; width: 100%; margin: 0; padding: 0; }
-        .container-main { width: 100% !important; max-width: 1320px !important; margin: 0 auto !important; padding: 0 1.5rem !important; box-sizing: border-box !important; }
+        .container-main { width: 100% !important; max-width: 1400px !important; margin: 0 auto !important; padding: 0 2rem !important; box-sizing: border-box !important; }
         .section-padding { width: 100%; box-sizing: border-box; }
       `}</style>
     </div>
