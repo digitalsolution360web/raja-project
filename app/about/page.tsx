@@ -41,7 +41,7 @@ export default function AboutPage() {
                 alt="Manufacturing and precision aluminium profiles"
                 fill
                 sizes="(max-width: 900px) 100vw, 50vw"
-                style={{ objectFit: 'cover' }}
+                style={{ objectFit: 'cover', objectPosition: 'center 40%' }}
                 priority
               />
             </div>
@@ -55,13 +55,13 @@ export default function AboutPage() {
                 Our Airoli (Navi Mumbai) facility is equipped with precision extrusion capability, enabling us to maintain tight dimensional tolerances across every batch. Our supply operations serve Maharashtra and the western seaboard, ensuring fast lead times.
               </p>
               <div className="about-story-locs">
-                <div>
-                  <h4 style={{ color: 'var(--gold-dark)', fontWeight: 800, fontSize: '0.8rem', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Headquarters</h4>
-                  <p style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--navy)' }}>Airoli, Navi Mumbai</p>
+                <div className="loc-card">
+                  <h4 className="loc-label">Headquarters</h4>
+                  <p className="loc-name">Airoli, Navi Mumbai</p>
                 </div>
-                <div>
-                  <h4 style={{ color: 'var(--gold-dark)', fontWeight: 800, fontSize: '0.8rem', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Supply Hub</h4>
-                  <p style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--navy)' }}>Airoli, Navi Mumbai</p>
+                <div className="loc-card">
+                  <h4 className="loc-label">Supply Hub</h4>
+                  <p className="loc-name">Airoli, Navi Mumbai</p>
                 </div>
               </div>
             </div>
@@ -70,39 +70,54 @@ export default function AboutPage() {
         <style jsx>{`
           .about-story-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: clamp(2rem, 5vw, 4rem);
+            grid-template-columns: 1.4fr 0.6fr;
+            gap: clamp(2.5rem, 6vw, 6rem);
             align-items: center;
-            max-width: 100%;
           }
           .about-story-media {
             position: relative;
             width: 100%;
-            aspect-ratio: 4 / 3;
-            border-radius: 20px;
+            aspect-ratio: 16 / 9;
+            border-radius: 28px;
             overflow: hidden;
-            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
-            background: linear-gradient(
-              145deg,
-              #f1f5f9 0%,
-              #e2e8f0 50%,
-              #f8fafc 100%
-            );
+            box-shadow: 0 40px 100px rgba(15, 23, 42, 0.15);
+            background: #0f172a;
           }
           .about-story-img {
             display: block;
-            object-fit: cover !important;
-            width: 100% !important;
-            height: 100% !important;
           }
           .about-story-copy {
-            max-width: 560px;
+            max-width: 100%;
+          }
+          .loc-card {
+            background: rgba(241, 245, 249, 0.5);
+            padding: 1.25rem;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+          }
+          .loc-label {
+            color: var(--gold-dark);
+            font-weight: 800;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+          }
+          .loc-name {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--navy);
           }
           .about-story-locs {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1.25rem;
-            margin-top: 2rem;
+            margin-top: 2.5rem;
+          }
+          @media (max-width: 1024px) {
+            .about-story-grid {
+              grid-template-columns: 1.2fr 0.8fr;
+            }
           }
           @media (max-width: 900px) {
             .about-story-grid {
@@ -110,11 +125,7 @@ export default function AboutPage() {
             }
             .about-story-media {
               order: -1;
-              width: 100%;
-              aspect-ratio: 16 / 9;
-            }
-            .about-story-copy {
-              max-width: none;
+              aspect-ratio: 16 / 8;
             }
             .about-story-locs {
               grid-template-columns: 1fr;
@@ -122,7 +133,7 @@ export default function AboutPage() {
           }
           @media (max-width: 480px) {
             .about-story-media {
-              aspect-ratio: 4 / 3;
+              aspect-ratio: 16 / 10;
             }
           }
         `}</style>
@@ -138,41 +149,43 @@ export default function AboutPage() {
           <div>
             <div style={{ position: 'relative' }}>
               <div style={{ 
-                position: 'relative', 
                 borderRadius: '24px', 
                 overflow: 'hidden', 
                 boxShadow: '0 30px 60px rgba(15, 23, 42, 0.2)',
                 border: '10px solid white',
-                background: 'white'
+                background: 'white',
+                position: 'relative'
               }}>
+                {/* Full image — no crop, full height auto */}
+                <Image
+                  src="/aero.jpeg"
+                  alt="Aerospace Facility"
+                  width={1400}
+                  height={900}
+                  sizes="(max-width: 768px) 100vw, 90vw"
+                  style={{ 
+                    width: '100%', 
+                    height: 'auto', 
+                    display: 'block',
+                    objectFit: 'unset'
+                  }}
+                  priority
+                />
+                {/* Overlay for text readability */}
                 <div style={{ 
-                  position: 'relative', 
-                  width: '100%',
-                  aspectRatio: '16 / 7'
+                  position: 'absolute', 
+                  inset: 0, 
+                  background: 'linear-gradient(to top, rgba(15, 23, 42, 0.55), transparent 60%)' 
+                }} />
+                <div style={{ 
+                  position: 'absolute', 
+                  bottom: '30px', 
+                  left: '30px', 
+                  color: 'white',
+                  zIndex: 2
                 }}>
-                  <Image
-                    src="/aero.jpeg"
-                    alt="Aerospace Facility"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 90vw"
-                    style={{ objectFit: 'cover', objectPosition: 'center' }}
-                    priority
-                  />
-                  <div style={{ 
-                    position: 'absolute', 
-                    inset: 0, 
-                    background: 'linear-gradient(to top, rgba(15, 23, 42, 0.5), transparent 70%)' 
-                  }} />
-                  <div style={{ 
-                    position: 'absolute', 
-                    bottom: '30px', 
-                    left: '30px', 
-                    color: 'white',
-                    zIndex: 2
-                  }}>
-                    <h3 style={{ color: 'white', marginBottom: '0.5rem', fontSize: 'clamp(1.1rem, 3vw, 1.5rem)' }}>Regional Coordination Center</h3>
-                    <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: 'clamp(0.85rem, 2vw, 1rem)' }}>Bikaner (Nokha), Rajasthan</p>
-                  </div>
+                  <h3 style={{ color: 'white', marginBottom: '0.5rem', fontSize: 'clamp(1.1rem, 3vw, 1.5rem)' }}>Regional Coordination Center</h3>
+                  <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: 'clamp(0.85rem, 2vw, 1rem)' }}>Bikaner (Nokha), Rajasthan</p>
                 </div>
               </div>
               <div style={{ 
