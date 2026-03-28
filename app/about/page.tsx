@@ -78,7 +78,6 @@ export default function AboutPage() {
           .about-story-media {
             position: relative;
             width: 100%;
-            min-height: 320px;
             aspect-ratio: 4 / 3;
             border-radius: 20px;
             overflow: hidden;
@@ -92,6 +91,9 @@ export default function AboutPage() {
           }
           .about-story-img {
             display: block;
+            object-fit: cover !important;
+            width: 100% !important;
+            height: 100% !important;
           }
           .about-story-copy {
             max-width: 560px;
@@ -108,14 +110,19 @@ export default function AboutPage() {
             }
             .about-story-media {
               order: -1;
-              min-height: 260px;
-              aspect-ratio: 16 / 10;
+              width: 100%;
+              aspect-ratio: 16 / 9;
             }
             .about-story-copy {
               max-width: none;
             }
             .about-story-locs {
               grid-template-columns: 1fr;
+            }
+          }
+          @media (max-width: 480px) {
+            .about-story-media {
+              aspect-ratio: 4 / 3;
             }
           }
         `}</style>
@@ -138,12 +145,18 @@ export default function AboutPage() {
                 border: '10px solid white',
                 background: 'white'
               }}>
-                <div style={{ position: 'relative', minHeight: '500px', width: '100%' }}>
+                <div style={{ 
+                  position: 'relative', 
+                  width: '100%',
+                  aspectRatio: '16 / 7'
+                }}>
                   <Image
                     src="/aero.jpeg"
                     alt="Aerospace Facility"
                     fill
+                    sizes="(max-width: 768px) 100vw, 90vw"
                     style={{ objectFit: 'cover', objectPosition: 'center' }}
+                    priority
                   />
                   <div style={{ 
                     position: 'absolute', 
@@ -157,8 +170,8 @@ export default function AboutPage() {
                     color: 'white',
                     zIndex: 2
                   }}>
-                    <h3 style={{ color: 'white', marginBottom: '0.5rem', fontSize: '1.5rem' }}>Regional Coordination Center</h3>
-                    <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1rem' }}>Bikaner (Nokha), Rajasthan</p>
+                    <h3 style={{ color: 'white', marginBottom: '0.5rem', fontSize: 'clamp(1.1rem, 3vw, 1.5rem)' }}>Regional Coordination Center</h3>
+                    <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: 'clamp(0.85rem, 2vw, 1rem)' }}>Bikaner (Nokha), Rajasthan</p>
                   </div>
                 </div>
               </div>

@@ -41,9 +41,10 @@ export default function ImageSlider({ images, aspectRatio = '16 / 10', borderRad
               src={img}
               alt={`Slide ${i + 1}`}
               fill
-              sizes="(max-width: 900px) 100vw, 50vw"
-              style={{ objectFit: 'cover' }}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 60vw"
+              style={{ objectFit: 'cover', objectPosition: 'center' }}
               priority={i === 0}
+              quality={85}
             />
           </div>
         ))}
@@ -108,7 +109,12 @@ export default function ImageSlider({ images, aspectRatio = '16 / 10', borderRad
           border-radius: 4px;
         }
         
-        @media (max-width: 640px) {
+        @media (max-width: 900px) {
+          .image-slider-container {
+            aspect-ratio: 16 / 9;
+          }
+        }
+        @media (max-width: 480px) {
           .image-slider-container {
             aspect-ratio: 4 / 3;
           }
