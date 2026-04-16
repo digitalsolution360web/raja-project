@@ -122,7 +122,7 @@ export default function Footer() {
           </p>
 
           <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.85rem', margin: 0, textAlign: 'center' }}>
-            Designed &amp; Developed by <a href="https://digitalsolution.com" target="_blank" rel="noopener noreferrer" style={{ color: '#D92D20', textDecoration: 'none', fontWeight: 800 }}>Digitalsolution.com</a>
+            Designed &amp; Developed by <a href="https://digitalsolution360.in" target="_blank" rel="noopener noreferrer" style={{ color: '#D92D20', textDecoration: 'none', fontWeight: 800 }}>Digital Solution 360</a>
           </p>
 
           <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
