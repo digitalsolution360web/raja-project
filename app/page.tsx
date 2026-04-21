@@ -238,8 +238,8 @@ export default function HomePage() {
             <div className="inner-spec-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1px', background: 'var(--silver-dark)' }}>
               {[
                 { label: 'AEROSPACE Glass Partition System Slim Line Fix 25x45mm (Black Finish) 2500mm', img: '/gp1 (1).jpeg' },
-                { label: 'AEROSPACE Glass Partition System Slim Line Male Female 25x45mm (Black Finish) 2500mm', img: '/gp1 (2).jpeg' },
-                { label: 'AEROSPACE Glass Partition System Slim Line Door Frame 45x50 Mm (Black Finish) 2500mm', img: '/gp1 (3).jpeg' }
+                { label: 'AEROSPACE Glass Partition System Slim Line Male Female 45x50mm (Black Finish) 2500mm', img: '/gp1 (2).jpeg' },
+                { label: 'AEROSPACE Glass Partition System Slim Line Style Door 60x35 Mm (Black Finish) 2500mm', img: '/gp1 (3).jpeg' }
               ].map((item, i) => (
                 <div key={i} style={{ background: '#ffffff', padding: '2rem', display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
                   <div className="architect-border" style={{ width: '60px', height: '60px', position: 'relative', flexShrink: 0 }}>
