@@ -6,14 +6,15 @@ const products = [
   { id: 'double-glaze-partition-new', title: 'Double Glaze Partition', img: '/double.webp' },
   { id: 'single-glazing-25x45-new', title: 'Single Glazing Partition 25x45', img: '/single.webp' },
   { id: 'single-glazing-25x100-new', title: 'Single Glazing Partition 25x100', img: '/single25.webp' },
+  { id: 'single-glazing-partition', title: 'Single Glazing Partition', img: '/g1.jpeg' },
   { id: 'single-glazing-25-25', title: 'Single Glazing Partition 25*25', img: '/g4.jpeg' },
   { id: 'single-glaze-25-45', title: 'Single Glaze Partition 25*45', img: '/g5.jpeg' },
   { id: 'single-glazing-25-100', title: 'Single Glazing Partition 25*100', img: '/p20.jpeg' },
   { id: 'grid-partition', title: 'Double Glaze Partition 25*100', img: '/p21.jpeg' },
   { id: 'single-glass-25-25', title: 'Single Gaze Grid Partition 25*45', img: '/g2.jpeg' },
-  { id: 'single-glazing-partition', title: 'Single Glazing Partition', img: '/g1.jpeg' },
 
-  // { id: 'double-glaze-25-100', title: 'Double Glaze Partition 25*100', img: '/dou.jpeg' },
+
+  { id: 'double-glaze-25-100', title: 'Double Glaze Partition 25*100', img: '/dou.jpeg' },
 ];
 
 export default function ProductsPage() {
