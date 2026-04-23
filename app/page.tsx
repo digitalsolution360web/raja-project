@@ -153,8 +153,8 @@ export default function HomePage() {
             </div>
             <div className="inner-spec-grid" style={{ display: 'grid', gridTemplateRows: 'repeat(3, 1fr)', gap: '1px', background: 'var(--silver-dark)' }}>
               {[
-                { src: '/122.jpeg', label: 'Aerospace Glass Partition System Slim Line Door Frame 35x60 Mm (Black Finish) 2500mm' },
-                { src: '/124.jpeg', label: 'Aerospace Glass Partition System Style Door Fix 45x50mm (Black Finish) 2500mm' },
+                { src: '/122.jpeg', label: 'Aerospace Glass Partition System Slim Line Door Frame 45x50 Mm (Black Finish) 2500mm' },
+                { src: '/124.jpeg', label: 'Aerospace Glass Partition System Style Door Fix 35x60mm (Black Finish) 2500mm' },
                 { src: '/126.jpeg', label: 'Aerospace Glass Partition Style Door Male Female Profile 35x60mm (Black Finish) 1800mm' }
               ].map((item, i) => (
                 <div key={i} style={{ background: '#ffffff', padding: '1.5rem', display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
@@ -264,16 +264,16 @@ export default function HomePage() {
           <div className="responsive-spec-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '0', background: '#ffffff', borderRadius: '28px', overflow: 'hidden', boxShadow: '0 25px 60px -15px rgba(0,0,0,0.1)' }}>
             <div className="inner-spec-grid" style={{ display: 'grid', gridTemplateRows: 'repeat(3, 1fr)', gap: '1px', background: 'var(--silver-dark)' }}>
               {[
-                'AEROSPACE Glass Partition System Slim Line Fix 25x25mm (Black Finish) 2500mm',
-                'AEROSPACE Glass Partition System Slim Line Fix 25x45mm (Black Finish) 2500mm',
-                'AEROSPACE Glass Partition System Slim Line Fix 25x100mm (Black Finish) 2500mm',
-              ].map((spec, i) => (
+                { label: 'AEROSPACE Glass Partition System Slim Line Fix 25x25mm (Black Finish) 2500mm', img: '/g1.jpeg' },
+                { label: 'AEROSPACE Glass Partition System Slim Line Fix 25x45mm (Black Finish) 2500mm', img: '/single.webp' },
+                { label: 'AEROSPACE Glass Partition System Slim Line Fix 25x100mm (Black Finish) 2500mm', img: '/single25.webp' },
+              ].map((item, i) => (
                 <div key={i} style={{ background: '#ffffff', padding: '1.5rem', display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
                   <div className="architect-border" style={{ width: '100px', height: '100px', position: 'relative', flexShrink: 0 }}>
-                    <Image src="/g1.jpeg" alt="Slim Line Profile" fill style={{ objectFit: 'contain' }} />
+                    <Image src={item.img} alt="Slim Line Profile" fill style={{ objectFit: 'contain' }} />
                   </div>
                   <p style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--navy)', lineHeight: 1.4 }}>
-                    {spec}
+                    {item.label}
                   </p>
                 </div>
               ))}
