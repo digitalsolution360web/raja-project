@@ -153,8 +153,8 @@ export default function HomePage() {
             </div>
             <div className="inner-spec-grid" style={{ display: 'grid', gridTemplateRows: 'repeat(3, 1fr)', gap: '1px', background: 'var(--silver-dark)' }}>
               {[
-                { src: '/122.jpeg', label: 'Aerospace Glass Partition System Slim Line Door Frame 45x50 Mm (Black Finish) 2500mm' },
-                { src: '/124.jpeg', label: 'Aerospace Glass Partition System Style Door Fix 35x60mm (Black Finish) 2500mm' },
+                { src: '/122.jpeg', label: 'Aerospace Glass Partition System Slim Line Door Frame 35x60 Mm (Black Finish) 2500mm' },
+                { src: '/124.jpeg', label: 'Aerospace Glass Partition System Style Door Fix 45x50mm (Black Finish) 2500mm' },
                 { src: '/126.jpeg', label: 'Aerospace Glass Partition Style Door Male Female Profile 35x60mm (Black Finish) 1800mm' }
               ].map((item, i) => (
                 <div key={i} style={{ background: '#ffffff', padding: '1.5rem', display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
