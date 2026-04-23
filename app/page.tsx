@@ -264,9 +264,9 @@ export default function HomePage() {
           <div className="responsive-spec-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '0', background: '#ffffff', borderRadius: '28px', overflow: 'hidden', boxShadow: '0 25px 60px -15px rgba(0,0,0,0.1)' }}>
             <div className="inner-spec-grid" style={{ display: 'grid', gridTemplateRows: 'repeat(3, 1fr)', gap: '1px', background: 'var(--silver-dark)' }}>
               {[
+                'AEROSPACE Glass Partition System Slim Line Fix 25x25mm (Black Finish) 2500mm',
                 'AEROSPACE Glass Partition System Slim Line Fix 25x45mm (Black Finish) 2500mm',
                 'AEROSPACE Glass Partition System Slim Line Fix 25x100mm (Black Finish) 2500mm',
-                'AEROSPACE Glass Partition System Slim Line Fix 25x25mm (Black Finish) 2500mm',
               ].map((spec, i) => (
                 <div key={i} style={{ background: '#ffffff', padding: '1.5rem', display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
                   <div className="architect-border" style={{ width: '100px', height: '100px', position: 'relative', flexShrink: 0 }}>
